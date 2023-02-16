@@ -1,0 +1,62 @@
+:root{
+    --icon-color: rgb(100, 100, 100);
+    --icon-hover-color: rgb(0,0,0);
+    --icon-size: 25px;
+    --navbar-bacground: rgb(253, 253, 253);
+    --body-bacground: #F3F2EF;
+}
+
+/* header icon link */
+body{
+    background: var(--body-bacground);
+}
+
+.container{
+    height: 3rem;
+    background: var(--navbar-bacground);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    justify-content: center;
+    width: 98%;    
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    position: absolute;
+    padding-right: 5%;
+    
+}
+
+.links ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+}
+
+.links ul li {
+    list-style: none;
+
+}
+.links ul li span {
+    white-space: wrap;
+}
+
+.links ul li a i {
+   color: var(--icon-color);
+   
+}
+.links ul li a:hover i {
+    color: var(--icon-hover-color);
+    
+ }
+
+.logo{
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
