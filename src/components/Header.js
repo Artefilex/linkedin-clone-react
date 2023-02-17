@@ -1,4 +1,4 @@
-
+// import { useState } from "react"
 // import { Formik } from 'formik'
 import Logo from "../components/lk.png"
 import styles from "../components/styles.module.css"
@@ -12,13 +12,10 @@ import Fastjob from './links/Fastjob'
 import Job from './links/Job'
 import { BrowserRouter as Router, Routes,Route, NavLink } from 'react-router-dom'
 
+
 function Header() {
 
- let activeStyle = {
-  
-  paddingBottom:"1rem",
-  borderBottom: "2px solid black"
- }
+
  return (
   <>
     <div className={styles.container}>
@@ -28,50 +25,92 @@ function Header() {
        <img src={Logo} alt="logo" className={styles.logo} />
       <nav>
         <ul >
-          <li>
-            <NavLink to="/" style={({ isActive }) => isActive ? activeStyle : undefined }>
-            <i className="fa-solid fa-magnifying-glass fa-lg"></i>
-            
-           </NavLink>
+          <li >
+          <button>
+             
+           <div className={styles.iconDiv}>
+              <span>
+               <i className="fa-solid fa-magnifying-glass fa-xl"></i>
+               Arama Yap</span>
+           </div>
+          </button>
+
          </li>
-         <li> 
-            <NavLink to="home" style={({ isActive }) => isActive ? activeStyle : undefined }> 
-            <i className="fa-solid fa-house  fa-lg"> </i>
+         <li > 
+            <NavLink to="/" className={({ isActive }) =>  isActive ? styles.active : undefined}  > 
+
+               <div className={styles.iconDiv}   >
+                      <i className="fa-solid fa-house  fa-xl"> </i>
+                       <div className={styles.iconSpan}>    
+                        <span > Ana Sayfa</span>
+                        
+                       </div>
+                </div>
             </NavLink>
         </li>
-        <li>
-            <NavLink to="network" style={({ isActive }) => isActive ? activeStyle : undefined } >
-               <i className="fa-solid fa-user-group  fa-lg"></i>
+        <li  >
+            <NavLink to="network"   className={({ isActive }) =>  isActive ?  styles.active  : undefined}   >
+            <div  className={styles.iconDiv}  >
+               <i className="fa-solid fa-user-group  fa-xl"></i>
+               <div className={styles.iconSpan}>
+               <span  >Ağım</span>
+              
+               </div>
+             </div>
             </NavLink>
         </li>
         <li>  
-          <NavLink to="jobadvertisement" style={({ isActive }) => isActive ? activeStyle : undefined } >
-             <i className="fa-solid fa-briefcase  fa-lg"></i>
+          <NavLink to="jobadvertisement"  className={({ isActive }) =>  isActive ?  styles.active  : undefined}  >
+             <div className={styles.iconDiv}>
+             <i className="fa-solid fa-briefcase  fa-xl"></i>
+             <div className={styles.iconSpan}>
+             <span>İş İlanları </span>
+             
+             </div>
+             </div>
           </NavLink>
         </li>
         <li>
-         <NavLink to="comment" style={({ isActive }) => isActive ? activeStyle : undefined }> 
-            <i className="fa-solid fa-comment-dots  fa-lg"></i>
+         <NavLink to="comment" className={({ isActive }) =>  isActive ?  styles.active  : undefined}  > 
+            <div className={styles.iconDiv}>
+            <i className="fa-solid fa-comment-dots  fa-xl"></i>
+            <div className={styles.iconSpan}>
+            <span className="ascasc">Mesajlaşma</span>
+           
+             </div>
+            </div>
          </NavLink>
         </li>
         <li> 
-          <NavLink to="notifications" style={({ isActive }) => isActive ? activeStyle : undefined }>
-            <i className="fa-solid fa-bell  fa-lg"></i>
+          <NavLink to="notifications"className={({ isActive }) =>  isActive ?  styles.active  : undefined}   >
+            <div className={styles.iconDiv}>
+            <i className="fa-solid fa-bell  fa-xl"></i>
+            <div className={styles.iconSpan}>
+            <span>Bildirimler</span>
+          
+             </div>
+            </div>
           </NavLink>
         </li>
     
         <li> 
           <NavLink to="user" > 
-            <img src="iii" alt="user-img" />  
+           <div>
+           <img src="iii" alt="user-img" />
+            <span>Ben</span>
+            </div>  
           </NavLink>
         </li>
-    
-     
- 
-      
+  
      <li> 
-     <NavLink to="job" style={({ isActive }) => isActive ? activeStyle : undefined }>
-    <i className="fa-solid fa-list-ul  fa-lg"></i>
+     <NavLink to="job" className={({ isActive }) =>  isActive ?  styles.active  : undefined} >
+      <div className={styles.iconDiv}>
+      <i className="fa-solid fa-list-ul  fa-xl"></i>
+      <div className={styles.iconSpan}>
+         <span >İş</span>
+
+      </div>
+      </div>
 
     </NavLink>
     </li>
@@ -86,10 +125,10 @@ function Header() {
     </div>
     <Routes>
     <Route path='/' element={<Home/>}> </Route>
-    <Route path="/home" element={<Home/>}></Route>
+    
     <Route path="/network" element={<Network />} > </Route>
     <Route path="/jobadvertisement" element={<Advertisment />}></Route>
-    <Route path="/comement" element={<Comment />}></Route>
+    <Route path="/comment" element={<Comment />}></Route>
     <Route path="/notifications" element={<Notifications />}> </Route>
     <Route path="/user" element={<User />}> </Route>
     <Route path="/fastjob" element={<Fastjob />}> </Route>
@@ -104,32 +143,4 @@ function Header() {
 export default Header
 
 
-    //  <Router>
-    //       <div>
-    //       <nav>
-    //           <ul>
-    //             <li>
-    //               <NavLink style={({ isActive }) =>
-    //                 isActive ? activeStyle : undefined
-    //               } to="/">Home</NavLink>
-    //             </li>
-    //             <li>
-    //               <NavLink style={({ isActive }) =>
-    //                 isActive ? activeStyle : undefined
-    //               } to="/about">About</NavLink>
-    //             </li>
-    //             <li>
-    //               <NavLink style={({ isActive }) =>
-    //                 isActive ? activeStyle : undefined
-    //               } to="/users">Users</NavLink>
-    //             </li>
-
-    //           </ul>
-    //         </nav>
-
-    //          A <Switch> looks through its children <Route>s and
-    //           renders the first one that matches the current URL. 
-
-//       </div >
-//     </Router >
-//   ); 
+    
