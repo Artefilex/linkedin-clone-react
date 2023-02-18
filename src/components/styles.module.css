@@ -5,6 +5,7 @@
     --navbar-bacground: rgb(253, 253, 253);
     --body-bacground: #F3F2EF;
     --active-link: rgb(0,0,0);
+    --img-size: 40px;;
 }
 
 /* header icon link */
@@ -48,8 +49,8 @@ body{
     white-space: wrap;
     font-weight: 600;
     width: 6rem;
-    color: var(--icon-color)
-   
+    color: var(--icon-color);
+    margin-top: 10px;
 }
 .links ul li a{
     text-decoration: none;
@@ -81,13 +82,11 @@ body{
     display: flex;
     flex-direction: column;
     text-decoration: none;
-
+ 
 
 }
-/* .iconDiv:active  span{
- 
-    border-bottom: 5px solid black;
-} */
+
+
 .iconDiv i{
  margin-bottom: 1rem;
 }
@@ -111,3 +110,43 @@ body{
     border-bottom: 3px solid black;
     transition:  0.2s ;
  }
+ .userImg{
+    width: var(--img-size);
+    height:var(--img-size);
+    border-radius: 100%;
+}
+
+
+
+ .userDownBtn{
+    outline: none;
+    border: none;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    gap: 0.2rem;
+    background: var(--navbar-bacground) ;
+    color: var(--icon-color);
+    position: relative;
+ }
+ .userDownBtn span{
+    
+    position: absolute;
+    width: 1rem !important;
+    right: 1px;    
+    top: 0 rem;
+    margin-top: 0rem !important; 
+}
+ .userDownBtn i {
+    position: absolute;
+    left: 2rem;
+    top: 0rem;
+ }
+
+  .altLink{
+   
+    position: absolute;
+    ;
+ } 
+

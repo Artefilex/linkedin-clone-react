@@ -1,3 +1,127 @@
+:root{
+    --div-bacground: rgb(254,254,254);
+    --div-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px; 
+    --userInf-btn-color: rgb(10, 102, 194);
+    --userInf-border-color: rgb(223, 220, 220);
+    --hover-span-color: rgb(0,0,0);
+}
+
 .container{
     margin-top: 10rem ;
+}
+.userInfdownDiv h4{
+    color: var(--hover-span-color)
+}
+
+/* UserInf.js */
+
+.userInfdownDiv{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 2rem;
+    right: 12rem;
+    background: var(--div-bacground);
+    width: 18rem;
+    
+    border-radius: 10px 0px 10px 10px;
+    box-shadow: var(--div-shadow) ;
+    
+}
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem ;
+    width: 89%;
+    border-bottom: 1px solid var(--userInf-border-color);
+    
+   
+}
+.userInfo .userInformation{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.userInfo .userInformation .userInfSpan{
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    align-items: flex-start;
+   
+}
+.userInfo .userInformation .userInfSpan span{
+    margin-top: 0rem;
+    width: auto;
+}
+.userInfo .userInfBtnDiv{
+    width: 100%;
+}
+.userInfo .userInfBtnDiv button {
+    width: 100%;
+    padding: 0.2rem ;
+    outline: none;
+    border: none;
+    color: var(--userInf-btn-color);
+    cursor: pointer;
+    border: 1px solid var(--userInf-btn-color);
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    
+}
+.userInfo img{
+ width: 60px;
+ height: 60px;
+ border-radius: 100%;
+}
+
+
+/* account */
+.accountNav{
+    padding: 0.5rem 1rem;
+    width: 97%;
+    border-bottom: 1px solid var(--userInf-border-color);
+}
+.accountNav h4{
+    text-align: start;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+
+.accountNav .accountBtn{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.accountNav .accountBtn span:hover{
+    border-bottom: 1px solid var(--hover-span-color);
+    
+}
+
+.firstSpan:hover {
+    color: var(--userInf-btn-color);
+    border-bottom: none !important;
+}
+
+
+/* manage */
+.manage{
+    width: 92%;
+}
+/* out */
+.out{
+   margin: 1rem 2rem;
+}
+.out:hover{
+    border-bottom: 1px solid var(--hover-span-color);
 }
