@@ -125,3 +125,18 @@
 .out:hover{
     border-bottom: 1px solid var(--hover-span-color);
 }
+
+
+
+.dotLink{
+    position: relative;
+    right: 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media ( max-width: 500px){
+  
+    
+}

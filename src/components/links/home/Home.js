@@ -4,6 +4,7 @@ import Live from './Live'
 import Post from './Post'
 import Profile from './Profile'
 function Home() {
+  
   return (
    <>
     <div className={styles.container}>

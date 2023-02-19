@@ -1,11 +1,15 @@
 :root{
     --icon-color: rgb(100, 100, 100);
     --icon-hover-color: rgb(0,0,0);
-    --icon-size: 50px;
     --navbar-bacground: rgb(253, 253, 253);
     --body-bacground: #F3F2EF;
     --active-link: rgb(0,0,0);
-    --img-size: 40px;;
+   --standar-padding-container: 0.5rem 1rem;
+    --icon-size-phone: 18px;
+    --icon-size-large: 22px;
+    --img-size-large: 40px;
+    --img-size-phone: 35px;
+    --user-img-phone: 25px
 }
 
 /* header icon link */
@@ -19,10 +23,12 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: var(--standar-padding-container);
     justify-content: center;
     width: 98%;    
 }
+
+
 .links{
     display: flex;
     flex-direction: row;
@@ -72,8 +78,8 @@ body{
  }
 
 .logo{
-    width: var(--icon-size);
-    height: var(--icon-size);
+    width: var(--img-size-large);
+    height: var(--img-size-large);
 }
 .iconDiv{
     position: relative;
@@ -111,12 +117,10 @@ body{
     transition:  0.2s ;
  }
  .userImg{
-    width: var(--img-size);
-    height:var(--img-size);
+    width: var(--img-size-large);
+    height:var(--img-size-large);
     border-radius: 100%;
 }
-
-
 
  .userDownBtn{
     outline: none;
@@ -145,8 +149,134 @@ body{
  }
 
   .altLink{
-   
     position: absolute;
     ;
  } 
+ .phonDot{
+    display: none;
+}
 
+
+@media ( min-width: 410px) and (max-width: 600px){
+   
+    .container{
+        height: 7rem;
+        padding: 0.5rem 2rem;
+        width: 98%;    
+    }
+    .container .logo{
+            width: var(--img-size-phone);
+            height: var(--img-size-phone);
+     }
+
+     .container nav{
+        display: flex;
+        flex-direction: row;
+        left: 16px;
+        position: absolute;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .container .activeDots{
+        position: relative;
+        left: 8%;
+    }
+    .activeDots .altLink{
+        right: 3rem;
+    }
+    
+    .activeDots .altLink .altLink{
+        left: 7rem;
+    }
+    .userImg{
+        width: var(--user-img-phone);
+        height: var(--user-img-phone);
+    }
+    .activeDots .altLink button span,
+    .activeDots .altLink button i {
+        display: none;
+    }
+  
+    .phonDot{
+        display: flex;
+    }
+
+  .activeUls{
+    display: block;
+
+  }
+  .close{
+    display: none;
+  }
+     
+  .phoneUser{
+    display: none;
+  }
+    .inputDiv input{
+      display: none;
+    }
+
+    .links{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        position: absolute;
+        padding-right: 0rem;
+        
+    }
+    
+    .links ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .links ul li {
+        list-style: none;
+    
+    }
+    .links ul li button span{
+        display: block;
+    }
+    .links ul li span {
+        display: none;
+        white-space: wrap;
+        font-weight: 600;
+        width: 6rem;
+        color: var(--icon-color);
+        margin-top: 10px;
+    }
+
+    .iconDiv i{
+        margin-bottom: 0rem;
+        font-size: var(--icon-size-phone);
+       
+    }
+   
+
+
+
+}
+@media ( min-width: 600px) and (max-width: 870px){
+    /* only icon */
+
+}
+
+ @media  ( min-width: 870px) and (max-width: 1025px) {
+    .container{
+        padding: 0.5rem 0rem;
+        display: block;
+    }
+    /* .container .links ul {
+
+    } */
+ }
+ @media ( min-width: 1025px) and (max-width: 1200px){
+
+ }
+ @media ( min-width: 1200px) {
+
+ }
