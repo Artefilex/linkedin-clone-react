@@ -1,4 +1,4 @@
-import { useState} from "react"
+import { useState } from "react"
 
 import Logo from "../components/lk.png"
 import styles from "../components/styles.module.css"
@@ -13,7 +13,7 @@ import Job from './links/Job'
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom'
 import img from "../components/ben.jpg"
 import UserInf from './links/userInf/UserInf'
-import ThreeDots from "./links/userInf/ThreeDots"
+// import ThreeDots from "./links/userInf/ThreeDots"
 
 
 
@@ -22,30 +22,32 @@ import ThreeDots from "./links/userInf/ThreeDots"
 function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
-   const [isOpenDot, setIsOpenDot] = useState(false);
- const [openLi,setOpenLi ] = useState(false)
- const [count, setCount] = useState(0)
+  const [isOpenDot, setIsOpenDot] = useState(false);
+  const [count, setCount] = useState(0)
 
- const toggleSidebar = () => {
+
+ 
+
+  const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
- const toggleLi = ()=>{
-  setOpenLi(true)
- } 
+
   const toggleDot = () => {
-    if(count% 2 === 0 ){
-    setIsOpenDot(false)
+    if (count % 2 === 0) {
+      setIsOpenDot(false)
     }
-   else{
-    setIsOpenDot(true);
-   }
- 
+    else {
+      setIsOpenDot(true);
+    }
+
   };
-  
- 
- 
+
+
+//  anasyafa
+
   return (
     <>
+
       <div className={styles.container}>
         <Router>
 
@@ -53,7 +55,7 @@ function Header() {
             <img src={Logo} alt="logo" className={styles.logo} />
             <nav>
               <ul >
-                <li >
+                <li  >
 
                   <div className={styles.iconDiv}>
 
@@ -67,19 +69,19 @@ function Header() {
 
                 </li>
                 <li >
-                  <NavLink to="/" className={({ isActive }) => isActive ? styles.active : undefined} onClick={toggleSidebar} >
+                  <NavLink to="/"   className={({ isActive }) => isActive ? styles.active : undefined}   >
 
-                    <div className={styles.iconDiv}   >
-                      <i className="fa-solid fa-house  fa-xl"> </i>
+                    <div   className={styles.iconDiv}   >
+                      <i className="fa-solid fa-house  fa-xl" >  </i>
                       <div className={styles.iconSpan}>
                         <span > Ana Sayfa</span>
-                      
+
                       </div>
                     </div>
                   </NavLink>
                 </li>
-                <li  >
-                  <NavLink to="network" className={({ isActive }) => isActive ? styles.active : undefined} onClick={toggleSidebar}  >
+                <li   >
+                  <NavLink to="network" className={({ isActive }) => isActive ? styles.active : undefined}    >
                     <div className={styles.iconDiv}  >
                       <i className="fa-solid fa-user-group  fa-xl"></i>
                       <div className={styles.iconSpan}>
@@ -89,8 +91,8 @@ function Header() {
                     </div>
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to="jobadvertisement" className={({ isActive }) => isActive ? styles.active : undefined}  onClick={toggleSidebar} >
+                <li  >
+                  <NavLink to="jobadvertisement" className={({ isActive }) => isActive ? styles.active  : undefined }   >
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-briefcase  fa-xl"></i>
                       <div className={styles.iconSpan}>
@@ -100,8 +102,8 @@ function Header() {
                     </div>
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to="comment" className={({ isActive }) => isActive ? styles.active : undefined} onClick={toggleSidebar}  >
+                <li  className={styles.navbarLastItem}   >
+                  <NavLink to="comment" className={({ isActive }) => isActive ? styles.active : undefined}   >
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-comment-dots  fa-xl"></i>
                       <div className={styles.iconSpan}>
@@ -111,8 +113,8 @@ function Header() {
                     </div>
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to="notifications" className={({ isActive }) => isActive ? styles.active : undefined} onClick={toggleSidebar} >
+                <li  className={styles.navbarFourItem}  >
+                  <NavLink to="notifications" className={({ isActive }) => isActive ? styles.active : undefined} >
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-bell  fa-xl"></i>
                       <div className={styles.iconSpan}>
@@ -122,24 +124,25 @@ function Header() {
                   </NavLink>
                 </li>
 
-                <li className={styles.phoneUser}>
-                  <NavLink to="user"  onClick={toggleSidebar} >
+                <li className={styles.navbarThreeItem}   >
+                  <NavLink to="user" onClick={toggleSidebar} >
                     <div className={styles.userDiv}>
                       <img src={img} className={styles.userImg} alt="user-img" />
                       <button className={styles.userDownBtn} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
                       <div className={styles.altLink}>
                         {
-                          isOpen && <UserInf/> 
+                          isOpen && <UserInf />
                         }
-                        
-                        
+
+
+
                       </div>
                     </div>
                   </NavLink>
                 </li>
 
-                <li className={styles.phoneUser}>
-                  <NavLink to="job" className={({ isActive }) => isActive ? styles.active : undefined}  onClick={toggleSidebar} >
+                <li className={styles.navbarSecondItem}>
+                  <NavLink to="job" className={({ isActive }) => isActive ? styles.active : undefined}   >
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-list-ul  fa-xl"></i>
                       <div className={styles.iconSpan}>
@@ -150,70 +153,112 @@ function Header() {
 
                   </NavLink>
                 </li>
-                <li className={styles.phoneUser} >
-                  <NavLink to="fastJob"   onClick={toggleSidebar}>
+
+                <li className={styles.navbarFirstItem} >
+                  <NavLink to="fastJob"   >
                     <span> Premiumu <br /> ücretsiz deneyin.</span>
                   </NavLink>
                 </li>
-                <li className={styles.phoneDot} onClick={()=>setCount(count+1) }>
-                    <div className={styles.userDiv}>
+
+
+
+
+
+
+
+                <li className={styles.phoneDot} onClick={() => setCount(count + 1)}>
+                  <div className={styles.userDiv}>
                     <i onClick={toggleDot} className="fa-solid fa-ellipsis"></i>
-                     
-                      <div className={styles.altLink}>
-                        {
-                          isOpenDot &&  (
-                            <>
-                              <li onClick={toggleLi}><button> <img src={img} alt=""  className={styles.userImg} /></button>
-                              <div>
-                                { openLi && <UserInf/>}
-                              </div>
-                              </li>
-                              <li onClick={()=>alert("ccccc")}> <button>ccc</button> </li>
-                              <div>
-                                { openLi && <ThreeDots/>}
-                              </div>
-                              <li ><button>ccc</button></li>
-                            </>)
-                        
-                        }
-                        
-                        
-                      </div>
-                    </div>
-                 
-               </li>
 
-                
+                    <div className={styles.altLink}>
+                      {
+                        isOpenDot && (<>
+                          <div className={styles.openSideBar}>
 
-          
-              </ul>
-              {/* <div className={styles.phoneDot}>
+                                <li  className={styles.navbarLastItem}   >
+                                  <NavLink to="comment" className={({ isActive }) => isActive ? styles.active : undefined}   >
+                                    <div className={styles.iconDiv}>
+                                      <i className="fa-solid fa-comment-dots  fa-xl"></i>
+                                      <div className={styles.iconSpan}>
+                                        <span className="ascasc">Mesajlaşma</span>
 
-               <div  onClick ={toggleDot } >
-                    <div className={styles.userDiv}>
-                  
-                    <i className="fa-solid fa-ellipsis"></i>
-                     
-                      <div className={styles.altLink}>
-                        {
-                          isOpenDot &&  <ThreeDots/>
-                        
-                        }
-                        
-                        
-                      </div>
+                                      </div>
+                                    </div>
+                                  </NavLink>
+                                </li>
+                                <li  className={styles.navbarFourItem}  >
+                                  <NavLink to="notifications" className={({ isActive }) => isActive ? styles.active : undefined} >
+                                    <div className={styles.iconDiv}>
+                                      <i className="fa-solid fa-bell  fa-xl"></i>
+                                      <div className={styles.iconSpan}>
+                                        <span>Bildirimler</span>
+                                      </div>
+                                    </div>
+                                  </NavLink>
+                                </li>
+
+                                <li className={styles.navbarThreeItem}   >
+                                  <NavLink to="user" onClick={toggleSidebar} >
+                                    <div className={styles.userDiv}>
+                                      <img src={img} className={styles.userImg} alt="user-img" />
+                                      <button className={styles.userDownBtn} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
+                                      <div className={styles.altLink}>
+                                        {
+                                          isOpen && <UserInf />
+                                        }
+
+
+
+                                      </div>
+                                    </div>
+                                  </NavLink>
+                                </li>
+
+                                <li className={styles.navbarSecondItem}>
+                                  <NavLink to="job" className={({ isActive }) => isActive ? styles.active : undefined}   >
+                                    <div className={styles.iconDiv}>
+                                      <i className="fa-solid fa-list-ul  fa-xl"></i>
+                                      <div className={styles.iconSpan}>
+                                        <span >İş</span>
+
+                                      </div>
+                                    </div>
+
+                                  </NavLink>
+                                </li>
+
+                                <li className={styles.navbarFirstItem} >
+                                  <NavLink to="fastJob"   >
+                                    <span id="span"> Premiumu <br /> ücretsiz deneyin.</span>
+                                  </NavLink>
+
+
+                                </li>
+                          </div>
+                        </>)
+
+                      }
+
+
                     </div>
                   </div>
-               </div> */}
+
+                </li>
+
+
+
+
+              </ul>
+             
             </nav>
           </div>
 
 
 
 
-      
+
           <Routes>
-            
+
             <Route path='/' element={<Home />}> </Route>
 
             <Route path="/network" element={<Network />} > </Route>
@@ -225,6 +270,9 @@ function Header() {
             <Route path="/job" element={<Job />}> </Route>
           </Routes>
         </Router>
+
+
+
       </div>
     </>
   )

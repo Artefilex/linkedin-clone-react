@@ -5,11 +5,13 @@
     --body-bacground: #F3F2EF;
     --active-link: rgb(0,0,0);
    --standar-padding-container: 0.5rem 1rem;
-    --icon-size-phone: 18px;
+   --openside-padding-container: 1rem 2rem;
+   --icon-size-phone: 18px;
     --icon-size-large: 22px;
     --img-size-large: 40px;
     --img-size-phone: 35px;
-    --user-img-phone: 25px
+    --user-img-phone: 25px;
+    --div-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px; 
 }
 
 /* header icon link */
@@ -152,12 +154,75 @@ body{
     position: absolute;
     ;
  } 
- .phonDot{
+.userDiv {
     display: none;
 }
+ /* open nav dots */
 
+.openSideBar .navbarFirstItem,
+.openSideBar .navbarSecondItem,
+.openSideBar .navbarThreeItem,
+.openSideBar .navbarFourItem,
+.openSideBar .navbarLastItem{
+    display: none;
+}
+.openSideBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    background: var(--navbar-bacground);
+    padding: var(--openside-padding-container);
+    border-radius: 5px 1px 5px 5px ;
+   box-shadow: var(--div-shadow) ;
 
-@media ( min-width: 410px) and (max-width: 600px){
+} 
+@media ( min-width: 420px) and (max-width: 570px){
+    .userDiv{
+        display:flex;
+    }
+    .userDiv span{
+        display: flex;
+    }
+    .navbarFirstItem ,
+    .navbarSecondItem{
+        display: none;
+    }
+    
+     .openSideBar .navbarSecondItem {
+        display: flex;
+    }
+  
+}
+@media ( min-width: 420px) and (max-width: 570px){
+    .userDiv{
+        display:flex;
+    }
+    .userDiv span{
+        display: flex;
+    }
+    .navbarFirstItem ,
+    .navbarSecondItem{
+        display: none;
+    }
+    
+     .openSideBar .navbarSecondItem {
+        display: flex;
+    }
+    .links ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+        transition: 1s;
+    }
+  
+}
+
+ @media ( min-width: 410px) and (max-width: 600px){
    
     .container{
         height: 7rem;
@@ -197,9 +262,7 @@ body{
         display: none;
     }
   
-    .phonDot{
-        display: flex;
-    }
+    
 
   .activeUls{
     display: block;
@@ -209,9 +272,7 @@ body{
     display: none;
   }
      
-  .phoneUser{
-    display: none;
-  }
+  
     .inputDiv input{
       display: none;
     }
@@ -232,8 +293,8 @@ body{
         flex-direction: row;
         align-items: center;
         gap: 2rem;
+        transition: 0.5s;
     }
-    
     .links ul li {
         list-style: none;
     
@@ -257,9 +318,18 @@ body{
     }
    
 
+   
+   
+    .altLink .altLink #span{
+         display: flex;
+    }
+    .userDownBtn{
+        display: none;
+    }
 
 
-}
+
+} 
 @media ( min-width: 600px) and (max-width: 870px){
     /* only icon */
 
