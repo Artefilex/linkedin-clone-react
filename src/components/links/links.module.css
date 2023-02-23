@@ -138,12 +138,48 @@
 
 }
 @media ( max-width: 700px){
-    .userInfdownDiv{
-        bottom: 2rem;
-        right: 5rem
-    }
-
-
+   
     
+    .userInfdownDiv{        
+       right: 5rem;
+   }
+   
+}
+@media ( min-width: 420px) and (max-width: 450px){
+    .userInfdownDiv{
+        top: 2rem;
+        right: 12rem;
+        transition: .5s;
+    
+       }
+/* 
+       top: 2rem;
+left: 5rem;
+transition: .5s; */
+}
+@media ( min-width: 450px) and (max-width: 500px){
+    .userInfdownDiv{
+       top: 2rem;
+       left: 5rem;
+       transition: .5s; 
+       }
     
 }
+@media ( min-width: 360px) and (max-width: 420px){
+    .userInfdownDiv{
+    top: 2rem;
+    right: 6rem;
+    transition: .5s;
+
+   }
+   .userInformation .userInfImg img{
+    width: 30px !important;
+   }
+   
+
+}
+
+
+
+
+

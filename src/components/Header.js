@@ -126,7 +126,7 @@ function Header() {
 
                 <li className={styles.navbarThreeItem}   >
                   <NavLink to="user" onClick={toggleSidebar} >
-                    <div className={styles.userDiv}>
+                    <div className={styles.userDivs}>
                       <img src={img} className={styles.userImg} alt="user-img" />
                       <button className={styles.userDownBtn} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
                       <div className={styles.altLink}>
@@ -162,7 +162,7 @@ function Header() {
 
 
 
-
+  
 
 
 
