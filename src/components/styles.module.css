@@ -11,6 +11,7 @@
     --icon-size-large: 22px;
     --img-size-large: 40px;
     --img-size-phone: 35px;
+    --img-size-phone-small: 30px;
     --user-img-phone: 20px;
     --div-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px; 
     --trans-duration: 0.5s;
@@ -34,7 +35,7 @@ body{
 }
 
 
-.links{
+.container .links{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -44,49 +45,48 @@ body{
     
     
 }
-
-.links ul {
+.container .links ul {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 6rem;
+    gap: 2rem;
+    transition: var(--trans-duration);
+  
 }
 
-.links ul li {
+.container .links ul li {
     list-style: none;
 
 }
-.links ul li span {
+.container .links ul li span {
     white-space: wrap;
     font-weight: 600;
     width: 6rem;
     color: var(--icon-color);
     margin-top: 10px;
 }
-.links ul li a{
+.container .links ul li a{
     text-decoration: none;
     color: var(--icon-color);
 }
-.links ul li a:hover{
+.container .links ul li a:hover{
     color: var(--icon-hover-color);
 }
 
-.links ul li a i {
+.container .links ul li a i {
    color: var(--icon-color);
-  
-  
-   
+ 
 }
-.links ul li a:hover i {
+.container .links ul li a:hover i {
     color: var(--icon-hover-color);
     
  }
 
-.logo{
+.container .links .logo{
     width: var(--img-size-large);
     height: var(--img-size-large);
 }
-.iconDiv{
+.container .links nav ul li .iconDiv{
     position: relative;
     align-items: center;
     white-space: nowrap;
@@ -97,12 +97,11 @@ body{
 
 }
 
-
-.iconDiv i{
+.container .links nav ul li .iconDiv i{
  margin-bottom: 1rem;
 }
 
-.iconSpan{
+.container .links nav ul li .iconSpan{
     position: absolute;
     margin-top: 1rem;
     display: flex;
@@ -110,24 +109,22 @@ body{
     
 }
 
- .links ul li .active i, 
- .links ul li .active span {
+.container .links ul li .active i, 
+.container .links ul li .active span {
    color: var(--active-link);
-   
  }
- .links ul li .active span{
-    
+ .container .links ul li .active span{
     padding-bottom: 0.90rem;
     border-bottom: 3px solid black;
     transition:  0.2s ;
  }
- .userImg{
+ .container .links ul li .userImg{
     width: var(--img-size-large);
     height:var(--img-size-large);
     border-radius: 100%;
 }
 
- .userDownBtn{
+.container .links .userDownBtn{
     outline: none;
     border: none;
     font-size: 1em;
@@ -139,7 +136,7 @@ body{
     color: var(--icon-color);
     position: relative;
  }
- .userDownBtn span{
+ .container .links ul li .userDownBtn span{
     
     position: absolute;
     width: 1rem !important;
@@ -147,16 +144,19 @@ body{
     top: 0 rem;
     margin-top: 0rem !important; 
 }
- .userDownBtn i {
+.container .links ul li .userDownBtn i {
     position: absolute;
     left: 2rem;
     top: 0rem;
  }
-
-  .altLink{
+ .container .links ul li .altLink{
     position: absolute;
-    ;
+  
  } 
+  .container .links .altLink{
+    left: 0px ;
+    right: 0px;
+}
  .userDiv {
     display: none;
 }
@@ -185,33 +185,26 @@ body{
    box-shadow: var(--div-shadow) ;
 
 } 
-nav ul li i::before {
-    transition: 1.5s;
-}
-nav ul li i::after {
-    transition: 1.5s;
-}
 
+.container .links nav ul li i::before {
+    transition: 1.5s;
+}
+.container .links nav ul li i::after {
+    transition: 1.5s;
+}
+.container .userDiv .userImg {
+    width: 22px !important ;
+    height: 22px !important;
+}
 
 @media  (max-width: 300px){
 
-    nav ul {
-        gap: 1.8rem !important;
-        transition: var(--trans-duration);
-    }
-    .altLink{
-        left: 0;
-        right: 0;
-    }
-    
     .userDiv{
         display:flex;
     }
-
     .userDiv span{
         display: flex;
     }
-
     .navbarFirstItem ,
     .navbarSecondItem,
     .navbarThreeItem ,
@@ -220,7 +213,6 @@ nav ul li i::after {
         display: none;
         transition: var(--trans-duration);
     }
-
     .openSideBar .navbarThreeItem,
     .openSideBar .navbarSecondItem,
     .openSideBar .navbarThreeItem,
@@ -232,97 +224,44 @@ nav ul li i::after {
         width:  var(--user-img-phone);
         height: var(--user-img-phone);
     }
-    .container{
-        height: 5rem;
-        transition: var(--trans-duration);    
-    }
-
-
-    .container .logo{
-            width: var(--img-size-phone);
-            height: var(--img-size-phone);
+    .container .links .logo {
+            width: var(--img-size-phone-small) ;
+            height: var(--img-size-phone-small) ;
          
      }
-
      .container nav{
         left: 20px;
         position: absolute;
-      
     }
     .container .links{
-        width: 94%;
+        width: 95%;
          padding-right: 0rem; 
-    }
-    
-   .container .links ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        transition: 0.5s;
-    }
-    .container .links ul li .navbarThreeItem .altLink span{
-        display: flex ;
-        flex-direction: column;
     }
     .container .links nav ul li .iconDiv .inputDiv input{
         display: none;
       }
   
-    .container .links ul li {
-        list-style: none;
-    
-    }
-    .container .links ul li button span{
-        display: block;
-    }
-    .container .links ul li span {
-        display: flex;
-        white-space: wrap;
-        font-weight: 600;
-        width: 6rem;
-        color: var(--icon-color);
-        margin-top: 10px;
-    }
-
     .container .links nav ul li .iconDiv i{
         margin-bottom: 0rem;
         font-size: var(--icon-size-phone);
        
     }
-    .container .links nav ul li .navbarThreeItem .userDownBtn{
-        display: none;
-    }
    
-    .container .links nav ul li  .phoneDot{
-        display: none;
-
-    }
-
-
+  
 }
-
-
-
 
 @media ( min-width: 300px) and (max-width: 340px){
 
-    nav ul {
-        gap: 1.8rem !important;
-        transition: var(--trans-duration);
-    }
-    .altLink{
-        left: 0;
-        right: 0;
-    }
     .userDiv{
         display:flex;
     }
-
     .userDiv span{
         display: flex;
     }
-
+    .container .links nav ul li  img{
+        width: 22px !important ;
+        height: 22px !important;
+    }
     .navbarFirstItem ,
     .navbarSecondItem,
     .navbarThreeItem ,
@@ -331,7 +270,6 @@ nav ul li i::after {
         display: none;
         transition: var(--trans-duration);
     }
-
     .openSideBar .navbarThreeItem,
     .openSideBar .navbarSecondItem,
     .openSideBar .navbarThreeItem,
@@ -343,54 +281,28 @@ nav ul li i::after {
         width:  var(--user-img-phone);
         height: var(--user-img-phone);
     }
-    .container{
-        height: 5rem;
-        transition: var(--trans-duration);    
-
-    }
-
-
     .container .logo{
             width: var(--img-size-phone);
-            height: var(--img-size-phone);
-         
+            height: var(--img-size-phone);      
      }
-
      .container nav{
         left: 20px;
         position: absolute;
-      
     }
     .container .links{
-        width: 94%;
+        width: 95%;
          padding-right: 0rem; 
     }
     
-   .container .links ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        transition: 0.5s;
-    }
     .container .links nav ul li .iconDiv .inputDiv input{
         display: none;
       }
   
-    .container .links ul li {
-        list-style: none;
-    
-    }
     .container .links ul li button span{
         display: block;
     }
     .container .links ul li span {
         display: none;
-        white-space: wrap;
-        font-weight: 600;
-        width: 6rem;
-        color: var(--icon-color);
-        margin-top: 10px;
     }
     .container .links ul li .navbarThreeItem .altLink span{
         display: flex ;
@@ -398,39 +310,23 @@ nav ul li i::after {
     }
     .container .links nav ul li .iconDiv i{
         margin-bottom: 0rem;
-        font-size: var(--icon-size-phone);
-       
+        font-size: var(--icon-size-phone);     
     }
     .container .links nav ul li .navbarThreeItem .userDownBtn{
         display: none;
-    }
-   
+    } 
     .container .links nav ul li  .phoneDot{
         display: none;
-
-    }
-
-
+    } 
 }
 
 @media ( min-width: 340px) and (max-width: 360px){
-
-    nav ul {
-        gap: 1.8rem !important;
-        transition: var(--trans-duration);
-    }
-    .altLink{
-        left: 0;
-        right: 0;
-    }
     .userDiv{
         display:flex;
     }
-
     .userDiv span{
         display: flex;
     }
-
     .navbarFirstItem ,
     .navbarSecondItem,
     .navbarThreeItem ,
@@ -438,7 +334,6 @@ nav ul li i::after {
         display: none;
         transition: var(--trans-duration);
     }
-
     .openSideBar .navbarThreeItem,
     .openSideBar .navbarSecondItem,
     .openSideBar .navbarThreeItem,
@@ -449,44 +344,21 @@ nav ul li i::after {
         width:  var(--user-img-phone);
         height: var(--user-img-phone);
     }
-    .container{
-        height: 5rem;
-        transition: var(--trans-duration);    
-
-    }
-
-
     .container .logo{
             width: var(--img-size-phone);
-            height: var(--img-size-phone);
-         
+            height: var(--img-size-phone);      
      }
-
      .container nav{
         left: 20px;
-        position: absolute;
-      
+        position: absolute;    
     }
     .container .links{
         width: 94%;
          padding-right: 0rem; 
     }
-    
-   .container .links ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        transition: 0.5s;
-    }
     .container .links nav ul li .iconDiv .inputDiv input{
         display: none;
       }
-  
-    .container .links ul li {
-        list-style: none;
-    
-    }
     .container .links ul li button span{
         display: block;
     }
@@ -498,16 +370,13 @@ nav ul li i::after {
         color: var(--icon-color);
         margin-top: 10px;
     }
-
     .container .links nav ul li .iconDiv i{
         margin-bottom: 0rem;
-        font-size: var(--icon-size-phone);
-       
+        font-size: var(--icon-size-phone);    
     }
     .container .links nav ul li .navbarThreeItem .userDownBtn{
         display: none;
-    }
-   
+    }  
     .container .links nav ul li  .phoneDot{
         display: none;
 
@@ -515,6 +384,10 @@ nav ul li i::after {
     .container .links ul li .navbarThreeItem .altLink span{
         display: flex ;
         flex-direction: column;
+    }
+    .container .userDiv .userImg {
+        width: 22px !important ;
+        height: 22px !important;
     }
 
 
@@ -525,56 +398,47 @@ nav ul li i::after {
 @media ( min-width: 360px) and (max-width: 420px){
 
     /* response nav */
-    nav ul {
-        gap: 2rem !important;
-    }
-    .altLink{
-        left: 0;
-        right: 0;
-    }
+
     .userDiv{
         display:flex;
     }
-
     .userDiv span{
         display: flex;
     }
-
-    .navbarFirstItem ,
+    .navbarFirstItem,
     .navbarSecondItem,
     .navbarThreeItem{
         display: none;
         transition: var(--trans-duration);
     }
-    .container{
-        height: 5rem;
-        transition: var(--trans-duration);    
-
+    .container nav{
+        left: 20px;
     }
-
-
+    .openSideBar .navbarSecondItem,
+    .openSideBar .navbarThreeItem{
+        display: flex;
+        transition: var(--trans-duration);
+    }
+    .openSideBar .navbarThreeItem img{
+        width:  var(--user-img-phone);
+        height: var(--user-img-phone);
+    }
     .container .logo{
             width: var(--img-size-phone);
             height: var(--img-size-phone);
-           margin: var(--margin-container);
+           
      }
-
-     .container nav{
-        left: 20px;
-        position: absolute;
-        margin: var(--margin-container)
-    }
+    
     .container .links{
-        width: 94%;
+        width: 95%;
          padding-right: 0rem; 
     }
-    
-   .container .links ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        transition: 0.5s;
+    .container .altLink {
+        left: 0px;
+        right: 0px;
+    }
+    .container .links ul{
+        gap: 1.8rem
     }
     .container .links nav ul li .iconDiv .inputDiv input{
         display: none;
@@ -584,25 +448,18 @@ nav ul li i::after {
         flex-direction: column;
     }
   
-    .container .links ul li {
-        list-style: none;
-    
-    }
+  
     .container .links ul li button span{
         display: block;
     }
     .container .links ul li span {
         display: none;
-        white-space: wrap;
-        font-weight: 600;
-        width: 6rem;
-        color: var(--icon-color);
-        margin-top: 10px;
+       
     }
 
     .container .links nav ul li .iconDiv i{
         margin-bottom: 0rem;
-        font-size: var(--icon-size-large);
+        font-size: var(--icon-size-phone);
        
     }
     .container .links nav ul li .navbarThreeItem .userDownBtn{
@@ -614,21 +471,21 @@ nav ul li i::after {
 
     }
    /* response nav end */
-
+   .container .userDiv .userImg {
+    width: 22px !important ;
+    height: 22px !important;
+}
 
 }
 @media ( min-width: 420px) and (max-width: 450px){
     nav ul {
         gap: 2rem !important;
     }
-    .altLink{
-        left: 0;
-        right: 0;
-    }
+    
     .userDiv{
         display:flex;
     }
-
+  
     .userDiv span{
         display: flex;
     }
@@ -638,6 +495,10 @@ nav ul li i::after {
     .navbarThreeItem{
         display: none;
         transition: var(--trans-duration);
+    }
+    .container .altLink {
+        left: 0px;
+        right: 0px;
     }
     .container .links ul li .navbarThreeItem .altLink span{
         display: flex ;
@@ -653,13 +514,6 @@ nav ul li i::after {
         width:  var(--user-img-phone);
         height: var(--user-img-phone);
     }
-    .container{
-        height: 5rem;
-        transition: var(--trans-duration);    
-
-    }
-
-
     .container .logo{
             width: var(--img-size-phone);
             height: var(--img-size-phone);
@@ -668,29 +522,19 @@ nav ul li i::after {
 
      .container nav{
         left: 20px;
-        position: absolute;
-        margin: var(--margin-container)
+      
     }
     .container .links{
         width: 94%;
          padding-right: 0rem; 
     }
     
-   .container .links ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        transition: 0.5s;
-    }
+
     .container .links nav ul li .iconDiv .inputDiv input{
         display: none;
       }
   
-    .container .links ul li {
-        list-style: none;
-    
-    }
+  
     .container .links ul li button span{
         display: block;
     }
@@ -716,22 +560,16 @@ nav ul li i::after {
         display: none;
 
     }
+    .container .userDiv .userImg {
+        width: 22px !important ;
+        height: 22px !important;
+    }
 
 }
 
  @media ( min-width: 450px) and (max-width: 500px){
    
-    nav ul {
-        gap: 1.8rem !important;
-    }
-    .altLink{
-        left: 0;
-        right: 0;
-    }
-    .container .links ul li .navbarThreeItem .altLink span{
-        display: flex ;
-        flex-direction: column;
-    }
+  
      .navbarFirstItem{
         display: none;
      }
@@ -740,91 +578,70 @@ nav ul li i::after {
     .openSideBar .navbarThreeItem{
         display: flex;
     }
-    .openSideBar .navbarThreeItem img{
-        width:  var(--user-img-phone);
-        height: var(--user-img-phone);
-    }
-
-    .container{
-        height: 5rem;
-        transition: var(--trans-duration);    
-
-    }
-
-
     .container .logo{
-            width: var(--img-size-phone);
-            height: var(--img-size-phone);
-           margin: var(--margin-container);
-     }
+        width: var(--img-size-phone);
+        height: var(--img-size-phone);
+       margin: var(--margin-container);
+ }
+.container .links{
+    width: 100%;
+     padding-right: 0rem; 
+}
+.container .links nav ul{
+    gap: 1.5rem;
+}
+.container .links nav ul li .iconDiv .inputDiv input{
+    display: none;
+  }
 
-     .container nav{
-        left: 25px;
-        position: absolute;
-        margin: var(--margin-container)
-    }
-    .container .links{
-        width: 94%;
-         padding-right: 0rem; 
-    }
-    
-   .container .links ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        transition: 0.5s;
-    }
-    .container .links nav ul li .iconDiv .inputDiv input{
-        display: none;
-      }
-  
-    .container .links ul li {
-        list-style: none;
-    
-    }
+.container .links ul li button span{
+    display: block;
+}
+.container .links ul li span {
+    display: none;
+    white-space: wrap;
+    font-weight: 600;
+    width: 6rem;
+    color: var(--icon-color);
+    margin-top: 10px;
+}
+
+.container .links nav ul li .iconDiv i{
+    margin-bottom: 0rem;
+    font-size: var(--icon-size-large);
    
-    .container .links ul li span {
-        display: none;
-        white-space: wrap;
-        font-weight: 600;
-        width: 6rem;
-        color: var(--icon-color);
-        margin-top: 10px;
-    }
+}
+.container .links nav ul li .navbarThreeItem .userDownBtn{
+    display: none;
+}
 
-    .container .links nav ul li .iconDiv i{
-        margin-bottom: 0rem;
-        font-size: var(--icon-size-large);
-       
-    }
-    
-    .container .links nav ul li .userDownBtn i
-    {
-        display: none;
+.container .links nav ul li  .phoneDot{
+    display: none;
 
-    }
-    .container .links nav ul li  img{
-        width: 22px;
-        height: 22px;
-        margin-top: 3px;
-    }
+}
+.container .links ul li .navbarThreeItem .altLink span{
+    display: flex ;
+    flex-direction: column;
+}
+.container .userImg { 
+    width: 22px !important ;
+    height: 22px !important;
+}
+.container .links ul li .userDownBtn{
+    margin-top: -3px;
+}
+.container .links ul li .userDownBtn span{
+    display: none;
    
-    .container .links nav ul li  .phoneDot{
-        display: none;
+}
 
-    }
-    .container .links nav ul li .navbarThreeItem .altLink{
-        left: 0;
-        right: 0;
-    }
-   .navbarThreeItem .altLink img{
-    width: var(--img-size-large) !important;
-    height:  var(--img-size-large) !important;
-   }
-   .navbarThreeItem .altLink div span {
-    display: flex;
-   }
+.container .userDownBtn i  {
+ display: none;
+}
+.phoneDot{
+    display: none;
+}
+
 } 
 
 
@@ -833,12 +650,8 @@ nav ul li i::after {
     nav ul {
         gap: 2rem !important;
     }
-    .altLink{
-        left: 0;
-        right: 0;
-    }
     .container .links ul li .navbarThreeItem .altLink span{
-        display: flex ;
+        display: flex  !important;
         flex-direction: column;
     }
      .navbarFirstItem{
@@ -853,46 +666,22 @@ nav ul li i::after {
         width:  var(--user-img-phone);
         height: var(--user-img-phone);
     }
-
-    .container{
-        height: 5rem;
-        transition: var(--trans-duration);    
-
-    }
-
-
     .container .logo{
             width: var(--img-size-phone);
             height: var(--img-size-phone);
            margin: var(--margin-container);
      }
 
-     .container nav{
-        left: 25px;
-        position: absolute;
-        margin: var(--margin-container);
-        transition: var(--trans-duration);
-    }
     .container .links{
-        width: 94%;
+         width: 100%;
          padding-right: 0rem; 
+       
     }
     
-   .container .links ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        transition: 0.5s;
-    }
+  
     .container .links nav ul li .iconDiv .inputDiv input{
         display: none;
       }
-  
-    .container .links ul li {
-        list-style: none;
-    
-    }
    
     .container .links ul li span {
         display: none;
@@ -908,11 +697,8 @@ nav ul li i::after {
         font-size: var(--icon-size-large);
        
     }
-    
-    .container .links nav ul li .userDownBtn i
-    {
+    .container .links nav ul li .userDownBtn i {
         display: none;
-
     }
     .container .links nav ul li  img{
         width: 22px;
@@ -935,14 +721,178 @@ nav ul li i::after {
    .navbarThreeItem .altLink div span {
     display: flex;
    }
+   .container .userImg { 
+    width: 22px !important ;
+    height: 22px !important;
+}
 
 }
 
- @media  ( min-width: 870px) and (max-width: 1025px) {
+ @media  ( min-width: 600px) and (max-width: 800px) {
+
+    nav ul {
+        gap: 2.5rem !important;
+    }
+    .container .links ul li .navbarThreeItem .altLink span{
+        display: flex  !important;
+        flex-direction: column;
+    }
+     .navbarFirstItem{
+        display: none;
+    }
+    
+    .openSideBar .navbarSecondItem,
+    .openSideBar .navbarThreeItem{
+        display: flex;
+    }
+    .openSideBar .navbarThreeItem img{
+        width:  var(--user-img-phone);
+        height: var(--user-img-phone);
+    }
+    .container .logo{
+            width: var(--img-size-phone);
+            height: var(--img-size-phone);
+           margin: var(--margin-container);
+     }
+
+    .container .links{
+        width: 100%;
+         padding-right: 0rem; 
+         justify-content: center;
+         transition: var(--trans-duration);
+    }
+    
+  
+    .container .links nav ul li .iconDiv .inputDiv input{
+        display: none;
+      }
+   
+    .container .links ul li span {
+        display:none;
+        white-space: wrap;
+        font-weight: 600;
+        width: 6rem;
+        color: var(--icon-color);
+        margin-top: 10px;
+    }
+
+    .container .links nav ul li .iconDiv i{
+        margin-bottom: 0rem;
+        font-size: var(--icon-size-large);
+       
+    }
+    .container .links nav ul li .userDownBtn i {
+        display: none;
+    }
+    .container .links nav ul li  img{
+        width: 22px;
+        height: 22px;
+        margin-top: 3px;
+    }
+   
+    .container .links nav ul li  .phoneDot{
+        display: none;
+
+    }
+    .container .links nav ul li .navbarThreeItem .altLink{
+        left: 0;
+        right: 0;
+    }
+   .navbarThreeItem .altLink img{
+    width: var(--img-size-large) !important;
+    height:  var(--img-size-large) !important;
+   }
+   .navbarThreeItem .altLink div span {
+    display: flex;
+   }
+   .container .userImg { 
+    width: 22px !important ;
+    height: 22px !important;}
    
  }
- @media ( min-width: 1025px) and (max-width: 1200px){
+ @media ( min-width: 800px) and (max-width: 1200px){
+    nav ul {
+        gap: 4rem !important;
+    }
+    .container .links ul li .navbarThreeItem .altLink span{
+        display: flex  !important;
+        flex-direction: column;
+    }
+     .navbarFirstItem{
+        display: none;
+    }
+    
+    .openSideBar .navbarSecondItem,
+    .openSideBar .navbarThreeItem{
+        display: flex;
+    }
+    .openSideBar .navbarThreeItem img{
+        width:  var(--user-img-phone);
+        height: var(--user-img-phone);
+    }
+    .container .logo{
+            width: var(--img-size-phone);
+            height: var(--img-size-phone);
+           margin: var(--margin-container);
+     }
 
+    .container .links{
+        width: 100%;
+         padding-right: 0rem; 
+       
+         transition: var(--trans-duration);
+    }
+    
+  
+    .container .links nav ul li .iconDiv .inputDiv input{
+        display: none;
+      }
+   
+    .container .links ul li span {
+        display:flex;
+        white-space: wrap;
+        font-weight: 600;
+        width: 6rem;
+        color: var(--icon-color);
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .container .links nav ul li .iconDiv i{
+        margin-bottom: 0rem;
+        font-size: var(--icon-size-large);
+       
+    }
+    .container .links nav ul li .userDownBtn i {
+        display: none;
+    }
+    .container .links nav ul li  img{
+        width: 22px;
+        height: 22px;
+        margin-top: 3px;
+    }
+   
+    .container .links nav ul li  .phoneDot{
+        display: none;
+
+    }
+    .container .links nav ul li .navbarThreeItem .altLink{
+        left: 0;
+        right: 0;
+    }
+   .navbarThreeItem .altLink img{
+    width: var(--img-size-large) !important;
+    height:  var(--img-size-large) !important;
+   }
+   .navbarThreeItem .altLink div span {
+    display: flex;
+   }
+   .container .links ul li .userDownBtn {
+    padding-top: 15px ;
+   }
+   .container .userImg { 
+    width: 22px !important ;
+    height: 22px !important;}
  }
  @media ( min-width: 1200px) {
 

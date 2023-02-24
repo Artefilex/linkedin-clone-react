@@ -74,12 +74,13 @@
     font-size: 1rem;
     
 }
-.userInfo img{
- width: 60px;
- height: 60px;
- border-radius: 100%;
-}
 
+
+.userInfdownDiv .userInformation .userInfImg img{
+    width: 40px !important ;
+    height: 40px !important ;
+    border-radius: 100%;
+   }
 
 /* account */
 .accountNav{
@@ -92,7 +93,20 @@
     padding: 0rem;
     margin: 0rem;
 }
-
+.accountNav ul {
+    display: flex;
+    flex-direction: column !important;
+    gap: 0rem !important;
+    text-align: start;
+    align-items: start;
+}
+.accountNav ul li span{
+    cursor: pointer;
+    white-space: nowrap;
+}
+.accountNav ul li span:hover{
+ border-bottom: 1px solid black;
+}
 
 .accountNav .accountBtn{
     display: flex;
@@ -118,9 +132,14 @@
 .manage{
     width: 92%;
 }
+.manage .accountBtn {
+    align-items: flex-start !important;
+}
 /* out */
 .out{
    margin: 1rem 2rem;
+   white-space: nowrap;
+   text-align: start;
 }
 .out:hover{
     border-bottom: 1px solid var(--hover-span-color);
@@ -137,48 +156,48 @@
     gap: 2rem;
 
 }
-@media ( max-width: 700px){
-   
+
+@media ( min-width: 300px) and (max-width: 360px){
     
-    .userInfdownDiv{        
-       right: 5rem;
-   }
-   
+       .userInfdownDiv{
+        top: 2rem;
+        right: 4rem;
+        transition: .5s;
+       }
+
 }
+@media ( min-width: 360px) and (max-width: 420px){
+    .userInfdownDiv{
+        top: 2rem;
+        right: 10rem;
+        transition: .5s;
+       }
+}
+
 @media ( min-width: 420px) and (max-width: 450px){
     .userInfdownDiv{
         top: 2rem;
-        right: 12rem;
+        right: 10rem;
         transition: .5s;
-    
        }
-/* 
-       top: 2rem;
-left: 5rem;
-transition: .5s; */
+    
+
 }
 @media ( min-width: 450px) and (max-width: 500px){
     .userInfdownDiv{
        top: 2rem;
-       left: 5rem;
+       left: 10rem;
        transition: .5s; 
        }
     
 }
-@media ( min-width: 360px) and (max-width: 420px){
+@media ( min-width: 500px) and (max-width: 600px){
     .userInfdownDiv{
-    top: 2rem;
-    right: 6rem;
-    transition: .5s;
-
-   }
-   .userInformation .userInfImg img{
-    width: 30px !important;
-   }
-   
-
+        top: 2rem;
+        left: 10rem;
+        transition: .5s; 
+        }
 }
-
 
 
 
