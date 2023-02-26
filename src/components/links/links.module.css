@@ -6,6 +6,7 @@
     --hover-span-color: rgb(0,0,0);
 }
 
+
 .container{
     margin-top: 10rem ;
 }
@@ -74,7 +75,11 @@
     font-size: 1rem;
     
 }
-
+.userInfdownDiv span{
+    display: flex !important;
+    justify-content: flex-start !important;
+    
+}
 
 .userInfdownDiv .userInformation .userInfImg img{
     width: 40px !important ;
@@ -103,7 +108,9 @@
 .accountNav ul li span{
     cursor: pointer;
     white-space: nowrap;
+    
 }
+
 .accountNav ul li span:hover{
  border-bottom: 1px solid black;
 }
@@ -157,48 +164,78 @@
 
 }
 
-@media ( min-width: 300px) and (max-width: 360px){
-    
-       .userInfdownDiv{
-        top: 2rem;
-        right: 4rem;
-        transition: .5s;
-       }
 
-}
-@media ( min-width: 360px) and (max-width: 420px){
-    .userInfdownDiv{
-        top: 2rem;
-        right: 10rem;
-        transition: .5s;
-       }
-}
-
-@media ( min-width: 420px) and (max-width: 450px){
-    .userInfdownDiv{
-        top: 2rem;
-        right: 10rem;
-        transition: .5s;
-       }
+    @media ( min-width: 300px) and (max-width: 350px){
     
-
-}
-@media ( min-width: 450px) and (max-width: 500px){
-    .userInfdownDiv{
-       top: 2rem;
-       left: 10rem;
-       transition: .5s; 
-       }
-    
-}
-@media ( min-width: 500px) and (max-width: 600px){
-    .userInfdownDiv{
+        .userInfdownDiv{
+         top: 2rem;
+         right: 4rem;
+         transition: .5s;
+        }
+ 
+ }
+ @media ( min-width: 350px) and (max-width: 420px){
+     .userInfdownDiv{
+         top: 2rem;
+         right: 10rem;
+         transition: .5s;
+        }
+ }
+ 
+ @media ( min-width: 420px) and (max-width: 450px){
+     .userInfdownDiv{
+         top: 2rem;
+         right: 10rem;
+         transition: .5s;
+        }
+     
+ 
+ }
+ @media ( min-width: 450px) and (max-width: 500px){
+     .userInfdownDiv{
         top: 2rem;
         left: 10rem;
         transition: .5s; 
         }
-}
-
+     
+ }
+ @media ( min-width: 500px) and (max-width: 600px){
+     .userInfdownDiv{
+         top: 2rem;
+         left: 10rem;
+         transition: .5s; 
+         }
+ }
+ @media ( min-width: 600px) and (max-width: 700px){
+     .userInfdownDiv{
+         top: 2rem;
+         left: 16rem;
+         transition: .5s; 
+         }
+ }
+ @media ( min-width: 700px) and (max-width: 800px){
+     .userInfdownDiv{
+         top: 2rem;
+         left: 16rem;
+         transition: .5s; 
+         }
+ }
+ 
+ @media ( min-width: 800px) and (max-width: 900px){
+     .userInfdownDiv{
+         top: 2rem;
+         left: 21rem;
+         transition: .5s; 
+         }
+ }
+ @media ( min-width: 900px) {
+    .userInfdownDiv{
+        top: 2rem;
+        left: 50%;
+        transition: .5s; 
+        }
+ }
+ 
 
 
 
