@@ -13,7 +13,8 @@ import Job from './links/Job'
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom'
 import img from "../components/ben.jpg"
 import UserInf from './links/userInf/UserInf'
-// import ThreeDots from "./links/userInf/ThreeDots"
+import Sidebar from "./links/Sidebar/Sidebar"
+
 
 
 
@@ -24,9 +25,12 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenDot, setIsOpenDot] = useState(false);
   const [count, setCount] = useState(0)
-
-
+  const [openSideBar,setOpenSideBar] = useState(false)
  
+ 
+  const showSidebar = () =>{
+    setOpenSideBar(!openSideBar)
+  }
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -41,24 +45,16 @@ function Header() {
     }
 
   };
-
-
-//  anasyafa
-
   return (
     <>
-
       <div className={styles.container}>
         <Router>
-
           <div className={styles.links} >
             <img src={Logo} alt="logo" className={styles.logo} />
             <nav>
               <ul >
-                <li  >
-
+                <li>
                   <div className={styles.iconDiv}>
-
                     <div className={styles.inputDiv}>
                       <i className="fa-solid fa-magnifying-glass fa-xl"></i>
                       <input type="text" placeholder=" Arama Yap" />
@@ -142,7 +138,8 @@ function Header() {
                 </li>
 
                 <li className={styles.navbarSecondItem}>
-                  <NavLink to="job" className={({ isActive }) => isActive ? styles.active : undefined}   >
+                  <NavLink to="job" 
+                   onClick={showSidebar } className={styles.showSidebar} >
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-list-ul  fa-xl"></i>
                       <div className={styles.iconSpan}>
@@ -150,7 +147,8 @@ function Header() {
 
                       </div>
                     </div>
-
+                   { openSideBar && <Sidebar />}
+           
                   </NavLink>
                 </li>
 
@@ -252,11 +250,7 @@ function Header() {
              
             </nav>
           </div>
-
-
-
-
-
+     
           <Routes>
 
             <Route path='/' element={<Home />}> </Route>
