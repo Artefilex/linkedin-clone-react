@@ -10,13 +10,13 @@ function Sidebar() {
            
             <div className={Style.firsDivInsideItem}> 
                  <ul>
-                    <li> <i className='fa fa-facebook'> </i> <h6>Learning</h6>  </li>
-                    <li> <i className='fa fa-facebook'> </i> <h6>Learning</h6> </li>
-                    <li> <i className='fa fa-facebook'> </i> <h6>Learning</h6> </li>
-                    <li> <i className='fa fa-facebook'> </i> <h6>Learning</h6> </li>
-                    <li> <i className='fa fa-facebook'> </i> <h6>Learning</h6>  </li>
-                    <li> <i className='fa fa-facebook'> </i> <h6>Learning</h6> </li>
-                    <li> <i className='fa fa-facebook'> </i> <h6>Learning</h6> </li>
+                    <li> <i className="fa-solid fa-graduation-cap"></i> <h6>Learning</h6>  </li>
+                    <li> <i className='fa fa-person-shelter'> </i> <h6>İçgörüler </h6> </li>
+                    <li> <i className="fa-solid fa-person-circle-question"></i> <h6>İş ilanı yayınla</h6> </li>
+                    <li> <i className="fa-solid fa-rectangle-ad"></i> <h6>Reklam Ver</h6> </li>
+                    <li><i className="fa-solid fa-compass"></i> <h6>Adayları Bulun</h6>  </li>
+                    <li><i className="fa-solid fa-users"></i>  <h6>Gruplar</h6> </li>
+                    <li><i className="fa-solid fa-store"></i> <h6>Hizmetler Mağazası</h6> </li>
                     
                  </ul>
             </div>

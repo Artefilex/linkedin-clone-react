@@ -15,11 +15,6 @@ import img from "../components/ben.jpg"
 import UserInf from './links/userInf/UserInf'
 import Sidebar from "./links/Sidebar/Sidebar"
 
-
-
-
-
-
 function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +25,7 @@ function Header() {
  
   const showSidebar = () =>{
     setOpenSideBar(!openSideBar)
+
   }
 
   const toggleSidebar = () => {
@@ -45,6 +41,15 @@ function Header() {
     }
 
   };
+
+  const openWhichLi = (activeLi) =>{
+    if(activeLi.id === "1"){
+    setOpenSideBar(false)
+    }else{
+      setIsOpen(false)
+    }
+   }
+
   return (
     <>
       <div className={styles.container}>
@@ -120,26 +125,25 @@ function Header() {
                   </NavLink>
                 </li>
 
-                <li className={styles.navbarThreeItem}   >
-                  <NavLink to="user" onClick={toggleSidebar} >
+             
+             <li   className={styles.navbarThreeItem} onClick={(e)=>openWhichLi( e.currentTarget)} id="1"  >
+                  <NavLink  to="user" onClick={toggleSidebar} >
                     <div className={styles.userDivs}>
                       <img src={img} className={styles.userImg} alt="user-img" />
                       <button className={styles.userDownBtn} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
                       <div className={styles.altLink}>
                         {
-                          isOpen && <UserInf />
+                          isOpen && <UserInf  />
                         }
-
-
-
                       </div>
                     </div>
                   </NavLink>
                 </li>
+      
 
-                <li className={styles.navbarSecondItem}>
-                  <NavLink to="job" 
-                   onClick={showSidebar } className={styles.showSidebar} >
+                <li className={styles.navbarSecondItem} onClick={(e)=> openWhichLi(e.currentTarget)} id="2"  >
+                  <NavLink   to="job" 
+                   onClick={showSidebar} className={styles.showSidebar} >
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-list-ul  fa-xl"></i>
                       <div className={styles.iconSpan}>
@@ -147,7 +151,7 @@ function Header() {
 
                       </div>
                     </div>
-                   { openSideBar && <Sidebar />}
+                   { openSideBar && <Sidebar  />}
            
                   </NavLink>
                 </li>
@@ -195,7 +199,7 @@ function Header() {
                                   </NavLink>
                                 </li>
 
-                                <li className={styles.navbarThreeItem}   >
+                                <li className={styles.navbarThreeItem}   onClick={(e)=>openWhichLi( e.currentTarget)} id="1" >
                                   <NavLink to="user" onClick={toggleSidebar} >
                                     <div className={styles.userDiv}>
                                       <img src={img} className={styles.userImg} alt="user-img" />
@@ -212,17 +216,20 @@ function Header() {
                                   </NavLink>
                                 </li>
 
-                                <li className={styles.navbarSecondItem}>
-                                  <NavLink to="job" className={({ isActive }) => isActive ? styles.active : undefined}   >
-                                    <div className={styles.iconDiv}>
-                                      <i className="fa-solid fa-list-ul  fa-xl"></i>
-                                      <div className={styles.iconSpan}>
-                                        <span >İş</span>
+                              
+                                <li className={styles.navbarSecondItem} onClick={(e)=> openWhichLi(e.currentTarget)} id="2"  >
+                                    <NavLink   to="job" 
+                                    onClick={showSidebar} className={styles.showSidebar} >
+                                      <div className={styles.iconDiv}>
+                                        <i className="fa-solid fa-list-ul  fa-xl"></i>
+                                        <div className={styles.iconSpan}>
+                                          <span >İş</span>
 
+                                        </div>
                                       </div>
-                                    </div>
-
-                                  </NavLink>
+                                    { openSideBar && <Sidebar  />}
+                            
+                                    </NavLink>
                                 </li>
 
                                 <li className={styles.navbarFirstItem} >

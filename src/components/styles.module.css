@@ -25,7 +25,6 @@ body{
     background: var(--body-bacground);
     transition: var(--trans-duration);
 }
-
 .container{
     height: 5rem;
     background: var(--navbar-bacground);
@@ -34,8 +33,6 @@ body{
     align-items: center;
     justify-content: center;
 }
-
-
 .container .links{
     display: flex;
     flex-direction: row;
@@ -54,7 +51,6 @@ body{
     transition: var(--trans-duration);
   
 }
-
 .container .links ul li {
     list-style: none;
 
@@ -73,7 +69,6 @@ body{
 .container .links ul li a:hover{
     color: var(--icon-hover-color);
 }
-
 .container .links ul li a i {
    color: var(--icon-color);
  
@@ -81,8 +76,7 @@ body{
 .container .links ul li a:hover i {
     color: var(--icon-hover-color);
     
- }
-
+}
 .container .links .logo{
     width: var(--img-size-large);
     height: var(--img-size-large);
@@ -97,11 +91,9 @@ body{
  
 
 }
-
 .container .links nav ul li .iconDiv i{
  margin-bottom: 1rem;
 }
-
 .container .links nav ul li .iconSpan{
     position: absolute;
     margin-top: 1rem;
@@ -109,7 +101,6 @@ body{
     flex-direction: column;
     
 }
-
 .container .links ul li .active i, 
 .container .links ul li .active span {
    color: var(--active-link);
@@ -124,7 +115,6 @@ body{
     height:var(--img-size-large);
     border-radius: 100%;
 }
-
 .container .links .userDownBtn{
     outline: none;
     border: none;
@@ -161,6 +151,8 @@ body{
  .userDiv {
     display: none;
 }
+
+
  /* open nav dots */
 
 .openSideBar .navbarFirstItem,
@@ -1068,14 +1060,11 @@ body{
     .container .links{
         justify-content: center;
         gap: 2rem;
-    }
-    
+    }   
     .container .links ul li .navbarThreeItem .altLink span{
         display: flex  !important;
         flex-direction: column;
     }
-  
-    
     .openSideBar .navbarSecondItem,
     .openSideBar .navbarThreeItem{
         display: flex;
@@ -1167,5 +1156,4 @@ body{
         display: none ;
 
     }
-
  }
