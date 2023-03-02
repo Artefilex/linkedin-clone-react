@@ -3,8 +3,11 @@ import Style from "../../../components/styles.module.css"
 function Sidebar() {
   return (
     <div className={Style.sideBarContainer }>
-     
-             <h3>İş</h3>
+       <div className={Style.sidebarContainerHeader}>
+           <h3>İş</h3> 
+          <i className="fa-solid fa-xmark"></i>
+       </div>
+             
         <div className={Style.sideBarContainerFirst}>
             <div className={Style.insideSidebarHeader}> Diğer Linkedin Üyelerini Ziyaret Edin</div>
            

@@ -21,12 +21,25 @@ function Header() {
   const [isOpenDot, setIsOpenDot] = useState(false);
   const [count, setCount] = useState(0)
   const [openSideBar,setOpenSideBar] = useState(false)
+  
+  const  handleInput = (e) =>{
+    
+    if(e.currentTarget){
+      e.currentTarget.nextElementSibling.style.display = `flex `
+     
+    }
+    else{
+      e.currentTarget.nextElementSibling.style.display = "none"
+    }
  
+  }
  
   const showSidebar = () =>{
     setOpenSideBar(!openSideBar)
-
+   
+   
   }
+  
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -45,10 +58,18 @@ function Header() {
   const openWhichLi = (activeLi) =>{
     if(activeLi.id === "1"){
     setOpenSideBar(false)
+    document.body.style.background = "rgb(243, 242, 239)"
     }else{
       setIsOpen(false)
+      document.body.style.background = "rgba(61, 61, 60, 0.76)"
+        if(openSideBar === true){
+          document.body.style.background = "rgb(243, 242, 239)"
+        }
+        else{
+          document.body.style.background = "rgba(61, 61, 60, 0.76)"
+        } 
     }
-   }
+  }
 
   return (
     <>
@@ -61,10 +82,11 @@ function Header() {
                 <li>
                   <div className={styles.iconDiv}>
                     <div className={styles.inputDiv}>
-                      <i className="fa-solid fa-magnifying-glass fa-xl"></i>
+                     <button onClick={handleInput}> <i className="fa-solid fa-magnifying-glass fa-xl" ></i></button>
                       <input type="text" placeholder=" Arama Yap" />
+                      <span>Arama Yap</span>
                     </div>
-
+                     
                   </div>
 
 
@@ -123,9 +145,7 @@ function Header() {
                       </div>
                     </div>
                   </NavLink>
-                </li>
-
-             
+                </li>      
              <li   className={styles.navbarThreeItem} onClick={(e)=>openWhichLi( e.currentTarget)} id="1"  >
                   <NavLink  to="user" onClick={toggleSidebar} >
                     <div className={styles.userDivs}>
@@ -151,8 +171,8 @@ function Header() {
 
                       </div>
                     </div>
-                   { openSideBar && <Sidebar  />}
-           
+                   { openSideBar &&  <Sidebar/>     }
+                  
                   </NavLink>
                 </li>
 
@@ -241,20 +261,11 @@ function Header() {
                                 </li>
                           </div>
                         </>)
-
                       }
-
-
                     </div>
                   </div>
-
                 </li>
-
-
-
-
-              </ul>
-             
+              </ul>     
             </nav>
           </div>
      

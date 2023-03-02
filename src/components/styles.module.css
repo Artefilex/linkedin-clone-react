@@ -3,7 +3,7 @@
     --icon-color: rgb(100, 100, 100);
     --icon-hover-color: rgb(0,0,0);
     --navbar-bacground: rgb(253, 253, 253);
-    --body-bacground: #F3F2EF;
+    --body-bacground: rgb(243, 242, 239);
     --active-link: rgb(0,0,0);
    --standar-padding-container: 0.5rem 1rem;
    --openside-padding-container: 1rem 2rem;
@@ -16,8 +16,10 @@
     --user-img-phone: 20px;
     --div-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px; 
     --trans-duration: 0.5s;
-
-
+   --sidebar-icon-color: rgb(10, 113, 180);
+   --sidebar-border-color: 1px solid rgb(164, 162, 162);
+   --sidebar-border-for-icon : 1px solid rgb(214, 211, 211);
+   --colrs: rgba(61, 61, 60, 0.76);
 }
 
 /* header icon link */
@@ -40,7 +42,7 @@ body{
     justify-content: space-between;
     width: 75%;
     position: absolute;
-    
+   
     
 }
 .container .links ul {
@@ -53,7 +55,7 @@ body{
 }
 .container .links ul li {
     list-style: none;
-
+    
 }
 .container .links ul li span {
     white-space: wrap;
@@ -61,6 +63,7 @@ body{
     width: 6rem;
     color: var(--icon-color);
     margin-top: 10px;
+   
 }
 .container .links ul li a{
     text-decoration: none;
@@ -106,7 +109,7 @@ body{
    color: var(--active-link);
  }
  .container .links ul li .active span{
-    padding-bottom: 0.90rem;
+    padding-bottom: 0.48rem;
     border-bottom: 3px solid black;
     transition:  0.2s ;
  }
@@ -196,34 +199,51 @@ body{
 .showSidebar{
     position: absolute;
     height: 100%;
+  
 }
 
 .showSidebar .sideBarContainer {
     cursor: default;
     position: fixed;
     top: 5rem;
-    width: 20rem;
+    width: 25rem;
     right: 0rem;
     background: var(--body-bacground);
-    border: var(--standar-border);
+    border: var(--sidebar-border-color);
     transition: all 0.25s;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+    border-radius: 10px 0px 0px 10px;
+    height:100vh;
 }
-.showSidebar .sideBarContainer h3{
-    text-align: start;
-    padding: var(--standar-padding-container);
-    right: 8rem;
-    position: relative;
-} 
+
+.sideBarContainer .sidebarContainerHeader{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ 
+  gap: 20rem;
+}
+.sideBarContainer .sidebarContainerHeader i ,
+.sideBarContainer .sidebarContainerHeader h3 {
+    font-size: 1.5rem;
+}
+
 .showSidebar .sideBarContainer .sideBarContainerFirst,
 .showSidebar .sideBarContainer .sideBarContainerSecond {
     border-radius: 5px;
-    width: 16rem;
-    border:  var(--standar-border);
+    width: 20rem;
+    border: var(--sidebar-border-color);
     padding: var(--standar-padding-container);
+}
+.showSidebar .sideBarContainer .insideSidebarHeader{
+    border-bottom: var(--sidebar-border-color);
+    padding-bottom: 1rem ;
+}
+.showSidebar .sideBarContainer .firsDivInsideItem{
+    margin-top: 1rem;
 }
 .showSidebar .sideBarContainer .sideBarContainerSecond ul{
     flex-direction: column;
@@ -239,13 +259,7 @@ body{
     white-space: nowrap;
     justify-content: start;
 }
-.showSidebar .sideBarContainer .insideSidebarHeader{
-    border-bottom: var(--standar-border);
-    padding-bottom: 1rem ;
-}
-.showSidebar .sideBarContainer .firsDivInsideItem{
-    margin-top: 1rem;
-}
+
 .showSidebar .sideBarContainer .sideBarContainerFirst ul{
     display: flex;
     flex-wrap: wrap;
@@ -255,15 +269,24 @@ body{
     position: relative;
     gap: 0.4rem;
     right: 2rem;
+    align-items: flex-start;
 }
 
 .showSidebar .sideBarContainer .sideBarContainerFirst ul li i {
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: var(--standar-border);
+   cursor: pointer;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border:  var(--sidebar-border-for-icon);
+    color: var(--sidebar-icon-color) !important;
 }
+.showSidebar .sideBarContainer .sideBarContainerFirst ul li i:hover{
+    box-shadow:var(--div-shadow) ;
+    transition: 0.3s;
+}
+
 .showSidebar .sideBarContainer .sideBarContainerFirst ul li{ 
-    width: 3rem;   
+    width: 3rem;  
+    height: 5rem; 
 }
 .showSidebar .sideBarContainer .sideBarContainerFirst ul li h6{ 
     color: var(--icon-color);
@@ -272,6 +295,81 @@ body{
 .showSidebar .sideBarContainer .sideBarContainerFirst  ul li span {
     font-size: 10px;
 }
+
+/* input */
+.container .links nav ul li .inputDiv{
+    display: flex;
+    flex-direction: row;
+    border-radius: 11px;
+    width: 15rem;
+    margin-right: 2rem;
+   
+} 
+.container .links nav ul li .inputDiv i {
+    position: relative; 
+    left: 5px;
+    top: 4px;
+    color: var(--icon-color);
+}
+.container .links nav ul li .inputDiv i:hover{
+    color: var(--icon-hover-color);
+}
+.container .links nav ul li .inputDiv input{
+display: none ;
+flex-direction: row;
+height: 1.5rem;
+padding: 0.5rem;
+margin-left: 1rem;
+outline: none;
+border: none;
+}
+
+/* .container .links nav ul li .inputDiv:focus-within  {
+    border: 1px solid black;
+    padding: 0.1rem;
+    width: 20rem;
+} */
+.container .links nav ul li .inputDiv{
+    display: flex;
+    flex-direction: row;
+    border-radius: 11px;
+    margin-right: 2rem;
+   
+} 
+.container .links nav ul li .inputDiv i {
+    position: relative; 
+    left: 5px;
+    top: 4px;
+    color: var(--icon-color);
+}
+.container .links nav ul li .inputDiv i:hover{
+    color: var(--icon-hover-color);
+}
+.container .links nav ul li .inputDiv input{
+display: none;
+flex-direction: row;
+height: 1.5rem;
+padding: 0.5rem;
+margin-left: 1rem;
+outline: none;
+border: none;
+}
+
+.container .links nav ul li .inputDiv:focus-within  {
+    border: 1px solid black;
+    padding: 0.1rem;
+    width: 20rem;
+}
+.container .links .iconDiv .inputDiv button{
+    border: none;
+    outline: none;
+    background: transparent;
+    position: relative;
+    
+}
+
+
+
 
 @media  (max-width: 300px){
 
@@ -322,8 +420,17 @@ body{
         font-size: var(--icon-size-phone);
        
     }
-   
   
+    .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+        gap: 1rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+        gap: 0.1rem !important;
+    }  
+    .showSidebar .sideBarContainer .sideBarContainerFirst  ul li span {
+        font-size: 10px;
+        display: flex;
+    }
 }
 
 @media ( min-width: 300px) and (max-width: 340px){
@@ -394,6 +501,21 @@ body{
     .container .links nav ul li  .phoneDot{
         display: none;
     } 
+
+    /* sidebar */
+
+
+    
+    .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+        gap: 1.5rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+        gap: 0.1rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+        font-size: 10px;
+        display: flex 
+    }
 }
 
 @media ( min-width: 340px) and (max-width: 360px){
@@ -465,12 +587,25 @@ body{
         width: 22px !important ;
         height: 22px !important;
     }
+ 
+      /* sidebar */
 
 
+     
+      .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+        gap: 1.5rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+        gap: 0.1rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+        font-size: 10px;
+        display: flex 
+    }
 }
 
 
-/* this media quer import for feature  */
+
 @media ( min-width: 360px) and (max-width: 420px){
 
     /* response nav */
@@ -551,6 +686,21 @@ body{
     width: 22px !important ;
     height: 22px !important;
 }
+
+     /* sidebar */ 
+
+
+     
+     .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+        gap: 1.5rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+        gap: 0.1rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+        font-size: 10px;
+        display: flex 
+    }
 
 }
 @media ( min-width: 420px) and (max-width: 450px){
@@ -640,7 +790,22 @@ body{
         width: 22px !important ;
         height: 22px !important;
     }
+   
 
+    /* sidebar */
+
+
+     
+    .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+        gap: 1.5rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+        gap: 0.1rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+        font-size: 10px;
+        display: flex 
+    }
 }
 
  @media ( min-width: 450px) and (max-width: 500px){
@@ -721,6 +886,20 @@ body{
     display: none;
 }
 
+/* sidebar */
+
+
+ 
+.showSidebar .sideBarContainer .sideBarContainerFirst ul {
+    gap: 1.5rem !important;
+}
+.showSidebar .sideBarContainer .sideBarContainerSecond ul{
+    gap: 0.1rem !important;
+}
+.showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+    font-size: 10px;
+    display: flex 
+}
 } 
 
 
@@ -809,6 +988,21 @@ body{
     height: 22px !important;
 }
 
+/* sidebar */
+
+
+ 
+.showSidebar .sideBarContainer .sideBarContainerFirst ul {
+    gap: 1.5rem !important;
+}
+.showSidebar .sideBarContainer .sideBarContainerSecond ul{
+    gap: 0.1rem !important;
+}
+.showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+    font-size: 10px;
+    display: flex 
+}
+
 }
 
  @media  ( min-width: 600px) and (max-width: 800px) {
@@ -892,6 +1086,22 @@ body{
         display: none ;
 
     }
+
+
+    /* sidebar */
+
+
+    
+    .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+        gap: 1.5rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+        gap: 0.1rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+        font-size: 10px;
+        display: flex 
+    }
  }
  @media ( min-width: 800px) and (max-width: 1200px){
    
@@ -930,6 +1140,8 @@ body{
             margin-top: 1rem;
            margin-left: 1rem;
            margin-bottom: 2rem;
+           position: relative;
+           top: 8px;
      }
 
     .container .links{
@@ -938,8 +1150,10 @@ body{
        
          transition: var(--trans-duration);
     }
-    
-  
+    .container .links nav ul li .iconDiv .inputDiv {
+        position: relative;
+        top: 8px;
+    }
     .container .links nav ul li .iconDiv .inputDiv input{
         display: none;
       }
@@ -975,7 +1189,10 @@ body{
         height: 22px;
         margin-top: 3px;
     }
-   
+    .container .links nav ul li .iconDiv .inputDiv{
+        position: relative;
+        top: 1rem;
+    }
    
     .container .links nav ul li .navbarThreeItem .altLink{
         left: 0;
@@ -1003,18 +1220,33 @@ body{
         display: none ;
 
     }
+    
     .showSidebar .sideBarContainer .sideBarContainerFirst ul {
-        gap: 0.4rem !important;
+        gap: 1.5rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+        gap: 0.1rem !important;
+    }
+    .container .links nav ul li .iconDiv .inputDiv span{
+        display: none;
     }
    
 
     
  }
+ @media ( min-width: 800px) and (max-width: 1000px){
+    .container .links nav ul li .iconDiv .inputDiv{
+        position: relative;
+        top: 1rem;
+    }
+    .container .links nav ul li .iconDiv .inputDiv span{
+        display: flex;
+    }
+ }
  @media (min-width: 1000px){
     .container .links nav ul li .inputDiv{
         display: flex;
         flex-direction: row;
-        border: 1px solid black;
         border-radius: 11px;
         width: 15rem;
         margin-right: 2rem;
@@ -1023,7 +1255,7 @@ body{
     .container .links nav ul li .inputDiv i {
         position: relative; 
         left: 5px;
-        top: 20px;
+        top: 4px;
         color: var(--icon-color);
     }
     .container .links nav ul li .inputDiv i:hover{
@@ -1038,12 +1270,30 @@ body{
     outline: none;
     border: none;
   }
+ 
+ 
   .phoneDot{
     display: none ;
 
 }
+
+
+/* sidebar */
+
+ 
+.showSidebar .sideBarContainer .sideBarContainerFirst ul {
+    gap: 1.5rem !important;
+}
+.showSidebar .sideBarContainer .sideBarContainerSecond ul{
+    gap: 0.1rem !important;
+}
  }
-    
+ @media ( min-width: 1000px) and (max-width: 1200px) {
+    .container .links nav ul li .iconDiv .inputDiv {
+        position: relative;
+        top: 8px;
+    }
+ }
  
  @media ( min-width: 1200px) {
     
@@ -1081,7 +1331,7 @@ body{
     .container .logo{
             width: var(--img-size-phone);
             height: var(--img-size-phone);
-            margin-top: 1rem;
+            margin-top: 1.5rem;
            margin-left: 1rem;
            margin-bottom: 2rem;
      }
@@ -1155,5 +1405,22 @@ body{
     .phoneDot{
         display: none ;
 
+    }
+    /* sidebar */
+
+    .container .links nav ul li .iconDiv .inputDiv span{
+        display: none;
+    }
+   
+    .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+        gap: 1.5rem !important;
+    }
+    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+        gap: 0.1rem !important;
+    }
+
+    .container .links nav ul li .iconDiv .inputDiv {
+        position: relative;
+        top: 8px;
     }
  }
