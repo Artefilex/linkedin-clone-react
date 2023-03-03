@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState ,useEffect} from "react"
 
 import Logo from "../components/lk.png"
 import styles from "../components/styles.module.css"
@@ -15,23 +15,46 @@ import img from "../components/ben.jpg"
 import UserInf from './links/userInf/UserInf'
 import Sidebar from "./links/Sidebar/Sidebar"
 
+
 function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenDot, setIsOpenDot] = useState(false);
   const [count, setCount] = useState(0)
   const [openSideBar,setOpenSideBar] = useState(false)
+  const [hideDivs, setHideDivs] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+
   const  handleInput = (e) =>{
+   
     
-    if(e.currentTarget){
       e.currentTarget.nextElementSibling.style.display = `flex `
+      setHideDivs(!hideDivs);
+      console.log( e.currentTarget.parentElement.parentElement.parentElement.parentElement)
+      if(hideDivs === false &&  screenWidth <= 900 ){
+        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.style.display= "none"
+        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.style.display= "none"
+        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
+        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
+        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
+        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
+        
+      }
      
-    }
-    else{
-      e.currentTarget.nextElementSibling.style.display = "none"
-    }
- 
+    
   }
  
   const showSidebar = () =>{
@@ -82,28 +105,25 @@ function Header() {
                 <li>
                   <div className={styles.iconDiv}>
                     <div className={styles.inputDiv}>
-                     <button onClick={handleInput}> <i className="fa-solid fa-magnifying-glass fa-xl" ></i></button>
+                     <button onClick={ handleInput  }> <i className="fa-solid fa-magnifying-glass fa-xl" ></i></button>
                       <input type="text" placeholder=" Arama Yap" />
                       <span>Arama Yap</span>
-                    </div>
-                     
+                    </div>                 
                   </div>
-
-
                 </li>
-                <li >
-                  <NavLink to="/"   className={({ isActive }) => isActive ? styles.active : undefined}   >
+                
+                 <li >
+                <NavLink to="/"   className={({ isActive }) => isActive ? styles.active : undefined}   >
+                <div   className={styles.iconDiv}   >
+                  <i className="fa-solid fa-house  fa-xl" >  </i>
+                  <div className={styles.iconSpan}>
+                    <span > Ana Sayfa</span>
 
-                    <div   className={styles.iconDiv}   >
-                      <i className="fa-solid fa-house  fa-xl" >  </i>
-                      <div className={styles.iconSpan}>
-                        <span > Ana Sayfa</span>
-
-                      </div>
-                    </div>
-                  </NavLink>
+                  </div>
+                </div>
+                </NavLink>
                 </li>
-                <li   >
+                <li>
                   <NavLink to="network" className={({ isActive }) => isActive ? styles.active : undefined}    >
                     <div className={styles.iconDiv}  >
                       <i className="fa-solid fa-user-group  fa-xl"></i>
@@ -115,79 +135,69 @@ function Header() {
                   </NavLink>
                 </li>
                 <li  >
-                  <NavLink to="jobadvertisement" className={({ isActive }) => isActive ? styles.active  : undefined }   >
-                    <div className={styles.iconDiv}>
-                      <i className="fa-solid fa-briefcase  fa-xl"></i>
-                      <div className={styles.iconSpan}>
-                        <span>İş İlanları </span>
+                <NavLink to="jobadvertisement" className={({ isActive }) => isActive ? styles.active  : undefined }   >
+                <div className={styles.iconDiv}>
+                  <i className="fa-solid fa-briefcase  fa-xl"></i>
+                  <div className={styles.iconSpan}>
+                    <span>İş İlanları </span>
 
-                      </div>
-                    </div>
-                  </NavLink>
+                  </div>
+                </div>
+                </NavLink>
                 </li>
                 <li  className={styles.navbarLastItem}   >
-                  <NavLink to="comment" className={({ isActive }) => isActive ? styles.active : undefined}   >
-                    <div className={styles.iconDiv}>
-                      <i className="fa-solid fa-comment-dots  fa-xl"></i>
-                      <div className={styles.iconSpan}>
-                        <span className="ascasc">Mesajlaşma</span>
+                <NavLink to="comment" className={({ isActive }) => isActive ? styles.active : undefined}   >
+                <div className={styles.iconDiv}>
+                  <i className="fa-solid fa-comment-dots  fa-xl"></i>
+                  <div className={styles.iconSpan}>
+                    <span className="ascasc">Mesajlaşma</span>
 
-                      </div>
-                    </div>
-                  </NavLink>
+                  </div>
+                </div>
+                </NavLink>
                 </li>
                 <li  className={styles.navbarFourItem}  >
-                  <NavLink to="notifications" className={({ isActive }) => isActive ? styles.active : undefined} >
-                    <div className={styles.iconDiv}>
-                      <i className="fa-solid fa-bell  fa-xl"></i>
-                      <div className={styles.iconSpan}>
-                        <span>Bildirimler</span>
-                      </div>
-                    </div>
-                  </NavLink>
+                <NavLink to="notifications" className={({ isActive }) => isActive ? styles.active : undefined} >
+                <div className={styles.iconDiv}>
+                  <i className="fa-solid fa-bell  fa-xl"></i>
+                  <div className={styles.iconSpan}>
+                    <span>Bildirimler</span>
+                  </div>
+                </div>
+                </NavLink>
                 </li>      
-             <li   className={styles.navbarThreeItem} onClick={(e)=>openWhichLi( e.currentTarget)} id="1"  >
-                  <NavLink  to="user" onClick={toggleSidebar} >
-                    <div className={styles.userDivs}>
-                      <img src={img} className={styles.userImg} alt="user-img" />
-                      <button className={styles.userDownBtn} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
-                      <div className={styles.altLink}>
-                        {
-                          isOpen && <UserInf  />
-                        }
-                      </div>
-                    </div>
-                  </NavLink>
+                <li   className={styles.navbarThreeItem} onClick={(e)=>openWhichLi( e.currentTarget)} id="1"  >
+                <NavLink  to="user" onClick={toggleSidebar} >
+                <div className={styles.userDivs}>
+                  <img src={img} className={styles.userImg} alt="user-img" />
+                  <button className={styles.userDownBtn} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
+                  <div className={styles.altLink}>
+                    {
+                      isOpen && <UserInf  />
+                    }
+                  </div>
+                </div>
+                </NavLink>
                 </li>
-      
-
                 <li className={styles.navbarSecondItem} onClick={(e)=> openWhichLi(e.currentTarget)} id="2"  >
-                  <NavLink   to="job" 
-                   onClick={showSidebar} className={styles.showSidebar} >
-                    <div className={styles.iconDiv}>
-                      <i className="fa-solid fa-list-ul  fa-xl"></i>
-                      <div className={styles.iconSpan}>
-                        <span >İş</span>
+                <NavLink   to="job" 
+                onClick={showSidebar} className={styles.showSidebar} >
+                <div className={styles.iconDiv}>
+                  <i className="fa-solid fa-list-ul  fa-xl"></i>
+                  <div className={styles.iconSpan}>
+                    <span >İş</span>
 
-                      </div>
-                    </div>
-                   { openSideBar &&  <Sidebar/>     }
-                  
-                  </NavLink>
+                  </div>
+                </div>
+                { openSideBar &&  <Sidebar/>     }
+
+                </NavLink>
                 </li>
-
                 <li className={styles.navbarFirstItem} >
-                  <NavLink to="fastJob"   >
-                    <span> Premiumu <br /> ücretsiz deneyin.</span>
-                  </NavLink>
+                <NavLink to="fastJob"   >
+                <span> Premiumu <br /> ücretsiz deneyin.</span>
+                </NavLink>
                 </li>
-
-
-
-  
-
-
-
                 <li className={styles.phoneDot} onClick={() => setCount(count + 1)}>
                   <div className={styles.userDiv}>
                     <i onClick={toggleDot} className="fa-solid fa-ellipsis"></i>
@@ -267,6 +277,109 @@ function Header() {
                 </li>
               </ul>     
             </nav>
+
+
+          {
+            hideDivs && (
+              <>
+                <div className={styles.linksBottom}>
+                <nav>
+                 <ul>
+                 <li >
+                    <NavLink to="/"   className={({ isActive }) => isActive ? styles.active : undefined}   >
+                    <div   className={styles.iconDiv}   >
+                      <i className="fa-solid fa-house  fa-xl" >  </i>
+                      <div className={styles.iconSpan}>
+                        <span > Ana Sayfa</span>
+
+                      </div>
+                    </div>
+                    </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="network" className={({ isActive }) => isActive ? styles.active : undefined}    >
+                        <div className={styles.iconDiv}  >
+                          <i className="fa-solid fa-user-group  fa-xl"></i>
+                          <div className={styles.iconSpan}>
+                            <span  >Ağım</span>
+
+                          </div>
+                        </div>
+                      </NavLink>
+                    </li>
+                    <li  >
+                    <NavLink to="jobadvertisement" className={({ isActive }) => isActive ? styles.active  : undefined }   >
+                    <div className={styles.iconDiv}>
+                      <i className="fa-solid fa-briefcase  fa-xl"></i>
+                      <div className={styles.iconSpan}>
+                        <span>İş İlanları </span>
+
+                      </div>
+                    </div>
+                    </NavLink>
+                    </li>
+                    <li  className={styles.navbarLastItem}   >
+                    <NavLink to="comment" className={({ isActive }) => isActive ? styles.active : undefined}   >
+                    <div className={styles.iconDiv}>
+                      <i className="fa-solid fa-comment-dots  fa-xl"></i>
+                      <div className={styles.iconSpan}>
+                        <span className="ascasc">Mesajlaşma</span>
+
+                      </div>
+                    </div>
+                    </NavLink>
+                    </li>
+                    <li  className={styles.navbarFourItem}  >
+                    <NavLink to="notifications" className={({ isActive }) => isActive ? styles.active : undefined} >
+                    <div className={styles.iconDiv}>
+                      <i className="fa-solid fa-bell  fa-xl"></i>
+                      <div className={styles.iconSpan}>
+                        <span>Bildirimler</span>
+                      </div>
+                    </div>
+                    </NavLink>
+                    </li>      
+                    <li   className={styles.navbarThreeItem} onClick={(e)=>openWhichLi( e.currentTarget)} id="1"  >
+                    <NavLink  to="user" onClick={toggleSidebar} >
+                    <div className={styles.userDivs}>
+                      <img src={img} className={styles.userImg} alt="user-img" />
+                      <button className={styles.userDownBtn} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
+                      <div className={styles.altLink}>
+                        {
+                          isOpen && <UserInf  />
+                        }
+                      </div>
+                    </div>
+                    </NavLink>
+                    </li>
+                    <li className={styles.navbarSecondItem} onClick={(e)=> openWhichLi(e.currentTarget)} id="2"  >
+                    <NavLink   to="job" 
+                    onClick={showSidebar} className={styles.showSidebar} >
+                    <div className={styles.iconDiv}>
+                      <i className="fa-solid fa-list-ul  fa-xl"></i>
+                      <div className={styles.iconSpan}>
+                        <span >İş</span>
+
+                      </div>
+                    </div>
+                    { openSideBar &&  <Sidebar/>     }
+
+                    </NavLink>
+                    </li>
+                    <li className={styles.navbarFirstItem} >
+                    <NavLink to="fastJob"   >
+                    <span> Premiumu <br /> ücretsiz deneyin.</span>
+                    </NavLink>
+                      </li>
+                 </ul>
+                  </nav>
+                  </div>
+                         
+              </>
+            )
+          }
+
+
           </div>
      
           <Routes>
@@ -282,9 +395,6 @@ function Header() {
             <Route path="/job" element={<Job />}> </Route>
           </Routes>
         </Router>
-
-
-
       </div>
     </>
   )

@@ -8,6 +8,7 @@
 
 
 .container{
+    position: absolute;
     margin-top: 10rem ;
 }
 .userInfdownDiv h4{

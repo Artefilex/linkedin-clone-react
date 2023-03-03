@@ -25,15 +25,17 @@
 /* header icon link */
 body{
     background: var(--body-bacground);
+   
     transition: var(--trans-duration);
 }
 .container{
-    height: 5rem;
     background: var(--navbar-bacground);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    width: 100%;
 }
 .container .links{
     display: flex;
@@ -41,8 +43,8 @@ body{
     align-items: center;
     justify-content: space-between;
     width: 75%;
-    position: absolute;
-   
+    position: relative;
+    height: 5rem;
     
 }
 .container .links ul {
@@ -179,7 +181,7 @@ body{
     padding: var(--openside-padding-container);
     border-radius: 5px 1px 5px 5px ;
    box-shadow: var(--div-shadow) ;
-
+   
 } 
 
 .container .links nav ul li i::before {
@@ -301,7 +303,6 @@ body{
     display: flex;
     flex-direction: row;
     border-radius: 11px;
-    width: 15rem;
     margin-right: 2rem;
    
 } 
@@ -358,7 +359,7 @@ border: none;
 .container .links nav ul li .inputDiv:focus-within  {
     border: 1px solid black;
     padding: 0.1rem;
-    width: 20rem;
+
 }
 .container .links .iconDiv .inputDiv button{
     border: none;
@@ -368,7 +369,14 @@ border: none;
     
 }
 
-
+.linksBottom{
+   position: fixed;
+   bottom: 0px;
+   width: 100%;
+   background: var(--navbar-bacground);
+   height: 5rem;
+   left: 0;
+}
 
 
 @media  (max-width: 300px){
@@ -516,6 +524,15 @@ border: none;
         font-size: 10px;
         display: flex 
     }
+   
+    /* fixed bottom nav */
+    .linksBottom nav{
+        position: fixed;
+    }
+    .linksBottom nav ul li {
+        gap: 2rem;
+    }
+    
 }
 
 @media ( min-width: 340px) and (max-width: 360px){
@@ -601,6 +618,14 @@ border: none;
     .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
         display: flex 
+    }
+
+      /* fixed bottom nav */
+    .linksBottom nav{
+        position: fixed;
+    }
+    .linksBottom nav ul li {
+        gap: 2rem;
     }
 }
 
@@ -700,6 +725,15 @@ border: none;
     .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
         display: flex 
+    }
+      /* fixed bottom nav */
+   
+    .linksBottom nav{
+        position: fixed;
+       
+    }
+    .linksBottom nav ul li {
+        gap: 2rem !important;
     }
 
 }
