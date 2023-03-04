@@ -38,8 +38,13 @@ function Header() {
 
   const  handleInput = (e) =>{
       e.currentTarget.nextElementSibling.style.display = `flex `
+    console.log();
       setHideDivs(!hideDivs);
-      if(hideDivs === false &&  screenWidth <= 900 ){
+      if(hideDivs === false  &&  screenWidth <= 900 ){
+        e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.style.width="90%"
+        e.currentTarget.parentElement.parentElement.parentElement.style.width="90%"
+        e.currentTarget.parentElement.style.width="90%"
+        e.currentTarget.nextElementSibling.style.width= "100%"
         e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.style.display= "none"
         e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.style.display= "none"
         e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
@@ -49,7 +54,17 @@ function Header() {
         e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
         e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"    
       }
-    
+    else if (screenWidth > 900  )  {
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.style.display= "flex"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.style.display= "flex"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"   
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"    
+
+    }
   }
  
   const showSidebar = () =>{
@@ -349,8 +364,7 @@ function Header() {
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-list-ul  fa-xl"></i>
                       <div className={styles.iconSpan}>
-                        <span >İş</span>
-
+                        <span className="workSpan" >İş</span>
                       </div>
                     </div>
                     { openSideBar &&  <Sidebar/>     }
