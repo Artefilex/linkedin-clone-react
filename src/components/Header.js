@@ -24,14 +24,12 @@ function Header() {
   const [openSideBar,setOpenSideBar] = useState(false)
   const [hideDivs, setHideDivs] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  
+ 
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -39,28 +37,23 @@ function Header() {
 
 
   const  handleInput = (e) =>{
-   
-    
       e.currentTarget.nextElementSibling.style.display = `flex `
       setHideDivs(!hideDivs);
-      console.log( e.currentTarget.parentElement.parentElement.parentElement.parentElement)
       if(hideDivs === false &&  screenWidth <= 900 ){
         e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.style.display= "none"
         e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.style.display= "none"
         e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
         e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
         e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
-        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
-        
+        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"   
+        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
+        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"    
       }
-     
     
   }
  
   const showSidebar = () =>{
     setOpenSideBar(!openSideBar)
-   
-   
   }
   
 
@@ -75,7 +68,6 @@ function Header() {
     else {
       setIsOpenDot(true);
     }
-
   };
 
   const openWhichLi = (activeLi) =>{
@@ -112,7 +104,7 @@ function Header() {
                   </div>
                 </li>
                 
-                 <li >
+                 <li  >
                 <NavLink to="/"   className={({ isActive }) => isActive ? styles.active : undefined}   >
                 <div   className={styles.iconDiv}   >
                   <i className="fa-solid fa-house  fa-xl" >  </i>
@@ -278,14 +270,13 @@ function Header() {
               </ul>     
             </nav>
 
-
           {
             hideDivs && (
               <>
                 <div className={styles.linksBottom}>
-                <nav>
+                <nav >
                  <ul>
-                 <li >
+                    <li  >
                     <NavLink to="/"   className={({ isActive }) => isActive ? styles.active : undefined}   >
                     <div   className={styles.iconDiv}   >
                       <i className="fa-solid fa-house  fa-xl" >  </i>
@@ -307,7 +298,7 @@ function Header() {
                         </div>
                       </NavLink>
                     </li>
-                    <li  >
+                    <li>
                     <NavLink to="jobadvertisement" className={({ isActive }) => isActive ? styles.active  : undefined }   >
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-briefcase  fa-xl"></i>
@@ -318,7 +309,7 @@ function Header() {
                     </div>
                     </NavLink>
                     </li>
-                    <li  className={styles.navbarLastItem}   >
+                    <li  className={styles.navbarLastItem}  data-visible={true} >
                     <NavLink to="comment" className={({ isActive }) => isActive ? styles.active : undefined}   >
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-comment-dots  fa-xl"></i>
@@ -329,7 +320,7 @@ function Header() {
                     </div>
                     </NavLink>
                     </li>
-                    <li  className={styles.navbarFourItem}  >
+                    <li  className={styles.navbarFourItem} data-visible={true} >
                     <NavLink to="notifications" className={({ isActive }) => isActive ? styles.active : undefined} >
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-bell  fa-xl"></i>
@@ -339,7 +330,7 @@ function Header() {
                     </div>
                     </NavLink>
                     </li>      
-                    <li   className={styles.navbarThreeItem} onClick={(e)=>openWhichLi( e.currentTarget)} id="1"  >
+                    <li   className={styles.navbarThreeItem} onClick={(e)=>openWhichLi( e.currentTarget)} id="1" data-visible={true}  >
                     <NavLink  to="user" onClick={toggleSidebar} >
                     <div className={styles.userDivs}>
                       <img src={img} className={styles.userImg} alt="user-img" />
@@ -352,7 +343,7 @@ function Header() {
                     </div>
                     </NavLink>
                     </li>
-                    <li className={styles.navbarSecondItem} onClick={(e)=> openWhichLi(e.currentTarget)} id="2"  >
+                    <li className={styles.navbarSecondItem} onClick={(e)=> openWhichLi(e.currentTarget)} id="2"  data-visible={true} >
                     <NavLink   to="job" 
                     onClick={showSidebar} className={styles.showSidebar} >
                     <div className={styles.iconDiv}>
@@ -366,26 +357,20 @@ function Header() {
 
                     </NavLink>
                     </li>
-                    <li className={styles.navbarFirstItem} >
+                    <li className={styles.navbarFirstItem}  data-visible={true}>
                     <NavLink to="fastJob"   >
                     <span> Premiumu <br /> ücretsiz deneyin.</span>
                     </NavLink>
-                      </li>
+                    </li>
                  </ul>
                   </nav>
-                  </div>
-                         
+             </div>        
               </>
             )
           }
-
-
           </div>
-     
           <Routes>
-
             <Route path='/' element={<Home />}> </Route>
-
             <Route path="/network" element={<Network />} > </Route>
             <Route path="/jobadvertisement" element={<Advertisment />}></Route>
             <Route path="/comment" element={<Comment />}></Route>

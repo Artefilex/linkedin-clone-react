@@ -376,6 +376,8 @@ border: none;
    background: var(--navbar-bacground);
    height: 5rem;
    left: 0;
+   display: flex;
+   justify-content: center;
 }
 
 
@@ -532,6 +534,19 @@ border: none;
     .linksBottom nav ul li {
         gap: 2rem;
     }
+    .linksBottom nav ul li {
+        display: flex;
+    }
+    .linksBottom nav ul .navbarThreeItem,
+    .linksBottom nav ul .navbarSecondItem{
+      display: none;
+    }
+    .linksBottom nav{
+        left: 0;
+    }
+    .linksBottom nav ul{
+        gap: 2.5rem !important
+    }
     
 }
 
@@ -625,7 +640,7 @@ border: none;
         position: fixed;
     }
     .linksBottom nav ul li {
-        gap: 2rem;
+        gap: 3rem !important;
     }
 }
 
