@@ -1,11 +1,35 @@
 import React from 'react'
 import Style from "../../../components/styles.module.css"
 function Sidebar() {
+  const handleClose = (e)=>{
+    console.log( e.currentTarget.parentElement.parentElement)
+   e.currentTarget.parentElement.parentElement.style.display = "none"
+   if( e.currentTarget.parentElement.parentElement.style.display === "none") {
+    document.body.style.background = "rgb(243, 242, 239)"
+   }
+    
+  
+  }
   return (
-    <div className={Style.sideBarContainer }>
+    <div className={`${Style.sideBarContainer} sideBarContainerJsx `}  >
+      <style jsx>{
+                       `
+                       .sideBarContainerJsx{
+                        z-index: 1
+                       }
+                       `
+                    } </style>
        <div className={Style.sidebarContainerHeader}>
            <h3>İş</h3> 
-          <i className="fa-solid fa-xmark"></i>
+          <i onClick={handleClose} className="fa-solid fa-xmark"></i>
+          
+          <style jsx>{
+                       `
+                       .fa-xmark{
+                       cursor: pointer;
+                       }
+                       `
+                    } </style>
        </div>
              
         <div className={Style.sideBarContainerFirst}>
@@ -28,12 +52,28 @@ function Sidebar() {
             <div className={Style.insideSidebarHeader}>LinkedIn Ticari Hizmetler </div>
             <div className={Style.sidebarSecondDivInside}>
                  <ul> 
-                    <li> <span>Yetenek Çözümleri  </span> <span><small> Yetenekleri bulun, onların ilgisini çekin ve işe alın</small></span>     </li>
-                    <li> <span>Satış Çözümleri </span> <span><small>Satış fırsatlarının kapısını açın</small></span></li>
-                    <li><span>Ücretsiz iş ilanı yayınla</span> <span><small>İş ilanınızı kalifiye adayların önüne serin</small></span></li>
-                    <li><span>Pazarlama Çözümleri</span> <span><small>İşinizi büyütün ve yeni müşteriler edinin</small></span></li>
-                    <li><span>Eğitim Çözümleri </span> <span><small>Organizasyonunuzda yetenekler geliştirin</small></span></li> 
+                    <li> <span className='sidebarSpan'>Yetenek Çözümleri  </span> <span><small> Yetenekleri bulun, onların ilgisini çekin ve işe alın</small></span>     </li>
+                    <li> <span className='sidebarSpan'>Satış Çözümleri </span> <span><small>Satış fırsatlarının kapısını açın</small></span></li>
+                    <li><span className='sidebarSpan'>Ücretsiz iş ilanı yayınla</span> <span><small>İş ilanınızı kalifiye adayların önüne serin</small></span></li>
+                    <li><span className='sidebarSpan'>Pazarlama Çözümleri</span> <span><small>İşinizi büyütün ve yeni müşteriler edinin</small></span></li>
+                    <li><span className='sidebarSpan'> Eğitim Çözümleri </span> <span><small>Organizasyonunuzda yetenekler geliştirin</small></span></li> 
                 </ul>
+                <style jsx>
+                  {
+                    `
+                    .sidebarSpan{
+                        color:rgb(43, 43, 43) !important;
+                        font-weight: 700 !important;
+                    }
+                    .sidebarSpan:hover{
+                      position: relative;
+                      border-bottom: 1px solid black;  
+                    }
+                   
+                    
+                    `
+                  }
+                </style>
             </div>
         </div>
       </div>

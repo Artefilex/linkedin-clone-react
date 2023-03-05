@@ -19,7 +19,7 @@
    --sidebar-icon-color: rgb(10, 113, 180);
    --sidebar-border-color: 1px solid rgb(164, 162, 162);
    --sidebar-border-for-icon : 1px solid rgb(214, 211, 211);
-   --colrs: rgba(61, 61, 60, 0.76);
+  
 }
 
 /* header icon link */
@@ -180,12 +180,8 @@ body{
     height: 22px !important;
 }
 /* work for sidebar */
-.showSidebar{
-    position: absolute;
-    height: 100%;
-  
-}
-.showSidebar .sideBarContainer {
+
+.sideBarContainer {
     cursor: default;
     position: fixed;
     top: 5rem;
@@ -211,21 +207,21 @@ body{
 .sideBarContainer .sidebarContainerHeader h3 {
     font-size: 1.5rem;
 }
-.showSidebar .sideBarContainer .sideBarContainerFirst,
-.showSidebar .sideBarContainer .sideBarContainerSecond {
+.sideBarContainer .sideBarContainerFirst,
+.sideBarContainer .sideBarContainerSecond {
     border-radius: 5px;
     width: 20rem;
     border: var(--sidebar-border-color);
     padding: var(--standar-padding-container);
 }
-.showSidebar .sideBarContainer .insideSidebarHeader{
+.sideBarContainer .insideSidebarHeader{
     border-bottom: var(--sidebar-border-color);
     padding-bottom: 1rem ;
 }
-.showSidebar .sideBarContainer .firsDivInsideItem{
+.sideBarContainer .firsDivInsideItem{
     margin-top: 1rem;
 }
-.showSidebar .sideBarContainer .sideBarContainerSecond ul{
+ .sideBarContainer .sideBarContainerSecond ul{
     flex-direction: column;
     align-items: self-start;
     display: flex;
@@ -235,11 +231,11 @@ body{
     gap: 0.4rem;
     right: 2rem;
 }
-.showSidebar .sideBarContainer .sideBarContainerSecond ul li span{
+.sideBarContainer .sideBarContainerSecond ul li span{
     white-space: nowrap;
     justify-content: start;
 }
-.showSidebar .sideBarContainer .sideBarContainerFirst ul{
+.sideBarContainer .sideBarContainerFirst ul{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -250,26 +246,26 @@ body{
     right: 2rem;
     align-items: flex-start;
 }
-.showSidebar .sideBarContainer .sideBarContainerFirst ul li i {
+.sideBarContainer .sideBarContainerFirst ul li i {
    cursor: pointer;
     padding: 0.8rem;
     border-radius: 5px;
     border:  var(--sidebar-border-for-icon);
     color: var(--sidebar-icon-color) !important;
 }
-.showSidebar .sideBarContainer .sideBarContainerFirst ul li i:hover{
+.sideBarContainer .sideBarContainerFirst ul li i:hover{
     box-shadow:var(--div-shadow) ;
     transition: 0.3s;
 }
-.showSidebar .sideBarContainer .sideBarContainerFirst ul li{ 
+.sideBarContainer .sideBarContainerFirst ul li{ 
     width: 3rem;  
     height: 5rem; 
 }
-.showSidebar .sideBarContainer .sideBarContainerFirst ul li h6{ 
+.sideBarContainer .sideBarContainerFirst ul li h6{ 
     color: var(--icon-color);
     margin-top: 0.5rem;   
 }
-.showSidebar .sideBarContainer .sideBarContainerFirst  ul li span {
+.sideBarContainer .sideBarContainerFirst  ul li span {
     font-size: 10px;
 }
 /* input */
@@ -390,13 +386,13 @@ border: none;
         margin-bottom: 0rem;
         font-size: var(--icon-size-phone);      
     }
-    .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+   .sideBarContainer .sideBarContainerFirst ul {
         gap: 1rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+   .sideBarContainer .sideBarContainerSecond ul{
         gap: 0.1rem !important;
     }  
-    .showSidebar .sideBarContainer .sideBarContainerFirst  ul li span {
+   .sideBarContainer .sideBarContainerFirst  ul li span {
         font-size: 10px;
         display: flex;
     }
@@ -466,13 +462,13 @@ border: none;
         display: none;
     } 
     /* sidebar */
-    .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+   .sideBarContainer .sideBarContainerFirst ul {
         gap: 1.5rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+   .sideBarContainer .sideBarContainerSecond ul{
         gap: 0.1rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+   .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
         display: flex 
     }
@@ -565,13 +561,13 @@ border: none;
         height: 22px !important;
     }
       /* sidebar */   
-      .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+       .sideBarContainer .sideBarContainerFirst ul {
         gap: 1.5rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+   .sideBarContainer .sideBarContainerSecond ul{
         gap: 0.1rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+   .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
         display: flex 
     }
@@ -662,13 +658,13 @@ border: none;
     height: 22px !important;
     }
      /* sidebar */   
-     .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+       .sideBarContainer .sideBarContainerFirst ul {
         gap: 1.5rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+   .sideBarContainer .sideBarContainerSecond ul{
         gap: 0.1rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+   .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
         display: flex 
     }
@@ -757,13 +753,13 @@ border: none;
         height: 22px !important;
     }
     /* sidebar */   
-    .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+   .sideBarContainer .sideBarContainerFirst ul {
         gap: 1.5rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+   .sideBarContainer .sideBarContainerSecond ul{
         gap: 0.1rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+   .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
         display: flex 
     }
@@ -851,14 +847,11 @@ border: none;
 .phoneDot{
     display: none;
 }
-/* sidebar */
-.showSidebar .sideBarContainer .sideBarContainerFirst ul {
+/* sidebar */   .sideBarContainer .sideBarContainerFirst ul {
     gap: 1.5rem !important;
-}
-.showSidebar .sideBarContainer .sideBarContainerSecond ul{
+}   .sideBarContainer .sideBarContainerSecond ul{
     gap: 0.1rem !important;
-}
-.showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+}   .sideBarContainer .sideBarContainerSecond  ul li span {
     font-size: 10px;
     display: flex 
 }
@@ -947,14 +940,13 @@ border: none;
     width: 22px !important ;
     height: 22px !important;
 }
-/* sidebar */
-.showSidebar .sideBarContainer .sideBarContainerFirst ul {
+/* sidebar */   .sideBarContainer .sideBarContainerFirst ul {
     gap: 1.5rem !important;
 }
-.showSidebar .sideBarContainer .sideBarContainerSecond ul{
+.sideBarContainer .sideBarContainerSecond ul{
     gap: 0.1rem !important;
 }
-.showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+.sideBarContainer .sideBarContainerSecond  ul li span {
     font-size: 10px;
     display: flex 
 }
@@ -1043,13 +1035,13 @@ border: none;
 
     }
     /* sidebar */
-    .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+    .sideBarContainer .sideBarContainerFirst ul {
         gap: 1.5rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+    .sideBarContainer .sideBarContainerSecond ul{
         gap: 0.1rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond  ul li span {
+    .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
         display: flex 
     }
@@ -1171,10 +1163,10 @@ border: none;
     .phoneDot{
         display: none ;
     }  
-    .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+    .sideBarContainer .sideBarContainerFirst ul {
         gap: 1.5rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+    .sideBarContainer .sideBarContainerSecond ul{
         gap: 0.1rem !important;
     }
     .container .links nav ul li .iconDiv .inputDiv span{
@@ -1229,10 +1221,10 @@ border: none;
     display: none ;
 }
 /* sidebar */
-.showSidebar .sideBarContainer .sideBarContainerFirst ul {
+.sideBarContainer .sideBarContainerFirst ul {
     gap: 1.5rem !important;
 }
-.showSidebar .sideBarContainer .sideBarContainerSecond ul{
+.sideBarContainer .sideBarContainerSecond ul{
     gap: 0.1rem !important;
 }
 .linksBottom nav ul li {
@@ -1347,10 +1339,10 @@ border: none;
     .container .links nav ul li .iconDiv .inputDiv span{
         display: none;
     }
-    .showSidebar .sideBarContainer .sideBarContainerFirst ul {
+    .sideBarContainer .sideBarContainerFirst ul {
         gap: 1.5rem !important;
     }
-    .showSidebar .sideBarContainer .sideBarContainerSecond ul{
+    .sideBarContainer .sideBarContainerSecond ul{
         gap: 0.1rem !important;
     }
     .container .links nav ul li .inputDiv{
@@ -1374,3 +1366,4 @@ border: none;
         display: none;
     }
  }
+

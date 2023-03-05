@@ -177,8 +177,15 @@ function Header() {
                 <NavLink  to="user" onClick={toggleSidebar} >
                 <div className={styles.userDivs}>
                   <img src={img} className={styles.userImg} alt="user-img" />
-                  <button className={styles.userDownBtn} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
-                  <div className={styles.altLink}>
+                  <button className={`${styles.userDownBtn} userDownBtnJsx `} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
+                  <div className={`${styles.altLink} altLink`}>
+                    <style jsx>{
+                       `
+                       .altLink{
+                        z-index: 1
+                       }
+                       `
+                    } </style>
                     {
                       isOpen && <UserInf  />
                     }
@@ -196,7 +203,7 @@ function Header() {
 
                   </div>
                 </div>
-                { openSideBar &&  <Sidebar/>     }
+                {/* { openSideBar &&  <Sidebar/>} */}
 
                 </NavLink>
                 </li>
@@ -284,7 +291,7 @@ function Header() {
                 </li>
               </ul>     
             </nav>
-
+            { openSideBar &&  <Sidebar/>}
           {
             hideDivs && (
               <>

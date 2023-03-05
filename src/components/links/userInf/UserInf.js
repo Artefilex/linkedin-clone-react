@@ -4,7 +4,13 @@ import img from "../../ben.jpg"
 
 function UserInf() {
   return (
-    <div className={styles.userInfdownDiv}>
+    <div className={`${styles.userInfdownDiv} jsxUserInf`}>
+        <style jsx>{`
+              .jsxUserInf{
+                cursor: default;
+              }
+        `}
+        </style>
         <div className={styles.userInfo} > 
             <div className={styles.userInformation}>
                  <div className={styles.userInfImg}> <img src={img} alt="" /></div>
@@ -24,24 +30,16 @@ function UserInf() {
                     <li> <span onClick={()=> alert("dv")}>Yardım</span> </li>
                     <li><span onClick={()=> alert("dv")}>Dil</span> </li>
                 </ul>
-            
-            
-        
-             
             </div>
         </div >
         <div className={styles.manage}>
         <div className={styles.accountNav}> 
                <h4>Yönet </h4>
                 <ul className={styles.accountBtn}>
-                  
                     <li> <span onClick={()=> alert("dv")}>Gönderi ve Faaliyetler</span> </li>
                     <li><span onClick={()=> alert("dv")}>İş İlanı Yayınlama Hesabı</span> </li>
                 </ul>
             
-            
-        
-             
             </div>
             
         </div >
