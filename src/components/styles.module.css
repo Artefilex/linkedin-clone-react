@@ -1172,9 +1172,7 @@ border: none;
     .container .links nav ul li .iconDiv .inputDiv span{
         display: none;
     }
-    .linksBottom nav ul li {
-        display: none;
-    }  
+    
     .container .links nav ul li .iconDiv .inputDiv{
         position: relative;
         top: 6px;
@@ -1189,7 +1187,17 @@ border: none;
     .container .links nav ul li .iconDiv .inputDiv i {
         top: 1px;
     }
+  
  }
+ @media (min-width: 800px) and (max-width:900px){
+    .linksBottom {
+        display: flex;
+    }
+    .linksBottom nav{
+        display: flex;
+       
+    }
+ } 
  @media (min-width: 1000px){
     .container .links nav ul li .inputDiv{
         display: flex;
@@ -1354,6 +1362,9 @@ border: none;
     .container .links nav ul li .iconDiv .inputDiv {
         position: relative;
         top: 8px;
+    }
+    .linksBottom{
+        display: none;
     }
     .linksBottom nav ul li {
         display: none;

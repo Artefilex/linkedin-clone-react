@@ -2,7 +2,14 @@ import React from 'react'
 
 function Post() {
   return (
-    <div>Post</div>
+    <div className='postDiv'>
+       <style jsx> {`
+        .postDiv{
+             width: 60%;
+        }`}
+    </style>
+       post
+       </div>
   )
 }
 

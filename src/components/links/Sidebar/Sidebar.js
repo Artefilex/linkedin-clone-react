@@ -52,15 +52,19 @@ function Sidebar() {
             <div className={Style.insideSidebarHeader}>LinkedIn Ticari Hizmetler </div>
             <div className={Style.sidebarSecondDivInside}>
                  <ul> 
-                    <li> <span className='sidebarSpan'>Yetenek Çözümleri  </span> <span><small> Yetenekleri bulun, onların ilgisini çekin ve işe alın</small></span>     </li>
-                    <li> <span className='sidebarSpan'>Satış Çözümleri </span> <span><small>Satış fırsatlarının kapısını açın</small></span></li>
-                    <li><span className='sidebarSpan'>Ücretsiz iş ilanı yayınla</span> <span><small>İş ilanınızı kalifiye adayların önüne serin</small></span></li>
-                    <li><span className='sidebarSpan'>Pazarlama Çözümleri</span> <span><small>İşinizi büyütün ve yeni müşteriler edinin</small></span></li>
-                    <li><span className='sidebarSpan'> Eğitim Çözümleri </span> <span><small>Organizasyonunuzda yetenekler geliştirin</small></span></li> 
+                    <li className='sidebarLi'> <span className='sidebarSpan'>Yetenek Çözümleri  </span> <span><small> Yetenekleri bulun, onların ilgisini çekin ve işe alın</small></span>     </li>
+                    <li className='sidebarLi'> <span className='sidebarSpan'>Satış Çözümleri </span> <span><small>Satış fırsatlarının kapısını açın</small></span></li>
+                    <li className='sidebarLi'><span className='sidebarSpan'>Ücretsiz iş ilanı yayınla</span> <span><small>İş ilanınızı kalifiye adayların önüne serin</small></span></li>
+                    <li className='sidebarLi'><span className='sidebarSpan'>Pazarlama Çözümleri</span> <span><small>İşinizi büyütün ve yeni müşteriler edinin</small></span></li>
+                    <li className='sidebarLi'><span className='sidebarSpan'> Eğitim Çözümleri </span> <span><small>Organizasyonunuzda yetenekler geliştirin</small></span></li> 
                 </ul>
                 <style jsx>
                   {
                     `
+                    .sidebarLi span{  
+                      width: 17rem !important;        
+                      justify-content: flex-start !important;
+                    }
                     .sidebarSpan{
                         color:rgb(43, 43, 43) !important;
                         font-weight: 700 !important;

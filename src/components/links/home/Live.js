@@ -2,7 +2,15 @@ import React from 'react'
 
 function Live() {
   return (
-    <div>Live</div>
+    <div className='liveDiv'>
+      <style jsx>
+       {`
+       .liveDiv{
+        width: 19%;
+       }`}
+      </style>
+      
+      Live</div>
   )
 }
 
