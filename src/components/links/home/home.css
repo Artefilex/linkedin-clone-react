@@ -1,0 +1,908 @@
+:root{
+  --standart-container-background: rgb(255, 255, 255);
+  --standart-span-color: rgb(107, 106, 105);
+  --standart-hover-color:rgb(201, 200, 199);
+  --button-first-color: rgb(107, 106, 105);
+  --container-border: 1px solid rgb(202, 201, 201);
+  --standart-border: 1px solid rgb(0, 0, 0);
+  --h6-first-color:rgb(107, 106, 105);
+  --span-blue-color:rgb(10, 102, 194);
+  --button-blue-color:rgb(10, 102, 194);
+  --border-div: rgb(207, 199, 199);
+  --item-hover-color: rgb(219, 218, 217);
+ 
+  --button-hover-color: rgb(230, 227, 223);
+  --border-postSorting-item: 1px solid rgb(201, 198, 198);
+  --color-black: rgb(0, 0, 0);
+
+  --liveDiv-ul-item: rgb(121, 114, 114);
+  --div-inside-gap: 0.5rem;
+  --div-inside-gap-second: 1rem;
+  --button-inside-gap: 0.2rem;
+
+  --font-size-xs: 12px;
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 20px;
+  --border-radius-large:15px;
+ 
+  --background-transparent: transparent;
+  --btn-border-none: none;
+   --img-size:50px;
+
+   --container-width-full: 100%;
+   --container-width-insideContainer: 95%;
+   --container-width-insideContainer-second: 90%;
+   --container-width-insideContainer-content: 80%;
+}
+.container{
+  display:flex;
+  flex-direction: row;
+  position: absolute;
+  top:6rem;
+  width: var(--container-width-insideContainer);
+  justify-content: center;
+  gap: 1rem;}
+
+.profileContainer{ 
+    display:flex;
+    flex-direction:column;
+    width:15%; 
+    border-radius:15px;
+    position:relative;
+    gap:var(--div-inside-gap-second);
+   
+  }
+  .profileContent{
+    width: var(--container-width-insideContainer-content);
+    background: var(--standart-container-background);
+    height: 24.5rem;
+    border-radius: var(--border-radius-large);
+    border: var(--container-border);
+  }
+  .headerProfile{
+    background: linear-gradient( to top, #FFFFFF 0%,  #FFFFFF 80%,  #A0B4B7 50%, #A0B4B7 100%);
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+    gap:var(--div-inside-gap);
+    border-radius:15px;
+   
+  }
+  .headerProfile .imgPosition{
+    position:relative;
+    top:2.5rem
+
+  }
+  .headerProfile img{
+    width: var(--img-size);
+    height:  var(--img-size);
+    border-radius:100%;
+    right:6px;
+    bottom:1px;
+    padding: 0.2rem;
+    position:relative;
+    
+  }
+  .imgPosition{
+    background:var(--standart-container-background);
+    width:56px;
+    height:56px;
+    border-radius: 100%;
+  }
+  
+  
+  .headerProfile button{
+    outline:var(--btn-border-none);
+    border: var(--btn-border-none);
+    background:var( --background-transparent);
+  }
+  .spanDiv{
+    position: relative;
+    top:3rem;
+    display:flex;
+    flex-direction:column;
+
+  }
+  .spanDiv span:first-child{
+    font-weight:600; 
+  }
+  .spanDiv span:first-child:hover{
+     border-bottom:var(--standart-border);
+     
+  }
+  .spanDiv span:last-child{
+    font-size:var(--font-size-xs);
+    color: var(--standart-span-color)
+  }
+  .spanDiv ::after{
+    border:var(--standart-border)
+  }
+  .borderDiv{
+    position: relative;
+    width: var(--container-width-full);
+    height: 1px;
+    top: 4rem;
+    background: var(--border-div);
+  }
+  .profileInfo{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    top:4rem;
+    gap:var(--div-inside-gap);
+    width: var(--container-width-insideContainer);
+  }
+  .profileInfo .profileInfoDiv{
+    padding:0.5rem 0.2rem;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:space-between;
+   
+  }
+  .profileInfo .profileInfoDiv h6{
+    font-size:var(--font-size-xs);
+    color: var(--h6-first-color);
+    margin:0;
+  }
+  .profileInfo .profileInfoDiv span{
+    font-size:var(--font-size-xs);
+    color: var(--span-blue-color);
+    font-weight: 700;
+  }
+  .profileInfo .profileInfoDiv:hover{
+    background:var(--item-hover-color);
+  }
+  .profileAdd{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    top:4rem;
+    align-items: flex-start;
+    gap:var(--div-inside-gap);
+    padding: 0.5rem 0.5rem 1rem 0rem;
+    width: var(--container-width-insideContainer);
+  }
+  .profileAdd:hover{
+    background: var(--standart-hover-color)
+  }
+  .profileAdd h6{
+    padding-left:1rem;
+    margin:0;
+    color:var(--h6-first-color)
+  }
+  .profileAdd a{
+    padding-left:1rem;
+    color: var(--color-black);
+    font-size:var(--font-size-xs);
+  }
+  .profileAdd a:hover{
+    color: var(--span-blue-color)
+  }
+  .profileSave{
+    align-items:center;
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    top:4rem;
+    gap:var(--div-inside-gap);
+    padding: 0.5rem 0.5rem 1rem 0rem;
+    width:85%;
+  }
+  .profileSave i,
+  .profileSave span{
+    color: var(--standart-span-color);
+    cursor:pointer;
+    font-size:var(--font-size-small);
+  }
+  .profileSave:hover,
+  .profileSave:hover i,
+  .profileSave:hover span{
+    background:var(--standart-container-background);
+    color: var(--standart-span-color);
+  }
+  .profileSave .profileSaveArea{
+    left: 2px;
+    width: var(--container-width-insideContainer-second);
+    display: flex;
+    gap:var(--div-inside-gap-second);
+    align-items: center;
+    position: relative;
+  }   
+  .profileGroup{
+    
+    width: var(--container-width-insideContainer-content);
+    background: var(--standart-container-background);
+    height: 22.5rem;
+    border-radius: var(--border-radius-large);
+    border: var(--container-border);
+  }
+  .profileGroup ul li {
+    list-style: none;
+  }
+  .profileGroup .profileLatestContent,
+  .profileGroup .profileGroupContent{
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+    width: var(--container-width-insideContainer);
+    position: relative;
+    left: 1rem;
+  }
+  .profileGroup .profileLatestContent ul,
+  .profileGroup .profileGroupContent ul{
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+    width: var(--container-width-insideContainer);
+    position: relative;
+    right: 2rem;
+  }
+  .profileGroup .profileLatestContent h6,
+  .profileGroup .profileGroupContent h6{
+    margin: 0.5rem 0rem 0rem 0rem;
+  }
+  .profileGroup .profileGroupContent h6,
+  .profileGroup .profileFollowingHastagContent h6,
+  .profileGroup .profileActivityContent h6 {
+    color: var(--button-blue-color);
+    cursor: pointer;
+
+  }
+  .profileGroup .profileGroupContent h6:hover,
+  .profileGroup .profileActivityContent h6:hover{
+    border-bottom: 1px solid  var(--button-blue-color);
+  }
+  .profileGroup .profileLatestContent ul li,
+  .profileGroup .profileGroupContent ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap:var(--div-inside-gap-second);
+  }
+  .profileGroup ul li:hover{
+    background:var(--standart-hover-color);
+    color: var(--standart-hover-color);
+  }
+  .profileGroup .profileLatestContent span,
+  .profileGroup .profileGroupContent span,
+  .profileGroup .profileLatestContent i,
+  .profileGroup .profileGroupContent i{
+    font-size:var(--font-size-small);
+    color: var(--standart-span-color);
+  }
+  .profileGroup .profileActivityContent{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width: var(--container-width-insideContainer-second);
+    padding:0rem 1rem;
+  }
+  .profileGroup .profileActivityContent h6{
+    margin: 0;
+  }
+  .profileGroup .profileActivityContent button{
+    border:var(--btn-border-none);
+    outline:var(--btn-border-none);
+    cursor: pointer;
+    background: var(--background-transparent);
+  
+  }
+  .profileGroup .profileFollowingHastagContent{
+    display: flex;
+    padding: 0rem 1rem;
+          }
+  .profileGroup .profileFollowingHastagContent a{
+    text-decoration: none;
+  }
+  .profileGroup .profileMoreContent button{
+       border: none;
+       outline: none;
+       color: var(--button-first-color);
+       background: var(--background-transparent);
+       cursor:pointer;
+
+  }
+
+  /* LİVE */
+
+
+  .liveDiv{
+    width: 15%;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    gap: var(--button-inside-gap);
+  }
+
+   .liveFollower{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items: flex-start;
+    width: var(--container-width-insideContainer-second);
+     gap:var(--div-inside-gap-second);
+   }
+   .liveFollower{
+    background:var(--standart-container-background);
+    border:var(--container-border);
+    padding:0.5rem;
+    border-radius: var(--border-radius-large);
+   }
+   .liveFollower .liveJsonContainer {
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    gap:var(--div-inside-gap-second);
+   }
+   .liveFollower .liveJsonContainer .liveOffer{
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    justify-content: flex-start;
+    width: var(--container-width-full);
+   }
+   .liveFollower .liveJsonContainer .liveOffer .userImgBtn{
+     border:var(--btn-border-none);
+     outline: var(--btn-border-none);
+     background: var(--background-transparent);
+   }
+
+   .liveFollower .liveJsonContainer .liveOffer .userImgBtn img{
+      width: 45px;
+      height:45px;
+      object-fit:cover;
+      border-radius:100%
+       
+   }
+   .liveFollower .liveJsonContainer .liveOffer .liveOfferRight{
+    display:flex;
+    flex-direction:column;
+    white-space:nowrap;
+    justify-content:flex-start;
+    align-items:flex-start;
+    gap: var(--button-inside-gap);
+   }
+   .liveFollower .liveJsonContainer .liveOffer .liveOfferRight h6{
+    font-size:var(--font-size-small);
+    font-weight:620
+   }
+   .liveFollower .liveJsonContainer .liveOffer .liveOfferRight span{
+    font-size:var(--font-size-xs);
+    color: var(--liveDiv-ul-item);
+   }
+   .liveFollower .liveJsonContainer .liveOffer .liveOfferRight button{
+    border:var(--btn-border-none);
+    border: 1px solid var(--liveDiv-ul-item);
+    border-radius: var(--border-radius-large);
+    display:flex;
+    padding: 0.25rem 0.6rem;
+    cursor:pointer;
+    gap:0.3rem;
+
+   }
+   .liveFollower .liveJsonContainer .liveOffer .liveOfferRight button:hover{
+    border:var(--container-border);
+    background: var(--button-hover-color);
+    color: var(--standart-container-background);
+   }
+   .liveFollower .liveJsonContainer .liveOffer .liveOfferRight button i,
+   .liveFollower .liveJsonContainer .liveOffer .liveOfferRight button span{
+    color:var(--liveDiv-ul-item);
+   }
+  .liveFollower .allOffer button{
+    display:flex;
+    align-items:center;
+    gap: var(--button-inside-gap);
+    justify-content:center;
+    border:var(--btn-border-none);
+    background: var(--background-transparent);
+    cursor:pointer;
+    padding:0.1rem;
+    border-radius:3px;
+  }
+  .liveFollower .allOffer button:hover{
+    background: var(--button-hover-color)
+  } 
+  .liveDiv .addContent {
+    width: var(--container-width-insideContainer);
+    border:var(--container-border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    background: var(--standart-container-background);
+  }
+  .liveDiv .addContent img{
+    width: var(--container-width-insideContainer-second);
+  }
+  .liveDiv .infoForLinkedIn{
+    display:flex;
+    flex-direction:column;
+    width: var(--container-width-insideContainer);
+    gap:var(--div-inside-gap-second);
+
+  }
+  .liveDiv .infoForLinkedIn ul {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:var(--div-inside-gap);
+    justify-content: space-evenly;
+    width: var(--container-width-insideContainer-content);
+  }
+  .liveDiv .infoForLinkedIn ul li {
+    list-style: none;
+  }
+  .liveDiv .infoForLinkedIn ul li a{
+    text-decoration:none;
+    color: var(--liveDiv-ul-item)
+  }
+  .liveDiv .infoForLinkedIn ul li a:hover{
+    color: var(--button-blue-color);
+    text-decoration:underline;
+  }
+  .liveDiv .infoForLinkedIn ul li a span{
+    font-size:var(--font-size-xs);
+  }
+  .liveDiv .infoForLinkedIn ul li  button{
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+    justify-content:center;
+    gap:var(--div-inside-gap);
+    border:var(--btn-border-none);
+    color: var(--liveDiv-ul-item);
+    cursor:pointer;
+
+  }
+  .liveDiv .infoForLinkedIn ul li  button span{
+    font-size:var(--font-size-small)
+  }
+  .liveDiv .infoForLinkedIn ul li  button:hover span{
+    text-decoration:underline;
+    color: var(--button-blue-color);
+  }
+  .liveDiv .infoForLinkedIn ul li  button:hover i {
+    color: var(--button-blue-color);
+  }
+
+  .liveDiv .infoForLinkedIn ul li  button i {
+    position:relative;
+    top:-1px;
+  }
+  .liveDiv .infoForLinkedIn .bottomInfo i{
+    color: var(--button-blue-color);
+    font-size:var(--font-size-large);
+
+  }
+  .liveDiv .infoForLinkedIn .bottomInfo span{
+    font-size:var(--font-size-small);
+  }
+  .liveDiv .infoForLinkedIn .activePrivateTwo{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:15rem;
+    right:15%;
+    background:var(--standart-container-background);
+    justify-content:flex-start;
+    align-items:flex-start;
+    border:var(--container-border);
+    border-radius: 10px 10px 0px;
+  }
+  .liveDiv .infoForLinkedIn .activePrivate{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:18%;
+    right:20%;
+    background:var(--standart-container-background);
+    justify-content:flex-start;
+    align-items:flex-start;
+    gap:var(--div-inside-gap);
+    padding:1rem;
+    border:var(--container-border);
+    border-radius: 10px 0px 10px 10px;
+  }
+  .liveDiv .infoForLinkedIn .activePrivate a span {
+    color:#302c2c;
+    font-weight:600
+  
+  }
+  .liveDiv .infoForLinkedIn .activePrivate a:hover{
+    text-decoration:none;
+    background:var(--item-hover-color)
+
+  }
+  .liveDiv .infoForLinkedIn .activePrivateTwo a{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    padding:1rem;
+  }
+  .liveDiv .infoForLinkedIn .activePrivateTwo a h3{
+    white-space:nowrap;
+    font-size:var(--font-size-xs);
+    margin:0
+  }
+  .liveDiv .infoForLinkedIn .activePrivateTwo a p{
+    font-size:10px;
+    margin:0;
+    text-align:start;
+    white-space:wrap;
+  }
+ 
+  .liveDiv .infoForLinkedIn .activePrivateTwo a:hover h3~p{
+    text-decoration:underline;
+    color:var(--liveDiv-ul-item);
+  }
+  .liveDiv .infoForLinkedIn .activePrivateTwo .lastItem{
+     display:flex;
+    flex-direction: row;
+    gap:var(--div-inside-gap);
+    align-items:center;
+
+  }
+  liveDiv .infoForLinkedIn .activePrivateTwo .lastItem i {
+    text-decoration: none;
+  
+  }
+
+
+
+
+
+  /* POST Area */
+
+
+
+
+  .postArea{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   h6{
+    margin:0;
+    padding: 0;
+   }
+   
+  .postDiv{
+       width: 45%;
+       display:flex;
+       flex-direction:column;
+       gap:var(--div-inside-gap);
+        
+    } 
+    .postContainer{
+      display:flex;
+      flex-direction:column;
+      gap:var(--div-inside-gap);
+    
+    
+
+    }
+    .postContainer .postArea{
+      border: var(--container-border);
+      border-radius: 10px ;
+      display: flex;
+      flex-direction:column;
+      gap:var(--div-inside-gap);
+      align-items:center;
+      background: var(--standart-container-background);
+    }
+     .postContainer .postArea .postLikeUser{
+      display: flex;
+      flex-direction:row;
+      justify-content: space-between;
+      width: var(--container-width-insideContainer-second);
+      align-items:center;
+      margin-top:1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #ddd4d4;
+     }
+   
+     .postContainer .postArea .postLikeUser .first{
+      display:flex;
+      flex-direction: row;
+      gap:var(--div-inside-gap);
+      align-items: center;
+     }
+     .postContainer .postArea .postLikeUser .first img{
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+     }
+     
+     .postContainer .postArea .postLikeUser span{
+         font-size:10px;
+         color:var(--standart-span-color)
+     }
+     .postContainer .postArea .postLikeUser button{
+      border:var(--btn-border-none);
+      outline:var(--btn-border-none);
+      background: var(--background-transparent);
+      cursor:pointer;
+      font-size:var(--font-size-large);
+     }
+     .postContainer .postArea .postLikeUser button i{
+      color: var(--liveDiv-ul-item);
+     }
+     .postContainer .postArea .postLikeUser button:hover{
+      background:var(--button-hover-color);
+      border-radius:100%
+     }
+     .postContainer .postArea .profileInfo img{
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+     }
+     .postContainer .postArea .profileInfo{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      position:relative;
+      top:1rem;
+      margin-bottom:1rem;
+      
+     }
+     .postContainer .postArea .profileInfo .leftDiv{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: flex-start;
+      gap:var(--div-inside-gap-second);
+      
+     }
+     .postContainer .postArea .profileInfo  .leftInsideDiv{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+     }
+     .postContainer .postArea .profileInfo  .leftInsideDiv a {
+      text-decoration:none;
+      color: var(--color-black);
+      font-weight:600;
+      margin:0;
+      }
+      .postContainer .postArea .profileInfo  .leftInsideDiv span{
+        color:var(--standart-span-color);
+      }
+      .postContainer .postArea .profileInfo .userBtnForGoToUser{
+        background: var(--background-transparent);
+        outline: var(--btn-border-none);
+        border:var(--btn-border-none);
+        display:flex;
+        align-items:center;
+        gap:var(--div-inside-gap);
+        cursor:pointer;
+
+      }
+      .postContainer .postArea .profileInfo .rightDiv button{
+        background: var(--background-transparent);
+        outline:var(--btn-border-none);
+        border:var(--btn-border-none);
+        cursor:pointer;
+      }
+      
+     
+      .postContainer .postArea .profileInfo .rightDiv button i,
+      .postContainer .postArea .profileInfo .rightDiv button span{
+        font-size:var(--font-size-medium);
+         color: var(--button-blue-color);
+      }
+     .postContainer .postArea .postContent{
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+      width: var(--container-width-insideContainer);
+
+     } 
+     .postContainer .postArea .postContent .postTitle{
+      text-align: start;
+     }
+     .postContainer .postArea .postContent .postPhoto{
+      width: var(--container-width-full);
+      min-height:12rem;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+     }
+     .postContainer .postArea .postContent .postPhoto img{
+      width: var(--container-width-full);
+      max-height: 500px;
+     }
+     .postContainer .postArea .postContent .postButtons{
+      display:flex;
+      width: var(--container-width-full);
+      gap:var(--div-inside-gap-second);
+
+     }
+
+     .postContainer .postArea .postContent .postButtons .btnPost{
+      width:23%;
+     
+     }
+     .postContainer .postArea .postContent .postButtons button{
+      border:var(--btn-border-none);
+      background: var(--background-transparent);
+      width: var(--container-width-full);
+      height:3rem;
+      display:flex;
+      gap:var(--div-inside-gap);
+      align-items: center;
+      justify-content:center;
+      cursor:pointer;
+     }
+     .postContainer .postArea .postContent .postButtons button i,
+     .postContainer .postArea .postContent .postButtons button span{
+      font-size:var(--font-size-large);
+      color:var(--standart-span-color);
+     }
+     .postContainer .postArea .postContent .postButtons button:hover{
+      background:var(--button-hover-color)
+     }
+    .postContainer .borderClass{
+      border-bottom: var(--border-postSorting-item);
+      width: 88%;
+     }
+     .postContainer .sortingPost{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap:var(--div-inside-gap);
+      border:var(--btn-border-none);
+      outline:var(--btn-border-none);
+      cursor:pointer;
+      width: var(--container-width-full);
+      background: var(--background-transparent);
+    }
+  
+  .postContainer .sortingContainer{
+    width: var(--container-width-full);
+  }
+  .postContainer .sortingPost span{
+    font-size:var(--font-size-xs);
+    white-space:nowrap;
+    color:var(--standart-span-color)
+  }
+  .postContainer .sortingPost .sortingBtn{
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+    gap:var(--div-inside-gap);
+  }
+  .postContainer .sortingPost .sortingBtn span{
+    color: var(--color-black);
+    font-weight:600
+  }
+  .postContainer .newPost{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width: var(--container-width-insideContainer);
+    gap:0.7rem;
+    background: var(--standart-container-background);
+    border:var(--container-border);
+    border-radius: 10px;
+    padding:1rem;
+  }
+  .postContainer .newPost .newPostHeaderBtn{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    width: var(--container-width-insideContainer-second);
+    gap:var(--div-inside-gap-second);
+  }
+  .postContainer .newPost .newPostHeaderBtn button{
+    width: var(--container-width-full);
+    border-radius:30px;
+    border:var(--container-border);
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    cursor:pointer;
+    background:var(--standart-container-background);
+
+  }
+  .postContainer .newPost .newPostHeaderBtn button:hover{
+    background: var(--button-hover-color);
+  }
+  
+  .postContainer .newPost .newPostHeaderBtn button span{
+    color: var(--liveDiv-ul-item);
+    font-weight: 500;
+    font-size:var(--font-size-small);
+
+  }
+  .postContainer .newPost .newPostHeaderBtn a img{
+     width: var(--img-size);
+     height:  var(--img-size);;
+     border-radius:100%;
+
+  }
+  .postContainer .newPost .newPostButtons{
+    display:flex;
+    width: var(--container-width-insideContainer);
+    justify-content: space-between;
+  }
+  .postContainer .newPost .newPostButtons button{
+    width:20%;
+    height:50px;
+    cursor:pointer;
+    border:var(--btn-border-none);
+    background: var(--background-transparent);
+    gap:var(--div-inside-gap);
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:center;
+
+  }
+  .postContainer .newPost .newPostButtons button:hover{
+    background: var(--button-hover-color);
+  }
+  .postContainer .newPost .newPostButtons button:nth-child(1) i{
+     color: var(--button-blue-color);
+  }
+  .postContainer .newPost .newPostButtons button:nth-child(2) i{
+    color: #5F9B41;
+  }
+  .postContainer .newPost .newPostButtons button:nth-child(3) i{
+    color: #C37D16;
+  }
+  .postContainer .newPost .newPostButtons button:nth-child(4) i{
+    color:#E16745;
+  }
+  .postContainer .newPost .newPostButtons button i{
+    font-size:var(--font-size-large);
+  }
+
+  .postContainer .newPost .newPostButtons button span{
+    font-size:var(--font-size-medium);
+    font-weight:600;
+    color:var(--standart-span-color);
+  }
+  .sortingByWho{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 27.5%;
+    top: 11rem;
+    background: var(--standart-container-background);
+    width: 11rem;
+    gap:var(--div-inside-gap);
+    border: var(--container-border);
+    border-radius: 5px 0px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+   
+  }
+  .sortingByWho button{
+    border:var(--btn-border-none);
+    height:25px;
+    background: var(--background-transparent);
+    cursor:pointer;
+    display:flex;
+    justify-content:flex-start;
+    padding-left:1rem;
+    align-items:center;
+
+  }
+  .sortingByWho button:hover{
+    background:var(--item-hover-color);
+  }
+
+
+
+  @media(min-width:900px) and (max-width:1200px){
+    
+  }
