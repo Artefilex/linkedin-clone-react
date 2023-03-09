@@ -19,7 +19,7 @@
   --div-inside-gap: 0.5rem;
   --div-inside-gap-second: 1rem;
   --button-inside-gap: 0.2rem;
-
+  --font-size-xxs:10px;
   --font-size-xs: 12px;
   --font-size-small: 14px;
   --font-size-medium: 16px;
@@ -34,6 +34,10 @@
    --container-width-insideContainer: 95%;
    --container-width-insideContainer-second: 90%;
    --container-width-insideContainer-content: 80%;
+   --transition: 0.5s;
+}
+h6{
+  white-space: nowrap;
 }
 .container{
   display:flex;
@@ -304,6 +308,9 @@
        color: var(--button-first-color);
        background: var(--background-transparent);
        cursor:pointer;
+       position: relative;
+       top: var(--div-inside-gap-second);
+       font-size: var(--font-size-large);
 
   }
 
@@ -315,7 +322,7 @@
     display: flex;
     flex-direction:column;
     align-items:center;
-    gap: var(--button-inside-gap);
+    gap: var(--div-inside-gap-second);
   }
 
    .liveFollower{
@@ -649,6 +656,7 @@
       position:relative;
       top:1rem;
       margin-bottom:1rem;
+      align-items: center;
       
      }
      .postContainer .postArea .profileInfo .leftDiv{
@@ -672,6 +680,7 @@
       }
       .postContainer .postArea .profileInfo  .leftInsideDiv span{
         color:var(--standart-span-color);
+        text-align: start;
       }
       .postContainer .postArea .profileInfo .userBtnForGoToUser{
         background: var(--background-transparent);
@@ -688,6 +697,11 @@
         outline:var(--btn-border-none);
         border:var(--btn-border-none);
         cursor:pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: var(--button-inside-gap);
       }
       
      
@@ -695,6 +709,7 @@
       .postContainer .postArea .profileInfo .rightDiv button span{
         font-size:var(--font-size-medium);
          color: var(--button-blue-color);
+         white-space: nowrap;
       }
      .postContainer .postArea .postContent{
       display:flex;
@@ -871,6 +886,7 @@
     font-size:var(--font-size-medium);
     font-weight:600;
     color:var(--standart-span-color);
+    white-space: nowrap;
   }
   .sortingByWho{
     display: flex;
@@ -884,6 +900,7 @@
     border: var(--container-border);
     border-radius: 5px 0px 10px 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    z-index: 1;
    
   }
   .sortingByWho button{
@@ -900,9 +917,292 @@
   .sortingByWho button:hover{
     background:var(--item-hover-color);
   }
+  .buttonMores button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--div-inside-gap);
+    border: var(--btn-border-none);
+  }
+  .buttonMores{
+    display: none;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    width: var(--container-width-insideContainer-content);
+  }
 
+  .postContainer .postArea .postContent .postButtons button i, 
+    .postContainer .postArea .postContent .postButtons button span{
+      white-space: nowrap;
+    }
+  @media (min-width:300px) and (max-width:450px){
+    .postContainer .newPost{
+      width: var(--container-width-insideContainer-second);
+    }
+    .postContainer .newPost .newPostButtons button i,
+    .postContainer .newPost .newPostButtons button span{
+      font-size:var(--font-size-xs);
+    }
+    .postContainer .postArea .postContent .postButtons{
+      gap: var(--div-inside-gap)
+    }
+  
+    .postContainer .postArea .postContent .postButtons button i, 
+    .postContainer .postArea .postContent .postButtons button span{
+        font-size: var(--font-size-xs);
+    }
+    .postContainer .postArea .profileInfo .rightDiv button span{
+      display:none;
+    }
+    .sortingByWho{
+      right: 5.5%;
+      top: 63rem;
+    }
+    
+  }
+  @media (min-width:450px) and (max-width:600px){
+    .sortingByWho{
+      right: 5.5%;
+      top: 63rem;
+    }
+    .postContainer .newPost .newPostButtons button span{
+      font-size: var(--font-size-small)
+    }
+    .postContainer .postArea .postContent .postButtons button i, 
+    .postContainer .postArea .postContent .postButtons button span{
+        font-size: var(--font-size-xs);
+    }
+    .postContainer .postArea .profileInfo .rightDiv button span{
+      display:none;
+    }
+   }
 
+ @media (min-width:600px) and (max-width:620px){
+  .postContainer .postArea .postContent .postButtons button i, 
+    .postContainer .postArea .postContent .postButtons button span{
+        font-size: var(--font-size-small);
+    }
+    .postContainer .newPost{
+      width: var(--container-width-insideContainer-second);
+    }
+ }
 
-  @media(min-width:900px) and (max-width:1200px){
+  @media (max-width:1000px){
+    .buttonMores{
+      display: flex;
+    }
+    .postDiv{
+      width: var(--container-width-full);
+      display: flex;
+      align-items: center;
+  
+    }
+    .downGroup{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .postDiv .postContainer{
+      width: var(--container-width-insideContainer-second);
+    }
+    .container{
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+    }
+    .profileContainer{
+      width: 100%;
+      align-items: center;
+    }
+    .profileContent{
+      width: 90%;
+    }
+    .profileGroup{
+      width: var(--container-width-insideContainer-second);
+    }
+    .liveDiv{
+      display: none;
+    }
+  }
+
+  @media  (min-width:1000px) and (max-width:1400px){
+    .profileContent{
+      height: 22.5rem;
+    }
+    .postDiv{
+      width:40%;
+      transition: var(--transition);
+    }
+    .liveDiv{
+      width: 27%;
+      transition: var(--transition);
+    }
+    .profileContainer{
+      width: 24%;
+      transition: var(--transition);
+    }
+    .profileInfo .profileInfoDiv {
+      gap:var(--div-inside-gap-second)
+  }
+    .profileContent{
+      width: var(--container-width-insideContainer);
+    }
+    .profileGroup{
+      width: var(--container-width-insideContainer);
+    }
+    .profileAdd a,
+    .profileAdd h6{
+      padding-left: 0rem;
+    }
+    .postContainer .postArea .postContent .postButtons .btnPost {
+      white-space: nowrap;
+  }
+  .postContainer .postArea .profileInfo .rightDiv button span{
+    display:none;
+  }
+  .postContainer .postArea .profileInfo .rightDiv button i{
+    font-size:var(--font-size-large) ;
+  }
+  .postContainer .postArea .postContent .postButtons button i,
+  .postContainer .postArea .postContent .postButtons button span{
+   font-size:var(--font-size-medium);
+   
+  }
+  }
+  @media (min-width:1400px) and (max-width:1700px){
+    .profileContent{
+      height: 22.5rem;
+    }
+    .postDiv{
+      width:40%;
+      transition: var(--transition);
+    }
+    .liveDiv{
+      width: 20%;
+      transition: var(--transition);
+    }
+    .profileContainer{
+      width: 20%;
+      transition: var(--transition);
+    }
+    .profileInfo .profileInfoDiv {
+      gap:var(--div-inside-gap-second)
+  }
+    .profileContent{
+      width: var(--container-width-insideContainer);
+    }
+    .profileGroup{
+      width: var(--container-width-insideContainer);
+    }
+    .profileAdd a,
+    .profileAdd h6{
+      padding-left: 0rem;
+    }
+    .postContainer .postArea .postContent .postButtons .btnPost {
+      white-space: nowrap;
+  }
+
+  }
+
+ 
+  @media (min-width: 1700px) and(max-width:2000px) {
+
+    .profileContent{
+      height: 22.5rem;
+    }
+    .postDiv{
+      width:40%;
+    }
+    .liveDiv{
+      width: 20%;
+    }
+    .profileContainer{
+      width: 18%;
+    }
+    .profileInfo .profileInfoDiv {
+      gap:var(--div-inside-gap-second)
+  }
+    .profileContent{
+      width: var(--container-width-insideContainer);
+    }
+    .profileGroup{
+      width: var(--container-width-insideContainer);
+    }
+    .profileAdd a,
+    .profileAdd h6{
+      padding-left: 0rem;
+    }
+    .postContainer .postArea .postContent .postButtons .btnPost {
+      white-space: nowrap;
+  }
+  .profileGroup .profileLatestContent,
+  .profileGroup .profileGroupContent{
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+    width: var(--container-width-insideContainer);
+    position: relative;
+    left: 10%;
+  }
+  .profileGroup .profileActivityContent{
+    width: var(--container-width-insideContainer-content);
+    padding:0rem 10%;
+  }
+  .profileGroup .profileFollowingHastagContent{
+    padding: 0 10%;
+  }
+    
+  }
+
+  @media (min-width:2000px) {
+
+    .profileContent{
+      height: 22.5rem;
+    }
+    .postDiv{
+      width:40rem;
+      transition: var(--transition);
+    }
+    .liveDiv{
+      width: 20rem;
+      transition: var(--transition);
+    }
+    .profileContainer{
+      width: 20rem;
+      transition: var(--transition);
+    }
+    .profileInfo .profileInfoDiv {
+      gap:var(--div-inside-gap-second)
+  }
+    .profileContent{
+      width: var(--container-width-insideContainer);
+    }
+    .profileGroup{
+      width: var(--container-width-insideContainer);
+    }
+    .profileAdd a,
+    .profileAdd h6{
+      padding-left: 0rem;
+    }
+    .postContainer .postArea .postContent .postButtons .btnPost {
+      white-space: nowrap;
+  }
+  .profileGroup .profileLatestContent,
+  .profileGroup .profileGroupContent{
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+    width: var(--container-width-insideContainer);
+    position: relative;
+    left: 10%;
+  }
+  .profileGroup .profileActivityContent{
+    width: var(--container-width-insideContainer-content);
+    padding:0rem 10%;
+  }
+  .profileGroup .profileFollowingHastagContent{
+    padding: 0 10%;
+  }
     
   }

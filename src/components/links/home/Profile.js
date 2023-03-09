@@ -1,14 +1,33 @@
-import React from 'react'
+import {useState} from 'react'
 import img from "./../../ben.jpg"
 import "./home.css"
 
 function Profile() {
+  const [isOpen,setIsOpen] = useState(false)
+ const [showBtn,setShowBtn] = useState("up")
+ const [showSpan,setShowSpan] = useState("Daha fazla göster")
+ 
+   const showMoreButton = ()=>{
 
-  console.log(window.scrollX)
+    setIsOpen(!isOpen)
+    if(isOpen){
+      document.querySelector(".downGroup").style.display= "none";
+      document.querySelector(".downItem").style.display= "none";
+       setShowBtn("down")
+      setShowSpan("Daha az göster")
+    }else{
+      document.querySelector(".downGroup").style.display= "flex";
+      document.querySelector(".downItem").style.display= "block";
+      setShowBtn("up")
+       setShowSpan("Daha fazla göster")
+    }
+  
+   }
+
   return (
     <div className="profileContainer">
 
-
+ 
       <div className="profileContent">
         < div className="headerProfile">
           <div className="imgPosition">
@@ -20,6 +39,7 @@ function Profile() {
               Frontend Developer Candidate</span>
 
           </div>
+          <div className='downItem'>
           <div className="borderDiv"></div>
           <div className="profileInfo">
             <div className="profileInfoDiv"> <h6> Kişi profilinizi görüntüledi</h6>  <span>44</span> </div>
@@ -41,8 +61,10 @@ function Profile() {
             </div>
           </div>
         </div>
+        </div>
       </div>
-      <div className="profileGroup">
+      <div className='downGroup'>
+      <div className="profileGroup" >
         <div className="profileLatestContent">
           <h6>En yeni </h6>
           <ul>
@@ -67,7 +89,13 @@ function Profile() {
         <div className="profileFollowingHastagContent"> <a href={img}> <h6>Takip edilen Hastagler</h6></a> </div>
         <div className="profileMoreContent"> <button> Daha fazla keşfet</button> </div>
       </div>
+      </div>
 
+      <div className='buttonMores'><button onClick={showMoreButton}> 
+       
+         <span>{showSpan} </span> <i className={`fa-solid fa-chevron-${showBtn}`}></i>
+        
+         </button> </div>
     </div>
   )
 }

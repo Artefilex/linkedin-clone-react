@@ -17,19 +17,26 @@ function Sidebar() {
                        .sideBarContainerJsx{
                         z-index: 1
                        }
+                       .fa-xmark{
+                        cursor: pointer;
+                        }
+                        .sidebarLi span{  
+                          width: 17rem !important;        
+                          justify-content: flex-start !important;
+                        }
+                        .sidebarSpan{
+                            color:rgb(43, 43, 43) !important;
+                            font-weight: 700 !important;
+                        }
+                        .sidebarSpan:hover{
+                          position: relative;
+                          border-bottom: 1px solid black;  
+                        }
                        `
                     } </style>
        <div className={Style.sidebarContainerHeader}>
            <h3>İş</h3> 
           <i onClick={handleClose} className="fa-solid fa-xmark"></i>
-          
-          <style jsx>{
-                       `
-                       .fa-xmark{
-                       cursor: pointer;
-                       }
-                       `
-                    } </style>
        </div>
              
         <div className={Style.sideBarContainerFirst}>
@@ -58,26 +65,6 @@ function Sidebar() {
                     <li className='sidebarLi'><span className='sidebarSpan'>Pazarlama Çözümleri</span> <span><small>İşinizi büyütün ve yeni müşteriler edinin</small></span></li>
                     <li className='sidebarLi'><span className='sidebarSpan'> Eğitim Çözümleri </span> <span><small>Organizasyonunuzda yetenekler geliştirin</small></span></li> 
                 </ul>
-                <style jsx>
-                  {
-                    `
-                    .sidebarLi span{  
-                      width: 17rem !important;        
-                      justify-content: flex-start !important;
-                    }
-                    .sidebarSpan{
-                        color:rgb(43, 43, 43) !important;
-                        font-weight: 700 !important;
-                    }
-                    .sidebarSpan:hover{
-                      position: relative;
-                      border-bottom: 1px solid black;  
-                    }
-                   
-                    
-                    `
-                  }
-                </style>
             </div>
         </div>
       </div>
