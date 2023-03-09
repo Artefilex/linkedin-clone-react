@@ -9,7 +9,7 @@ function Profile() {
         .profileContainer{ 
           display:flex;
           flex-direction:column;
-          width:20%; 
+          width:15%; 
          border-radius:15px;
           position:relative;
           gap:1rem;
