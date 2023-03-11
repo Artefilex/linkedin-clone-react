@@ -3,14 +3,19 @@ import Live from './Live'
 import Post from './Post'
 import Profile from './Profile'
 import "./home.css"
+import {ButtonProvider} from '../../../context/ButtonContenx'
 function Home() {
-  
-  return (   
+
+  return (
+
     <div className="container">
-      <Profile/>
-      <Post/>
-      <Live/>
+      <ButtonProvider>
+       <Profile/>
+        <Post />
+        <Live />
+      </ButtonProvider>
     </div>
+
   )
 }
 

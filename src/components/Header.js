@@ -36,7 +36,6 @@ function Header() {
 
   const  handleInput = (e) =>{
       e.currentTarget.nextElementSibling.style.display = `flex `
-    console.log();
       setHideDivs(true);
       if(hideDivs === false  &&  screenWidth <= 900 ){
         e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.style.width="90%"

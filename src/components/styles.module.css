@@ -340,6 +340,7 @@ border: none;
    left: 0;
    display: flex;
    justify-content: center;
+   z-index: 1;
 }
 .linksBottom nav{
     padding: 1rem;
@@ -1054,6 +1055,7 @@ border: none;
     }
     .linksBottom nav{
         left: -20px;
+        z-index: 1;
     }
     .linksBottom nav ul{
         gap: 3rem !important

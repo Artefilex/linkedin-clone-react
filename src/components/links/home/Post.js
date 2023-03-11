@@ -2,19 +2,28 @@ import { useState, } from 'react'
 import postJson from "./post.json"
 import userImg from "./../../ben.jpg"
 import "./home.css"
+// import {useChangeButton} from '../../../context/ButtonContenx'
 function Post() {
-
   const [showSorting, setShowSorting] = useState(false);
+  // const {down} = useChangeButton()
+  
   const handleShowSort = () => {
     setShowSorting(!showSorting)
-    if (showSorting) {
+    if ( showSorting ) {
       document.querySelector(".sortingByWho").style.display = "flex"
+       
     } else {
-      document.querySelector(".sortingByWho").style.display = "none"
+      document.querySelector(".sortingByWho").style.display = "none"  
+     
     }
+  
   }
-
-
+//   if(down === "down"){
+//     document.querySelector(".sortingByWhoId").style.background="black";
+//  }else{
+//    document.querySelector(".sortingByWhoId").style.background="white";
+//  }
+ 
   const handleWhich = (e) => {
     if (e.currentTarget.id === "first") {
       document.querySelector(`#${e.currentTarget.id}`).style.borderLeft = "2px solid green"
@@ -30,15 +39,16 @@ function Post() {
       document.querySelector(`#second`).style.borderLeft = "none"
       document.getElementById("textContent").textContent = "En Önemli"
     }
-
+  
 
 
 
   }
 
+
   return (
     <div className='postDiv'>
-
+      
       <div className='postContainer'>
         <div className='newPost'>
           <div className='newPostHeaderBtn'>
@@ -61,7 +71,7 @@ function Post() {
               <span id="textContent">En Önemli</span>
               <i className="fa-solid fa-caret-down"></i> </div>
           </button>
-          <div className='sortingByWho' style={{ display: "none" }}>
+          <div  className='sortingByWho' style={{ display: "none" }}>
             <button onClick={handleWhich} id="first"><span>En Önemli</span></button>
             <button onClick={handleWhich} id="second"><span>En Yeni </span></button>
           </div>
