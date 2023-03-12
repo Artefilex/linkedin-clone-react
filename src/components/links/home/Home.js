@@ -11,8 +11,8 @@ function Home() {
     <div className="container">
       <ButtonProvider>
        <Profile/>
-        <Post />
-        <Live />
+        <Post/>
+        <Live/>
       </ButtonProvider>
     </div>
 

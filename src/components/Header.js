@@ -32,38 +32,40 @@ function Header() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+   
 
 
   const  handleInput = (e) =>{
-      e.currentTarget.nextElementSibling.style.display = `flex `
-      setHideDivs(true);
-      if(hideDivs === false  &&  screenWidth <= 900 ){
-        e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.style.width="90%"
-        e.currentTarget.parentElement.parentElement.parentElement.style.width="90%"
-        e.currentTarget.parentElement.style.width="90%"
-        e.currentTarget.nextElementSibling.style.width= "100%"
-        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.style.display= "none"
-        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.style.display= "none"
-        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
-        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
-        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
-        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"   
-        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
-        e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"    
-     
-      }
-    else if (screenWidth > 900  )  {
-      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.style.display= "flex"
-      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.style.display= "flex"
-      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
-      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
-      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
-      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"   
-      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
-      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"    
-      document.getElementById("bottomNav").style.background="rgb(243, 242, 239)"
+    e.currentTarget.nextElementSibling.style.display = `flex `
+    setHideDivs(true);
+    if(hideDivs === false  &&  screenWidth <= 900 ){
+      e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.style.width="90%"
+      e.currentTarget.parentElement.parentElement.parentElement.style.width="90%"
+      e.currentTarget.parentElement.style.width="90%"
+      e.currentTarget.nextElementSibling.style.width= "100%"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.style.display= "none"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.style.display= "none"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"   
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"
+      e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"    
+   
     }
+  else if (screenWidth >= 900  )  {
+    e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.style.display= "flex"
+    e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.style.display= "flex"
+    e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
+    e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
+    e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
+    e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"   
+    e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
+    e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"    
+   
   }
+}
+  
  
   const showSidebar = () =>{
     setOpenSideBar(!openSideBar)
@@ -90,13 +92,13 @@ function Header() {
     }else{
       setIsOpen(false)
       document.body.style.background = "rgba(61, 61, 60, 0.76)"
-        if(openSideBar === true){
+        if(openSideBar){
           document.body.style.background = "rgb(243, 242, 239)"
-          document.querySelector(".container").style.opacity= "1";
+          // document.querySelector(".container").style.opacity= "1";
         }
         else{
           document.body.style.background = "rgba(61, 61, 60, 0.76)"
-          document.querySelector(".container").style.opacity= "0.5";
+          // document.querySelector(".container").style.opacity= "0.5";
         } 
     }
   }
@@ -105,6 +107,7 @@ function Header() {
     <>
       <div className={styles.container}>
         <Router>
+          <div className={styles.position}>
           <div className={styles.links} >
             <img src={Logo} alt="logo" className={styles.logo} />
             <nav  >
@@ -130,17 +133,16 @@ function Header() {
                 </NavLink>
                 </li>
                 <li>
-                  <NavLink to="network"  className={({ isActive }) => isActive ? styles.active : undefined}    >
+                  <NavLink to="networks"  className={({ isActive }) => isActive ? styles.active : undefined}    >
                     <div className={styles.iconDiv}  >
                       <i className="fa-solid fa-user-group  fa-xl"></i>
                       <div className={styles.iconSpan}>
-                        <span  >Ağım</span>
-
+                        <span >Ağım</span>
                       </div>
                     </div>
                   </NavLink>
                 </li>
-                <li  >
+                <li>
                 <NavLink to="jobadvertisement" className={({ isActive }) => isActive ? styles.active  : undefined }   >
                 <div className={styles.iconDiv}>
                   <i className="fa-solid fa-briefcase  fa-xl"></i>
@@ -177,22 +179,15 @@ function Header() {
                 <div className={styles.userDivs}>
                   <img src={img} className={styles.userImg} alt="user-img" />
                   <button className={`${styles.userDownBtn} userDownBtnJsx `} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
-                  <div className={`${styles.altLink} altLink`}>
-                    <style jsx>{
-                       `
-                       .altLink{
-                        z-index: 1
-                       }
-                       `
-                    } </style>
+                  <div className={`${styles.altLink} altLink`} style={{zIndex: 1}}>
+                  
                    
                   </div>
                 </div>
                 </NavLink>
                 </li>
                 <li className={styles.navbarSecondItem} onClick={(e)=> openWhichLi(e.currentTarget)} id="2"  >
-                <NavLink   
-                onClick={showSidebar} className={styles.showSidebar} >
+                <NavLink  onClick={showSidebar} className={styles.showSidebar} >
                 <div className={styles.iconDiv}>
                   <i className="fa-solid fa-list-ul  fa-xl"></i>
                   <div className={styles.iconSpan}>
@@ -200,7 +195,7 @@ function Header() {
 
                   </div>
                 </div>
-                {/* { openSideBar &&  <Sidebar/>} */}
+            
 
                 </NavLink>
                 </li>
@@ -240,14 +235,14 @@ function Header() {
                                   </NavLink>
                                 </li>
                                 <li className={styles.navbarThreeItem}   onClick={(e)=>openWhichLi( e.currentTarget)} id="1" >
-                                  <NavLink to="user" onClick={toggleSidebar} >
+                                  <a href="user" onClick={toggleSidebar} >
                                     <div className={styles.userDiv}>
                                       <img src={img} className={styles.userImg} alt="user-img" />
                                       <button className={styles.userDownBtn} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
                                       <div className={styles.altLink}>
                                       </div>
                                     </div>
-                                  </NavLink>
+                                  </a>
                                 </li>                   
                                 <li className={styles.navbarSecondItem} onClick={(e)=> openWhichLi(e.currentTarget)} id="2"  >
                                     <NavLink   to="job" 
@@ -274,11 +269,11 @@ function Header() {
               </ul>     
             </nav>
             {
-                      isOpen && <UserInf  />
+                isOpen && <UserInf  />
              }
             { openSideBar &&  <Sidebar/>}
           {
-            hideDivs && (
+         hideDivs &&  (
               <>
                 <div className={styles.linksBottom} id="bottomNav">
                 <nav >
@@ -295,9 +290,9 @@ function Header() {
                     </NavLink>
                     </li>
                     <li>
-                      <NavLink to="network" className={({ isActive }) => isActive ? styles.active : undefined}    >
+                      <NavLink to="networks" className={({ isActive }) => isActive ? styles.active : undefined}    >
                         <div className={styles.iconDiv}  >
-                          <i className="fa-solid fa-user-group  fa-xl"></i>
+                          <i className="fa-solid fa-user-group fa-xl"></i>
                           <div className={styles.iconSpan}>
                             <span  >Ağım</span>
 
@@ -316,7 +311,7 @@ function Header() {
                     </div>
                     </NavLink>
                     </li>
-                    <li  className={styles.navbarLastItem}  data-visible={true} >
+                    <li  className={styles.navbarLastItem}   >
                     <NavLink to="comment" className={({ isActive }) => isActive ? styles.active : undefined}   >
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-comment-dots  fa-xl"></i>
@@ -327,7 +322,7 @@ function Header() {
                     </div>
                     </NavLink>
                     </li>
-                    <li  className={styles.navbarFourItem} data-visible={true} >
+                    <li  className={styles.navbarFourItem}  >
                     <NavLink to="notifications" className={({ isActive }) => isActive ? styles.active : undefined} >
                     <div className={styles.iconDiv}>
                       <i className="fa-solid fa-bell  fa-xl"></i>
@@ -337,8 +332,8 @@ function Header() {
                     </div>
                     </NavLink>
                     </li>      
-                    <li   className={styles.navbarThreeItem} onClick={(e)=>openWhichLi( e.currentTarget)} id="1" data-visible={true}  >
-                    <NavLink  to="user" onClick={toggleSidebar} >
+                    <li   className={styles.navbarThreeItem} onClick={(e)=>openWhichLi( e.currentTarget)} id="1"   >
+                    <a  href="user" onClick={toggleSidebar} >
                     <div className={styles.userDivs}>
                       <img src={img} className={styles.userImg} alt="user-img" />
                       <button className={styles.userDownBtn} ><span>Ben</span> <i className="fa-solid fa-sort-down"></i> </button>
@@ -348,9 +343,9 @@ function Header() {
                         }
                       </div>
                     </div>
-                    </NavLink>
+                    </a>
                     </li>
-                    <li className={styles.navbarSecondItem} onClick={(e)=> openWhichLi(e.currentTarget)} id="2"  data-visible={true} >
+                    <li className={styles.navbarSecondItem} onClick={(e)=> openWhichLi(e.currentTarget)} id="2"  >
                     <NavLink   to="job" 
                     onClick={showSidebar} className={styles.showSidebar} >
                     <div className={styles.iconDiv}>
@@ -363,8 +358,8 @@ function Header() {
 
                     </NavLink>
                     </li>
-                    <li className={styles.navbarFirstItem}  data-visible={true}>
-                    <NavLink to="fastJob"   >
+                    <li className={styles.navbarFirstItem} >
+                    <NavLink to="fastJob">
                     <span> Premiumu <br /> ücretsiz deneyin.</span>
                     </NavLink>
                     </li>
@@ -375,13 +370,19 @@ function Header() {
             )
           }
           </div>
+             
+
+
+
+
+          </div>
           <Routes>
-            <Route path='/'  element={<Home  />}> </Route>
-            <Route path="/network" element={<Network />} > </Route>
-            <Route path="/jobadvertisement" element={<Advertisment />}></Route>
-            <Route path="/comment" element={<Comment />}></Route>
-            <Route path="/notifications" element={<Notifications />}> </Route>
-            <Route path="/fastjob" element={<Fastjob />}> </Route>  
+            <Route path='/'  element={<Home/>}> </Route>
+            <Route path="/networks" element={<Network/>} ></Route>
+            <Route path="/jobadvertisement" element={<Advertisment/>}></Route>
+            <Route path="/comment" element={<Comment/>}></Route>
+            <Route path="/notifications" element={<Notifications/>}></Route>
+            <Route path="/fastjob" element={<Fastjob/>}></Route>  
           </Routes>
         </Router>
       </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import PropTypes from 'prop-types';
 import img from "./../../ben.jpg"
 import "./home.css"
 import { useChangeButton } from '../../../context/ButtonContenx'
@@ -6,45 +7,63 @@ import { useChangeButton } from '../../../context/ButtonContenx'
 function Profile() {
   const { setDown } = useChangeButton()
   const [isOpen, setIsOpen] = useState(false)
-  const [showBtn, setShowBtn] = useState("up")
+  const [showBtn, setShowBtn] = useState("down")
   const [showSpan, setShowSpan] = useState("Daha fazla göster")
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
 
   useEffect(() => {
-
+    
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
-      if (screenWidth <= 900) {
+      if (screenWidth <= 900 && document.querySelector(".buttonMores")){
+       setTimeout(()=>{
+        document.querySelector(".buttonMores").style.display = "flex";
         document.querySelector(".downGroup").style.display = "none";
         document.querySelector(".downItem").style.display = "none";
         document.querySelector(".profileContent").style.height = "10rem";
         document.querySelector(".headerProfile").style.background = " linear-gradient( to top, #FFFFFF 0px,  #FFFFFD 30px,  #A0B4B7 30px, #A0B4B7 100px)";
-        document.querySelector(".buttonMores").style.display = "flex";
+       },50)
       }
-      else {
-        document.querySelector(".downGroup").style.display = "flex";
+      else if( screenWidth >= 900 && document.querySelector(".buttonMores") ){
+       setTimeout(()=>{
         document.querySelector(".buttonMores").style.display = "none";
+        document.querySelector(".downGroup").style.display = "flex";
+        document.querySelector(".downGroup").style.flexDirection = "column";
+        document.querySelector(".downGroup").style.alignItems = "center";
+        document.querySelector(".downItem").style.display = "flex";
+        document.querySelector(".profileContent").style.height = "22.5rem";
+        document.querySelector(".headerProfile").style.background = "linear-gradient( to top, #FFFFFF 0px,  #FFFFFF 220px,  #A0B4B7 10px, #A0B4B7 100px)";
+       
+       },50)
       }
+
+      //  else{
+      //      setDown("up")
+      //   document.querySelector(".buttonMores").style.display = "flex";
+      //  }
     };
 
   }, [screenWidth]);
+
+
+ 
   const showMoreButton = () => {
     setIsOpen(!isOpen)
     if (isOpen) {
-      document.querySelector(".downGroup").style.display = "none";
-      document.querySelector(".downItem").style.display = "none";
+       document.querySelector(".downGroup").style.display = "none";
+       document.querySelector(".downItem").style.display = "none";
       setShowBtn("down")
       setShowSpan("Daha Fazla göster")
-      document.querySelector(".profileContent").style.height = "10rem"
-      document.querySelector(".headerProfile").style.background = " linear-gradient( to top, #FFFFFF 0px,  #FFFFFD 30px,  #A0B4B7 30px, #A0B4B7 100px)";
+        document.querySelector(".profileContent").style.height = "10rem"
+       document.querySelector(".headerProfile").style.background = " linear-gradient( to top, #FFFFFF 0px,  #FFFFFD 30px,  #A0B4B7 30px, #A0B4B7 100px)";
     } else {
-      document.querySelector(".downGroup").style.display = "flex";
-      document.querySelector(".downItem").style.display = "block";
+       document.querySelector(".downGroup").style.display = "flex";
+       document.querySelector(".downItem").style.display = "flex";
       document.querySelector(".profileContent").style.height = "22.5rem";
       document.querySelector(".headerProfile").style.background = "linear-gradient( to top, #FFFFFF 0px,  #FFFFFF 220px,  #A0B4B7 10px, #A0B4B7 100px)";
       setShowBtn("up")
@@ -53,13 +72,29 @@ function Profile() {
     }
 
   }
-  useEffect(() => {
-    setDown(showBtn)
+  useEffect(()=>{
+     setDown(showBtn)
   })
+ 
+  
+
+  useEffect(()=>{
+    if (screenWidth <= 900 && showBtn === "down") {
+     
+    }
+    else {
+    }
+  },[screenWidth,showBtn])
+
+
+
+
+
+
   return (
     <div className="profileContainer">
       <div className="profileContent">
-        < div className="headerProfile">
+        <div className="headerProfile">
           <div className="imgPosition">
             <button> <img src={img} alt="" /></button>
           </div>
@@ -93,6 +128,7 @@ function Profile() {
           </div>
         </div>
       </div>
+
       <div className='downGroup'>
         <div className="profileGroup" >
           <div className="profileLatestContent">
@@ -121,13 +157,20 @@ function Profile() {
         </div>
       </div>
 
-      <div className='buttonMores'><button onClick={showMoreButton}>
-
-        <span>{showSpan} </span> <i className={`fa-solid fa-chevron-${showBtn}`}></i>
-
-      </button> </div>
+      <div className='buttonMores'>
+        <button onClick={showMoreButton}>
+           <span>{showSpan} </span>
+           <i className={`fa-solid fa-chevron-${showBtn}`}></i>
+         </button>
+       </div>
     </div>
   )
 }
+
+Profile.propTypes = {
+  showBtn: PropTypes.string,
+  screenWidth:PropTypes.number
+}
+
 
 export default Profile

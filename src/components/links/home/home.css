@@ -55,6 +55,7 @@ h6{
     border-radius:15px;
     position:relative;
     gap:var(--div-inside-gap-second);
+    align-items: center;
    
   }
   .profileContent{
@@ -314,7 +315,16 @@ h6{
        font-size: var(--font-size-large);
 
   }
-
+ .profileContainer  .downItem,
+ .profileContainer  .downGroup{
+  width: var(--container-width-full);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profileContainer  .downGroup{
+  justify-content: center;
+}
   /* LİVE */
 
 
@@ -809,7 +819,7 @@ h6{
     background: var(--standart-container-background);
     border:var(--container-border);
     border-radius: 10px;
-    padding:1rem;
+    padding:0.5rem;
   }
   .postContainer .newPost .newPostHeaderBtn{
     display:flex;
@@ -884,13 +894,12 @@ h6{
   }
 
   .postContainer .newPost .newPostButtons button span{
-    font-size:var(--font-size-medium);
+    font-size:var(--font-size-small);
     font-weight:600;
     color:var(--standart-span-color);
     white-space: nowrap;
   }
   .sortingByWho{
-    display: flex;
     flex-direction: column;
     position: absolute;
     right: 27.5%;
@@ -999,11 +1008,7 @@ h6{
       align-items: center;
   
     }
-    .downGroup{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
+   
     .postDiv .postContainer{
       width: var(--container-width-insideContainer-second);
     }
@@ -1032,7 +1037,7 @@ h6{
       height: 22.5rem;
     }
     .postDiv{
-      width:40%;
+      width:45%;
       transition: var(--transition);
     }
     .liveDiv{

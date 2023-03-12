@@ -1,28 +1,39 @@
-import { useState, } from 'react'
+import { useEffect, useState, } from 'react'
 import postJson from "./post.json"
 import userImg from "./../../ben.jpg"
 import "./home.css"
-// import {useChangeButton} from '../../../context/ButtonContenx'
+ import {useChangeButton} from '../../../context/ButtonContenx'
 function Post() {
   const [showSorting, setShowSorting] = useState(false);
-  // const {down} = useChangeButton()
+   const {down} = useChangeButton()
   
   const handleShowSort = () => {
     setShowSorting(!showSorting)
     if ( showSorting ) {
+     
       document.querySelector(".sortingByWho").style.display = "flex"
        
     } else {
+    
       document.querySelector(".sortingByWho").style.display = "none"  
      
     }
   
   }
-//   if(down === "down"){
-//     document.querySelector(".sortingByWhoId").style.background="black";
-//  }else{
-//    document.querySelector(".sortingByWhoId").style.background="white";
-//  }
+  useEffect(()=>{
+    console.log(down)
+    if(down === "down"){
+       setTimeout(()=>{
+        document.querySelector(".sortingByWho").style.top ="24rem"
+       },50)}
+
+
+   else{
+        setTimeout(()=>{
+          document.querySelector(".sortingByWho").style.top= "60.5rem"
+ 
+         },50)}
+    },[down,showSorting])
  
   const handleWhich = (e) => {
     if (e.currentTarget.id === "first") {
@@ -44,15 +55,13 @@ function Post() {
 
 
   }
-
-
   return (
     <div className='postDiv'>
       
       <div className='postContainer'>
         <div className='newPost'>
           <div className='newPostHeaderBtn'>
-            <a href={userImg}> <img src={userImg} alt="" /></a>
+            <a href={userImg}> <img src={ userImg} alt="" /></a>
             <button> <span>Gönderi başlat</span> </button>
           </div>
           <div className='newPostButtons'>
@@ -77,15 +86,17 @@ function Post() {
           </div>
         </div>
         {postJson.map((post, index) => (
+       
           <div key={index} className='postArea'>
+         
             <div className="postLikeUser">
               <div className='first'>
-                <img src={userImg} alt="" />
-                <h6> Barış Tunçdemir </h6>
+                <img src={ userImg} alt="" />
+                 <h6>{"Barış Tunçdemir" }</h6>
                 <span>bunu beğendi</span>
               </div>
               <div>
-                <button> <i className="fa-solid fa-ellipsis"></i></button>
+                <button > <i className="fa-solid fa-ellipsis"></i></button>
               </div>
             </div>
             <div className='profileInfo'>

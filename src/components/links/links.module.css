@@ -9,7 +9,7 @@
 
 .container{
     position: absolute;
-    margin-top: 10rem ;
+    margin-top: 13rem ;
 }
 .userInfdownDiv h4{
     color: var(--hover-span-color)
@@ -103,7 +103,7 @@
     flex-direction: column !important;
     gap: 0rem !important;
     text-align: start;
-    align-items: start;
+    align-items: flex-start;
 }
 .accountNav ul li span{
     cursor: pointer;
@@ -166,8 +166,8 @@
 }
 
 
-    @media ( min-width: 300px) and (max-width: 350px){
-    
+ @media ( min-width: 300px) and (max-width: 350px){
+        
         .userInfdownDiv{
             right: 21%;
              }
@@ -175,13 +175,14 @@
  }
  @media ( min-width: 350px) and (max-width: 420px){
     .userInfdownDiv{
-        right: 21%;
+        top: 7rem;
+        right: 10%;
          }
  }
  
  @media ( min-width: 420px) and (max-width: 450px){
     .userInfdownDiv{
-        right: 21%;
+        right: 10%;
          }
  
  }

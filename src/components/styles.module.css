@@ -5,21 +5,43 @@
     --navbar-bacground: rgb(253, 253, 253);
     --body-bacground: rgb(243, 242, 239);
     --active-link: rgb(0,0,0);
-   --standar-padding-container: 0.5rem 1rem;
-   --openside-padding-container: 1rem 2rem;
-   --margin-container: 1rem;
-   --icon-size-phone: 18px;
+    --standar-padding-container: 0.5rem 1rem;
+    --openside-padding-container: 1rem 2rem;
+    --margin-container: 1rem;
+    --icon-size-phone: 18px;
     --icon-size-large: 22px;
     --img-size-large: 40px;
     --img-size-phone: 35px;
     --img-size-phone-small: 30px;
     --user-img-phone: 20px;
+    --userImg-size:22px;
     --div-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px; 
     --trans-duration: 0.5s;
    --sidebar-icon-color: rgb(10, 113, 180);
    --sidebar-border-color: 1px solid rgb(164, 162, 162);
    --sidebar-border-for-icon : 1px solid rgb(214, 211, 211);
-  
+   --font-size-large: 14px;
+   --font-size-medium:12px;
+   --font-size-small:10px;  
+
+   --gap-zero:0;
+   --gap-sideBarContainer: 20rem;
+   --gap-bigLarge-screen: 3.5rem;
+   --gap-large-screen : 3rem;
+   --gap-lmedium-screen:2.5rem;
+   --gap-medium-screen: 2rem;
+   --gap-xmedium-screen:1.5rem;
+   --gap-xxmedium-screen:1.2rem;
+   --gap-small-screen:1rem;
+   --gap-xsmall-screen:0.5rem;
+   --gap-xxsmall-screen:0.2rem;
+   --gap-xxxsmall-screen:0.1rem;
+
+   --screen-large-size: 100%;
+   --sreeen-medium-size:95%;
+
+
+    
 }
 
 /* header icon link */
@@ -34,14 +56,25 @@ body{
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 100%;
+    width: var(--screen-large-size);
 }
+.position{
+    position: fixed;
+    z-index: 100;
+    background: var(--navbar-bacground);
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--screen-large-size)
+}
+
 .container .links{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 95%;
+    width: var(--sreeen-medium-size);
     position: relative;
     height: 5rem;
 }
@@ -49,7 +82,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 2rem;
+    gap: var(--gap-medium-screen);
     transition: var(--trans-duration);
 }
 .container .links ul li {
@@ -105,9 +138,9 @@ body{
     border-bottom: 3px solid black;
     transition:  0.2s ;
  }
- .container .links ul li .userImg{
+ .container .links ul li img{
     width: var(--img-size-large);
-    height:var(--img-size-large);
+    height: var(--img-size-large);
     border-radius: 100%;
 }
 .container .links .userDownBtn{
@@ -117,7 +150,7 @@ body{
     display: flex;
     flex-direction: row;
     cursor: pointer;
-    gap: 0.2rem;
+    gap: var(--gap-xxsmall-screen);
     background: var(--navbar-bacground) ;
     color: var(--icon-color);
     position: relative;
@@ -160,7 +193,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: var(--gap-small-screen);
     position: absolute;
     right: 1rem;
     top: 2rem;
@@ -176,8 +209,8 @@ body{
     transition: 1.5s;
 }
 .container .userDiv .userImg {
-    width: 22px !important ;
-    height: 22px !important;
+    width: var(--userImg-size);
+    height: var(--userImg-size);
 }
 /* work for sidebar */
 
@@ -193,7 +226,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--gap-xsmall-screen);
     border-radius: 10px 0px 0px 10px;
     height:100vh;
 }
@@ -201,7 +234,7 @@ body{
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20rem;
+  gap: var(--gap-sideBarContainer)
 }
 .sideBarContainer .sidebarContainerHeader i ,
 .sideBarContainer .sidebarContainerHeader h3 {
@@ -225,10 +258,9 @@ body{
     flex-direction: column;
     align-items: self-start;
     display: flex;
-    gap: 0rem;
-    width: 100%;
+    width: var(--screen-large-size);
     position: relative;
-    gap: 0.4rem;
+    gap: var(--gap-xxsmall-screen);
     right: 2rem;
 }
 .sideBarContainer .sideBarContainerSecond ul li span{
@@ -239,10 +271,9 @@ body{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 0rem;
-    width: 100%;
+    width: var(--screen-large-size);
     position: relative;
-    gap: 0.4rem;
+    gap: var(--gap-xxsmall-screen);
     right: 2rem;
     align-items: flex-start;
 }
@@ -260,6 +291,9 @@ body{
 .sideBarContainer .sideBarContainerFirst ul li{ 
     width: 3rem;  
     height: 5rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .sideBarContainer .sideBarContainerFirst ul li h6{ 
     color: var(--icon-color);
@@ -299,7 +333,7 @@ border: none;
     flex-direction: row;
     border-radius: 11px;
     margin-right: 2rem;
-   gap: 3%;
+    gap: var(--gap-xxsmall-screen);
 } 
 .container .links nav ul li .inputDiv i {
     position: relative; 
@@ -334,7 +368,7 @@ border: none;
 .linksBottom{
    position: fixed;
    bottom: 0px;
-   width: 100%;
+   width: var(--screen-large-size);
    background: var(--navbar-bacground);
    height: 4rem;
    left: 0;
@@ -345,6 +379,12 @@ border: none;
 .linksBottom nav{
     padding: 1rem;
 }
+
+
+
+
+
+
 
 @media  (max-width: 300px){
     .userDiv{
@@ -388,10 +428,10 @@ border: none;
         font-size: var(--icon-size-phone);      
     }
    .sideBarContainer .sideBarContainerFirst ul {
-        gap: 1rem !important;
+    gap: var(--gap-small-screen);
     }
    .sideBarContainer .sideBarContainerSecond ul{
-        gap: 0.1rem !important;
+    gap: var(--gap-xxxsmall-screen);
     }  
    .sideBarContainer .sideBarContainerFirst  ul li span {
         font-size: 10px;
@@ -406,8 +446,8 @@ border: none;
         display: flex;
     }
     .container .links nav ul li  img{
-        width: 22px !important ;
-        height: 22px !important;
+        width:var(--userImg-size);
+        height: var(--userImg-size);
     }
     .navbarFirstItem ,
     .navbarSecondItem,
@@ -464,10 +504,10 @@ border: none;
     } 
     /* sidebar */
    .sideBarContainer .sideBarContainerFirst ul {
-        gap: 1.5rem !important;
+   gap: var(--gap-xmedium-screen)
     }
    .sideBarContainer .sideBarContainerSecond ul{
-        gap: 0.1rem !important;
+       gap: var(--gap-xxxsmall-screen)
     }
    .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
@@ -478,7 +518,7 @@ border: none;
         position: fixed;
     }
     .linksBottom nav ul li {
-        gap: 2rem;
+        gap: var(--gap-medium-screen);
     }
     .linksBottom nav ul li {
         display: flex;
@@ -491,7 +531,7 @@ border: none;
         left: -20px;
     }
     .linksBottom nav ul{
-        gap: 2.5rem !important
+        gap: var(--gap-lmedium-screen)
     }   
 }
 @media ( min-width: 340px) and (max-width: 360px){
@@ -558,15 +598,15 @@ border: none;
         flex-direction: column;
     }
     .container .userDiv .userImg {
-        width: 22px !important ;
-        height: 22px !important;
+        width: var(--userImg-size);
+        height: var(--userImg-size);
     }
       /* sidebar */   
        .sideBarContainer .sideBarContainerFirst ul {
-        gap: 1.5rem !important;
+        gap: var(--gap-xmedium-screen)
     }
    .sideBarContainer .sideBarContainerSecond ul{
-        gap: 0.1rem !important;
+        gap: var(--gap-xxxsmall-screen)
     }
    .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
@@ -577,7 +617,7 @@ border: none;
         position: fixed;
     }
     .linksBottom nav ul li {
-        gap: 2rem;
+        gap: var(--gap-medium-screen)
     }
     .linksBottom nav ul li {
         display: flex;
@@ -590,7 +630,7 @@ border: none;
         left: -20px;
     }
     .linksBottom nav ul{
-        gap: 3rem !important
+        gap: var(--gap-large-screen)
     }
 }
 @media ( min-width: 360px) and (max-width: 420px){
@@ -628,7 +668,7 @@ border: none;
         right: 0px;
     }
     .container .links ul{
-        gap: 1.4rem
+        gap: var(--gap-xxmedium-screen)
     }
     .container .links nav ul li .iconDiv .inputDiv input{
         display: none;
@@ -654,16 +694,13 @@ border: none;
         display: none;
     }
    /* response nav end */
-   .container .userDiv .userImg {
-    width: 22px !important ;
-    height: 22px !important;
-    }
+ 
      /* sidebar */   
        .sideBarContainer .sideBarContainerFirst ul {
-        gap: 1.5rem !important;
+        gap: var(--gap-xmedium-screen)
     }
    .sideBarContainer .sideBarContainerSecond ul{
-        gap: 0.1rem !important;
+        gap: var(--gap-xxxsmall-screen)
     }
    .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
@@ -681,12 +718,12 @@ border: none;
         left: -20px;
     }
     .linksBottom nav ul{
-        gap: 3rem !important
+        gap: var(--gap-large-screen)
     }
 }
 @media ( min-width: 420px) and (max-width: 450px){
     nav ul {
-        gap: 1.5rem !important;
+        gap: var(--gap-xmedium-screen)
     }
     .userDiv{
         display:flex;
@@ -749,16 +786,16 @@ border: none;
     .container .links nav ul li  .phoneDot{
         display: none;
     }
-    .container .userDiv .userImg {
-        width: 22px !important ;
-        height: 22px !important;
+    .container .userDiv  img{
+        width: var(--userImg-size);
+        height: var(--userImg-size);
     }
     /* sidebar */   
    .sideBarContainer .sideBarContainerFirst ul {
-        gap: 1.5rem !important;
+        gap: var(--gap-xmedium-screen)
     }
    .sideBarContainer .sideBarContainerSecond ul{
-        gap: 0.1rem !important;
+        gap: var(--gap-xxxsmall-screen)
     }
    .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
@@ -775,11 +812,15 @@ border: none;
         left: -20px;
     }
     .linksBottom nav ul{
-        gap: 3rem !important
+        gap: var(--gap-large-screen)
     }
+   
 }
  @media ( min-width: 450px) and (max-width: 500px){
-   
+    .container .links ul li img{
+        width: var(--userImg-size);
+        height:var(--userImg-size);
+    }
     .container .links ul li .navbarThreeItem .altLink span{
         display: flex ;
         flex-direction: column;
@@ -798,11 +839,11 @@ border: none;
        margin: var(--margin-container);
  }
 .container .links{
-    width: 100%;
+    width: var(--screen-large-size);
      padding-right: 0rem; 
 }
 .container .links nav ul{
-    gap: 1.2rem;
+    gap: var(--gap-xxmedium-screen)
 }
 .container .links nav ul li .iconDiv .inputDiv input{
     display: none;
@@ -833,8 +874,8 @@ border: none;
     flex-direction: column;
 }
 .container .userImg { 
-    width: 22px !important ;
-    height: 22px !important;
+    width: var(--userImg-size);
+    height: var(--userImg-size);
 }
 .container .links ul li .userDownBtn{
     margin-top: -3px;
@@ -848,10 +889,12 @@ border: none;
 .phoneDot{
     display: none;
 }
-/* sidebar */   .sideBarContainer .sideBarContainerFirst ul {
-    gap: 1.5rem !important;
-}   .sideBarContainer .sideBarContainerSecond ul{
-    gap: 0.1rem !important;
+/* sidebar */   
+.sideBarContainer .sideBarContainerFirst ul {
+    gap: var(--gap-xmedium-screen)
+}  
+.sideBarContainer .sideBarContainerSecond ul{
+    gap: var(--gap-xxxsmall-screen)
 }   .sideBarContainer .sideBarContainerSecond  ul li span {
     font-size: 10px;
     display: flex 
@@ -867,7 +910,7 @@ border: none;
     left: -20px;
 }
 .linksBottom nav ul{
-    gap: 3rem !important
+    gap: var(--gap-large-screen)
 }
 } 
 @media ( min-width: 500px) and (max-width: 600px){
@@ -875,7 +918,7 @@ border: none;
         margin-right: 2rem;
     }
     nav ul {
-        gap: 2rem !important;
+        gap: var(--gap-medium-screen)
     }
     .container .links ul li .navbarThreeItem .altLink span{
         display: flex  !important;
@@ -898,7 +941,7 @@ border: none;
            margin: var(--margin-container);
      }
     .container .links{
-         width: 100%;
+        width: var(--screen-large-size);
     }
     .container .links nav ul li .iconDiv .inputDiv input{
         display: none;
@@ -919,8 +962,8 @@ border: none;
         display: none;
     }
     .container .links nav ul li  img{
-        width: 22px;
-        height: 22px;
+        width: var(--userImg-size);
+        height: var(--userImg-size);
         margin-top: 3px;
     }
      .phoneDot{
@@ -931,21 +974,21 @@ border: none;
         right: 0;
     }
    .navbarThreeItem .altLink img{
-    width: var(--img-size-large) !important;
-    height:  var(--img-size-large) !important;
+    width: var(--img-size-large);
+    height:  var(--img-size-large);
    }
    .navbarThreeItem .altLink div span {
     display: flex;
    }
    .container .userImg { 
-    width: 22px !important ;
-    height: 22px !important;
+    width: var(--userImg-size);
+    height: var(--userImg-size);
 }
 /* sidebar */   .sideBarContainer .sideBarContainerFirst ul {
-    gap: 1.5rem !important;
+    gap: var(--gap-xmedium-screen)
 }
 .sideBarContainer .sideBarContainerSecond ul{
-    gap: 0.1rem !important;
+    gap: var(--gap-xxxsmall-screen)
 }
 .sideBarContainer .sideBarContainerSecond  ul li span {
     font-size: 10px;
@@ -962,13 +1005,13 @@ border: none;
     left: -20px;
 }
 .linksBottom nav ul{
-    gap: 3rem !important
+    gap: var(--gap-large-screen)
 }
 }
  @media  ( min-width: 600px) and (max-width: 800px) {
 
     nav ul {
-        gap: 2.5rem !important;
+        gap: var(--gap-lmedium-screen)
     }
     .container .links ul li .navbarThreeItem .altLink span{
         display: flex  !important;
@@ -991,7 +1034,7 @@ border: none;
            margin: var(--margin-container);
      }
     .container .links{
-        width: 100%;
+        width: var(--screen-large-size);
     }
     .container .links nav ul li .iconDiv .inputDiv input{
         display: none;
@@ -1012,8 +1055,8 @@ border: none;
         display: none;
     }
     .container .links nav ul li  img{
-        width: 22px;
-        height: 22px;
+        width: var(--userImg-size);
+        height: var(--userImg-size);
         margin-top: 3px;
     } 
     .container .links nav ul li .navbarThreeItem .altLink{
@@ -1021,26 +1064,26 @@ border: none;
         right: 0;
     }
    .navbarThreeItem .altLink img{
-    width: var(--img-size-large) !important;
-    height:  var(--img-size-large) !important;
+    width: var(--img-size-large) ;
+    height:  var(--img-size-large) ;
    }
    .navbarThreeItem .altLink div span {
     display: flex;
    }
    .container .userImg { 
-    width: 22px !important ;
-    height: 22px !important;}
-
+    width: var(--userImg-size);
+    height: var(--userImg-size);
+   }
     .phoneDot{
         display: none ;
 
     }
     /* sidebar */
     .sideBarContainer .sideBarContainerFirst ul {
-        gap: 1.5rem !important;
+        gap: var(--gap-xmedium-screen)
     }
     .sideBarContainer .sideBarContainerSecond ul{
-        gap: 0.1rem !important;
+        gap:var(--gap-xxxsmall-screen)
     }
     .sideBarContainer .sideBarContainerSecond  ul li span {
         font-size: 10px;
@@ -1058,7 +1101,7 @@ border: none;
         z-index: 1;
     }
     .linksBottom nav ul{
-        gap: 3rem !important
+        gap: var(--gap-large-screen)
     }
  }
  @media ( min-width: 800px) and (max-width: 1200px){
@@ -1067,8 +1110,8 @@ border: none;
         margin-top: 1rem;
         margin-bottom: 2rem;
     }
-    nav ul {
-        gap: 3rem !important;
+    .container .links ul{
+        gap: var(--gap-bigLarge-screen)
     }
     nav ul span{
         font-size: 12px;
@@ -1098,7 +1141,7 @@ border: none;
            top: 8px;
      }
     .container .links{
-        width: 100%;
+        width: var(--screen-large-size);
     }
     .container .links nav ul li .iconDiv .inputDiv {
         position: relative;
@@ -1132,8 +1175,8 @@ border: none;
         top: 10px;
     }
     .container .links nav ul li  img{
-        width: 22px;
-        height: 22px;
+        width: var(--userImg-size);
+        height:var(--userImg-size);
         margin-top: 3px;
     }
     .container .links nav ul li .iconDiv .inputDiv{
@@ -1145,8 +1188,8 @@ border: none;
         right: 0;
     }
    .navbarThreeItem .altLink img{
-    width: var(--img-size-large) !important;
-    height:  var(--img-size-large) !important;
+    width: var(--img-size-large) ;
+    height:  var(--img-size-large) ;
    }
    .navbarThreeItem .altLink div span {
     display: flex;
@@ -1155,8 +1198,9 @@ border: none;
     padding-top: 15px ;
    }
    .container .userImg { 
-    width: 22px !important ;
-    height: 22px !important;}
+    width: var(--userImg-size);
+    height: var(--userImg-size);
+    }
 
     .navbarFirstItem span{
         display: flex;
@@ -1166,10 +1210,10 @@ border: none;
         display: none ;
     }  
     .sideBarContainer .sideBarContainerFirst ul {
-        gap: 1.5rem !important;
+        gap: var(--gap-xmedium-screen)
     }
     .sideBarContainer .sideBarContainerSecond ul{
-        gap: 0.1rem !important;
+        gap: var(--gap-xxxsmall-screen)
     }
     .container .links nav ul li .iconDiv .inputDiv span{
         display: none;
@@ -1232,10 +1276,10 @@ border: none;
 }
 /* sidebar */
 .sideBarContainer .sideBarContainerFirst ul {
-    gap: 1.5rem !important;
+    gap: var(--gap-xmedium-screen)
 }
 .sideBarContainer .sideBarContainerSecond ul{
-    gap: 0.1rem !important;
+    gap: var(--gap-xxxsmall-screen)
 }
 .linksBottom nav ul li {
     display: none;
@@ -1253,14 +1297,14 @@ border: none;
         margin-top: 1rem;
         margin-bottom: 2rem;
     }
-    nav ul {
-        gap: 3.5rem !important;
+    .container .links ul{
+        gap: var(--gap-bigLarge-screen)
     }
     nav ul span{
         font-size: 12px;
     }
     .container .links{
-        gap: 2rem;
+        gap: var(--gap-medium-screen)
     }   
     .container .links ul li .navbarThreeItem .altLink span{
         display: flex  !important;
@@ -1285,8 +1329,8 @@ border: none;
             margin-bottom: 2rem;
      }
     .container .links{
-         width: 100%;
-          gap: 0;
+        width: var(--screen-large-size);
+          gap: var(--gap-zero)
     }
     .container .links nav ul li .iconDiv .inputDiv input{
         display: none;
@@ -1316,8 +1360,8 @@ border: none;
         top: 10px;
     }
     .container .links nav ul li  img{
-        width: 22px;
-        height: 22px;
+        width:var(--userImg-size);
+        height: var(--userImg-size);
         margin-top: 3px;
     }
     .container .links nav ul li .navbarThreeItem .altLink{
@@ -1325,8 +1369,8 @@ border: none;
         right: 0;
     }
    .navbarThreeItem .altLink img{
-    width: var(--img-size-large) !important;
-    height:  var(--img-size-large) !important;
+    width: var(--img-size-large) ;
+    height:  var(--img-size-large);
    }
    .navbarThreeItem .altLink div span {
     display: flex;
@@ -1335,8 +1379,9 @@ border: none;
     padding-top: 15px ;
    }
    .container .userImg { 
-    width: 22px !important ;
-    height: 22px !important;}
+    width: var(--userImg-size);
+    height: var(--userImg-size);
+      }
     .navbarFirstItem span{
         display: flex;
         margin-right: 1rem;
@@ -1350,10 +1395,10 @@ border: none;
         display: none;
     }
     .sideBarContainer .sideBarContainerFirst ul {
-        gap: 1.5rem !important;
+        gap: var(--gap-xmedium-screen)
     }
     .sideBarContainer .sideBarContainerSecond ul{
-        gap: 0.1rem !important;
+        gap: var(--gap-xxxsmall-screen)
     }
     .container .links nav ul li .inputDiv{
         width: 23rem;
