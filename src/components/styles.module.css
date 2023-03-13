@@ -128,6 +128,8 @@ body{
     margin-top: 1rem;
     display: flex;
     flex-direction: column;  
+    align-items: center;
+    justify-content: center;
 }
 .container .links ul li .active i, 
 .container .links ul li .active span {
@@ -1320,6 +1322,8 @@ border: none;
       }
     .container .links ul li span {
         display:flex;
+        align-items: center;
+        justify-content: center;
     }
     .container .links nav ul li .iconDiv i{
         margin-bottom: 0rem;

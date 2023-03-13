@@ -7,6 +7,19 @@ function Post() {
   const [showSorting, setShowSorting] = useState(false);
    const {down} = useChangeButton()
   
+   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+ 
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+
   const handleShowSort = () => {
     setShowSorting(!showSorting)
     if ( showSorting ) {
@@ -17,14 +30,18 @@ function Post() {
   
   }
   useEffect(()=>{
-   
-    if(down === "down"){
+   if( screenWidth <= 1000){
+    if(down === "down" ){
+      setTimeout(()=>{
+       document.querySelector(".sortingByWho").style.top ="24rem"},50)}
+   else{
        setTimeout(()=>{
-        document.querySelector(".sortingByWho").style.top ="24rem"},50)}
-    else{
-        setTimeout(()=>{
-          document.querySelector(".sortingByWho").style.top= "60.5rem"},50)}
-    },[down,showSorting])
+         document.querySelector(".sortingByWho").style.top= "60.5rem"},50)}
+   }else{
+    document.querySelector(".sortingByWho").style.top ="11rem"
+   }
+ 
+    },[down,showSorting,screenWidth])
  
   const handleWhich = (e) => {
     if (e.currentTarget.id === "first") {
