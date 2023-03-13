@@ -10,29 +10,20 @@ function Post() {
   const handleShowSort = () => {
     setShowSorting(!showSorting)
     if ( showSorting ) {
-     
       document.querySelector(".sortingByWho").style.display = "flex"
-       
     } else {
-    
-      document.querySelector(".sortingByWho").style.display = "none"  
-     
+      document.querySelector(".sortingByWho").style.display = "none"   
     }
   
   }
   useEffect(()=>{
-    console.log(down)
+   
     if(down === "down"){
        setTimeout(()=>{
-        document.querySelector(".sortingByWho").style.top ="24rem"
-       },50)}
-
-
-   else{
+        document.querySelector(".sortingByWho").style.top ="24rem"},50)}
+    else{
         setTimeout(()=>{
-          document.querySelector(".sortingByWho").style.top= "60.5rem"
- 
-         },50)}
+          document.querySelector(".sortingByWho").style.top= "60.5rem"},50)}
     },[down,showSorting])
  
   const handleWhich = (e) => {
@@ -50,10 +41,6 @@ function Post() {
       document.querySelector(`#second`).style.borderLeft = "none"
       document.getElementById("textContent").textContent = "En Önemli"
     }
-  
-
-
-
   }
   return (
     <div className='postDiv'>

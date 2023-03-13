@@ -1,11 +1,13 @@
 
 import './App.css';
 import Header from './components/Header';
-
+import { OpacityProviver } from './context/OpacityContex';
 function App() {
   return (
     <div className="App">
-    <Header/>
+     <OpacityProviver>
+       <Header/>
+     </OpacityProviver>
     </div>
   );
 }

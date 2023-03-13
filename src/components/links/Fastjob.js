@@ -3,7 +3,7 @@ import styles from "../links/links.module.css"
 function Fastjob() {
   return (
     <>
-    <div className={styles.container}>Home</div>
+    <div className={styles.container}>Premium</div>
    </>
   )
 }

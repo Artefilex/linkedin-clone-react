@@ -4,7 +4,7 @@ function Comment() {
   return (
     <>
     <div className={styles.container}>
-      Home</div>
+     Mesajlaşma</div>
    </>
   )
 }

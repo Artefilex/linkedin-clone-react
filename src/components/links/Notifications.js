@@ -3,7 +3,7 @@ import styles from "../links/links.module.css"
 function Notifications() {
   return (
     <>
-    <div className={styles.container}>Homeeeee</div>
+    <div className={styles.container}>Bildirimler</div>
    </>
   )
 }

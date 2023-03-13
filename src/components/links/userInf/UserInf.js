@@ -4,13 +4,7 @@ import img from "../../ben.jpg"
 
 function UserInf() {
   return (
-    <div className={`${styles.userInfdownDiv} jsxUserInf`}>
-        <style jsx>{`
-              .jsxUserInf{
-                cursor: default;
-              }
-        `}
-        </style>
+    <div className={`${styles.userInfdownDiv} jsxUserInf`} style={{cursor:"pointer"}}>
         <div className={styles.userInfo} > 
             <div className={styles.userInformation}>
                  <div className={styles.userInfImg}> <img src={img} alt="" /></div>

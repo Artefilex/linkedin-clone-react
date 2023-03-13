@@ -949,6 +949,7 @@ h6{
   @media (min-width:300px) and (max-width:450px){
     .postContainer .newPost{
       width: var(--container-width-insideContainer-second);
+      padding: 0.9rem;
     }
     .postContainer .newPost .newPostButtons button i,
     .postContainer .newPost .newPostButtons button span{
@@ -971,10 +972,13 @@ h6{
     }
     
   }
-  @media (min-width:450px) and (max-width:600px){
+  @media ( min-width:450px ) and ( max-width:600px ){
     .sortingByWho{
       right: 5.5%;
       top: 63rem;
+    }
+    .postContainer .newPost{
+      padding: 0.7rem;
     }
     .postContainer .newPost .newPostButtons button span{
       font-size: var(--font-size-small)
@@ -988,7 +992,7 @@ h6{
     }
    }
 
- @media (min-width:600px) and (max-width:620px){
+ @media ( min-width : 600px ) and ( max-width : 620px ){
   .postContainer .postArea .postContent .postButtons button i, 
     .postContainer .postArea .postContent .postButtons button span{
         font-size: var(--font-size-small);
@@ -996,6 +1000,19 @@ h6{
     .postContainer .newPost{
       width: var(--container-width-insideContainer-second);
     }
+    .sortingByWho{
+      right: 5%;
+     
+    }
+ }
+ @media (min-width:620px) and (max-width:1000px){
+  .postContainer .newPost{
+    padding:1.2rem
+  }
+  .sortingByWho{
+    right: 5%;
+   
+  }
  }
 
   @media (max-width:1000px){
@@ -1035,6 +1052,9 @@ h6{
   @media  (min-width:1000px) and (max-width:1400px){
     .profileContent{
       height: 22.5rem;
+    }
+   .postContainer .newPost{
+      padding: 0.8rem;
     }
     .postDiv{
       width:45%;
@@ -1080,6 +1100,9 @@ h6{
     .profileContent{
       height: 22.5rem;
     }
+    .postContainer .newPost{
+      padding: 0.8rem;
+    }
     .postDiv{
       width:40%;
       transition: var(--transition);
@@ -1112,11 +1135,12 @@ h6{
   }
 
  
-  @media (min-width: 1700px) and(max-width:2000px) {
+  @media ( min-width: 1700px) and ( max-width: 2000px) {
 
     .profileContent{
       height: 22.5rem;
     }
+  
     .postDiv{
       width:40%;
     }
@@ -1158,10 +1182,13 @@ h6{
   .profileGroup .profileFollowingHastagContent{
     padding: 0 10%;
   }
+  .postContainer .newPost {
+    padding: 1rem;
+  }
     
   }
 
-  @media (min-width:2000px) {
+  @media ( min-width: 2000px ) {
 
     .profileContent{
       height: 22.5rem;
@@ -1210,5 +1237,7 @@ h6{
   .profileGroup .profileFollowingHastagContent{
     padding: 0 10%;
   }
-    
+  .postContainer .newPost {
+    padding: 1rem;
+  }
   }

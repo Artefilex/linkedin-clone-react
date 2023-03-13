@@ -12,9 +12,10 @@ import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-do
 import img from "../components/ben.jpg"
 import UserInf from './links/userInf/UserInf'
 import Sidebar from "./links/Sidebar/Sidebar"
-
+import { useOpacity } from "../context/OpacityContex"
 
 function Header() {
+  const {setOpacity} = useOpacity()
   
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenDot, setIsOpenDot] = useState(false);
@@ -32,13 +33,13 @@ function Header() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-   
-
+  
 
   const  handleInput = (e) =>{
     e.currentTarget.nextElementSibling.style.display = `flex `
+    
     setHideDivs(true);
-    if(hideDivs === false  &&  screenWidth <= 900 ){
+    if(hideDivs === false  &&  screenWidth <= 1000 ){
       e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.style.width="90%"
       e.currentTarget.parentElement.parentElement.parentElement.style.width="90%"
       e.currentTarget.parentElement.style.width="90%"
@@ -53,7 +54,7 @@ function Header() {
       e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "none"    
    
     }
-  else if (screenWidth >= 900  )  {
+  else if (screenWidth >= 1000  )  {
     e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.style.display= "flex"
     e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.style.display= "flex"
     e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
@@ -62,15 +63,17 @@ function Header() {
     e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"   
     e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"
     e.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display= "flex"    
-   
+    e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.style.background= "none"
   }
 }
-  
- 
-  const showSidebar = () =>{
+const showSidebar = () =>{
     setOpenSideBar(!openSideBar)
   }
-  
+ 
+
+  useEffect(()=>{
+    setOpacity(openSideBar)
+  })
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -86,20 +89,16 @@ function Header() {
   };
 
   const openWhichLi = (activeLi) =>{
+    
     if(activeLi.id === "1"){
     setOpenSideBar(false)
     document.body.style.background = "rgb(243, 242, 239)"
     }else{
       setIsOpen(false)
-      document.body.style.background = "rgba(61, 61, 60, 0.76)"
+       document.body.style.background = "rgb(175 175 164)"
         if(openSideBar){
-          document.body.style.background = "rgb(243, 242, 239)"
-          // document.querySelector(".container").style.opacity= "1";
+          document.body.style.background = "rgb(243, 242, 239)" 
         }
-        else{
-          document.body.style.background = "rgba(61, 61, 60, 0.76)"
-          // document.querySelector(".container").style.opacity= "0.5";
-        } 
     }
   }
 
@@ -115,14 +114,14 @@ function Header() {
                 <li>
                   <div className={styles.iconDiv}>
                     <div className={styles.inputDiv}>
-                     <button onClick={ handleInput }> <i className="fa-solid fa-magnifying-glass fa-xl" ></i></button>
+                     <button style={{border:"none",outline:"none"}} onClick={ handleInput }> <i className="fa-solid fa-magnifying-glass fa-xl" ></i></button>
                       <input type="text" placeholder=" Arama Yap" />
                       <span>Arama Yap</span>
                     </div>                 
                   </div>
                 </li>
                 
-                 <li  >
+                 <li >
                 <NavLink to="/" className={({ isActive }) => isActive ? styles.active : undefined}   >
                 <div   className={styles.iconDiv}   >
                   <i className="fa-solid fa-house  fa-xl" > </i>
@@ -278,8 +277,8 @@ function Header() {
                 <div className={styles.linksBottom} id="bottomNav">
                 <nav >
                  <ul>
-                    <li  >
-                    <NavLink to="/"   className={({ isActive }) => isActive ? styles.active : undefined}   >
+                    <li >
+                    <NavLink to="/"  className={({ isActive }) => isActive ? styles.active : undefined}   >
                     <div   className={styles.iconDiv}   >
                       <i className="fa-solid fa-house  fa-xl" >  </i>
                       <div className={styles.iconSpan}>

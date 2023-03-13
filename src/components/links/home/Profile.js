@@ -20,7 +20,7 @@ function Profile() {
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
-      if (screenWidth <= 900 && document.querySelector(".buttonMores")){
+      if (screenWidth <= 1000 && document.querySelector(".buttonMores")){
        setTimeout(()=>{
         document.querySelector(".buttonMores").style.display = "flex";
         document.querySelector(".downGroup").style.display = "none";
@@ -29,7 +29,7 @@ function Profile() {
         document.querySelector(".headerProfile").style.background = " linear-gradient( to top, #FFFFFF 0px,  #FFFFFD 30px,  #A0B4B7 30px, #A0B4B7 100px)";
        },50)
       }
-      else if( screenWidth >= 900 && document.querySelector(".buttonMores") ){
+      else if( screenWidth >= 1000 && document.querySelector(".buttonMores") ){
        setTimeout(()=>{
         document.querySelector(".buttonMores").style.display = "none";
         document.querySelector(".downGroup").style.display = "flex";
@@ -41,11 +41,6 @@ function Profile() {
        
        },50)
       }
-
-      //  else{
-      //      setDown("up")
-      //   document.querySelector(".buttonMores").style.display = "flex";
-      //  }
     };
 
   }, [screenWidth]);
@@ -76,20 +71,6 @@ function Profile() {
      setDown(showBtn)
   })
  
-  
-
-  useEffect(()=>{
-    if (screenWidth <= 900 && showBtn === "down") {
-     
-    }
-    else {
-    }
-  },[screenWidth,showBtn])
-
-
-
-
-
 
   return (
     <div className="profileContainer">
