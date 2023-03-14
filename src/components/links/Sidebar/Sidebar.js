@@ -21,7 +21,7 @@ function Sidebar() {
      
      <div className={Style.sidebarContainerHeader}>
        <h3>İş</h3>
-       <button onClick={handleClose}> <i className="fa-solid fa-xmark" style={{cursor:"pointer"}}></i> </button>
+       <button className={Style.buttonClose} onClick={handleClose}> <i className="fa-solid fa-xmark" style={{cursor:"pointer"}}></i> </button>
       
      </div>
 

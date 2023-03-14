@@ -376,7 +376,7 @@ const showSidebar = () =>{
 
           </div>
           <Routes>
-            <Route path='/'  element={<Home/>}> </Route>
+            <Route path='/'  exact element={<Home/>}> </Route>
             <Route path="/networks" element={<Network/>} ></Route>
             <Route path="/jobadvertisement" element={<Advertisment/>}></Route>
             <Route path="/comment" element={<Comment/>}></Route>

@@ -383,13 +383,11 @@ border: none;
 .linksBottom nav{
     padding: 1rem;
 }
-
-
-
-
-
-
-
+.sidebarContainerHeader button{
+    border:none;
+    background: transparent;
+    cursor: pointer;
+  }
 
 @media  (max-width: 300px){
     .userDiv{

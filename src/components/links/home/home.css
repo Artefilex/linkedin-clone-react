@@ -902,7 +902,7 @@ h6{
   .sortingByWho{
     flex-direction: column;
     position: absolute;
-    right: 27.5%;
+    right: 29%;
     top: 11rem;
     background: var(--standart-container-background);
     width: 11rem;
@@ -1131,7 +1131,9 @@ h6{
     .postContainer .postArea .postContent .postButtons .btnPost {
       white-space: nowrap;
   }
-
+  .sortingByWho{
+    right: 30%;
+  }
   }
 
  
